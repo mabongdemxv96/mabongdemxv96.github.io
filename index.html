@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Việt Anh Edu – Thầy Việt Anh · Toán 9 · Ôn thi vào lớp 10</title>
+<meta name="description" content="Học Toán 9 online cùng Thầy Việt Anh: bài giảng, video, luyện tập, kiểm tra và báo cáo cho phụ huynh – tất cả trong một.">
+<meta property="og:title" content="Việt Anh Edu – Thầy Việt Anh · Toán 9 · Ôn thi vào lớp 10">
+<meta property="og:description" content="Học Toán 9 online cùng Thầy Việt Anh: bài giảng, video, luyện tập, kiểm tra và báo cáo cho phụ huynh – tất cả trong một.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>:root {
+  --ink: #1d2433; --muted: #5b6475; --line: #e3e6ec; --bg: #f6f7f9; --card: #fff;
+  --gold: #e9a908; --gold-soft: #fff6dc; --blue: #1f5fa8; --blue-soft: #e8f0fa;
+  --ds: #1f5fa8; --hh: #18875a; --tk: #7a4bc2; --th: #6b7280;
+  --ok: #18875a; --ok-soft: #e6f5ee; --bad: #c2410c; --bad-soft: #fdecdf;
+  --r: 12px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); }
+code { font-size: .9em; background: #eef0f4; padding: 1px 5px; border-radius: 4px; }
+a { color: var(--blue); text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 20px; background: var(--card); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.brand small { display: block; color: var(--muted); font-size: 12px; }
+.logo { background: var(--gold); color: #fff; font-weight: 800; border-radius: 8px; padding: 6px 8px; font-size: 13px; letter-spacing: .5px; }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav a { padding: 6px 12px; border-radius: 999px; color: var(--muted); }
+nav a.on { background: var(--blue-soft); color: var(--blue); font-weight: 600; }
+main { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.foot { max-width: 1100px; margin: 0 auto 30px; padding: 0 20px; color: var(--muted); font-size: 13px; }
+.link { background: none; border: 0; color: var(--blue); padding: 0; text-decoration: underline; }
+h1 { font-size: 24px; margin: 4px 0 6px; } h2 { font-size: 19px; margin: 24px 0 10px; } h3 { font-size: 16px; margin: 16px 0 8px; }
+.muted { color: var(--muted); } .small { font-size: 13px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; }
+.grid { display: grid; gap: 12px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.chip { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #eef0f4; color: var(--muted); white-space: nowrap; }
+.chip.DS { background: #e8f0fa; color: var(--ds); } .chip.HH { background: #e6f5ee; color: var(--hh); }
+.chip.TK { background: #f1ebfa; color: var(--tk); } .chip.TH { background: #f0f1f3; color: var(--th); }
+.chip.gold { background: var(--gold-soft); color: #946b00; } .chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); } .chip.star { background: #fff1f2; color: #be123c; }
+.btn { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 7px 14px; }
+.btn.pri { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600; }
+.btn.gold { background: var(--gold); border-color: var(--gold); color: #fff; font-weight: 600; }
+.btn:disabled { opacity: .5; cursor: default; }
+.bar { height: 8px; background: #eceef2; border-radius: 99px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--ok); border-radius: 99px; }
+
+/* Lộ trình */
+.hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; margin-bottom: 8px; }
+.next { border-left: 4px solid var(--gold); }
+.tabs { display: flex; gap: 6px; margin: 18px 0 10px; flex-wrap: wrap; }
+.tabs button { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 6px 14px; color: var(--muted); }
+.tabs button.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+.week { display: grid; grid-template-columns: 74px 1fr; gap: 10px; padding: 10px 0; border-top: 1px dashed var(--line); }
+.week:first-child { border-top: 0; }
+.wk { font-weight: 700; color: var(--muted); font-size: 13px; padding-top: 10px; }
+.sessions { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
+.ses { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--ink); position: relative; }
+.ses:hover { border-color: #b9c3d3; }
+.ses.co { border-left: 4px solid var(--gold); }
+.ses.xong { background: var(--ok-soft); border-color: #bfe3cf; }
+.ses.thi { background: #fbf7ea; }
+.ses .t { font-weight: 600; font-size: 14px; margin: 4px 0 6px; }
+.ses .ma { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+/* Buổi học */
+.crumb { font-size: 13px; color: var(--muted); }
+.layout { display: grid; grid-template-columns: 230px 1fr; gap: 18px; align-items: start; margin-top: 14px; }
+.steps { position: sticky; top: 70px; display: grid; gap: 4px; }
+.steps button { text-align: left; border: 1px solid transparent; background: none; border-radius: 8px; padding: 8px 10px; color: var(--ink); display: flex; gap: 8px; align-items: center; }
+.steps button.on { background: var(--card); border-color: var(--line); font-weight: 600; }
+.steps .n { width: 22px; height: 22px; border-radius: 50%; background: #e7eaf0; display: inline-grid; place-items: center; font-size: 12px; flex: none; }
+.steps button.done .n { background: var(--ok); color: #fff; }
+.pane > .card + .card { margin-top: 12px; }
+.theory { background: var(--blue-soft); border: 1px solid #c9dbf1; }
+.method { background: var(--gold-soft); border: 1px solid #f3dc97; }
+.method h3, .theory h3 { margin-top: 0; }
+.md p { margin: 6px 0; } .md ul, .md ol { margin: 6px 0; padding-left: 22px; }
+.sol { margin-top: 10px; border-top: 1px dashed var(--line); padding-top: 8px; }
+.sol ol { margin: 0; padding-left: 22px; } .sol li { margin: 4px 0; }
+.sol li.hide { display: none; }
+.video { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
+.screen { aspect-ratio: 16/9; background: #10151f; border-radius: 10px; color: #cdd5e3; display: grid; place-items: center; text-align: center; padding: 16px; position: relative; }
+.screen .now { font-size: 18px; font-weight: 600; color: #fff; margin-top: 8px; }
+.screen .tm { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: #93a0b6; }
+.chap { display: grid; gap: 4px; }
+.chap button { text-align: left; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+.chap button.on { border-color: var(--gold); background: var(--gold-soft); }
+.q { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; }
+.q + .q { margin-top: 10px; }
+.q .hd { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 6px; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+.opt { text-align: left; border: 1px solid var(--line); border-radius: 8px; background: var(--card); padding: 8px 10px; display: flex; gap: 8px; align-items: baseline; }
+.opt b { color: var(--muted); }
+.opt.sel { border-color: var(--blue); background: var(--blue-soft); }
+.opt.right { border-color: var(--ok); background: var(--ok-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.ds { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.ds td { border-top: 1px solid var(--line); padding: 7px 4px; vertical-align: middle; }
+.ds td.c { width: 112px; text-align: right; white-space: nowrap; }
+.ds button { border: 1px solid var(--line); background: var(--card); border-radius: 6px; padding: 3px 9px; margin-left: 4px; }
+.ds button.sel { background: var(--blue); color: #fff; border-color: var(--blue); }
+.ds tr.right td { background: var(--ok-soft); } .ds tr.wrong td { background: var(--bad-soft); }
+.tln { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
+.tln input { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; width: 140px; font: inherit; }
+.fb { margin-top: 8px; padding: 8px 10px; border-radius: 8px; font-size: 14px; }
+.fb.ok { background: var(--ok-soft); color: var(--ok); } .fb.bad { background: var(--bad-soft); color: var(--bad); }
+.timer { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 20px; }
+.score { font-size: 40px; font-weight: 800; }
+.skills { display: grid; gap: 8px; }
+.sk { display: grid; grid-template-columns: 90px 1fr 140px; gap: 10px; align-items: center; }
+table.tb { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; font-size: 13px; }
+table.tb th, table.tb td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+table.tb th { background: #f3f4f7; font-weight: 600; color: var(--muted); }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #d7dbe3; }
+.dot.on { background: var(--ok); }
+.banner { background: var(--gold-soft); border: 1px solid #f3dc97; border-radius: var(--r); padding: 10px 14px; font-size: 14px; }
+@media (max-width: 760px) {
+  .hero, .layout, .video { grid-template-columns: 1fr; }
+  .steps { position: static; grid-template-columns: repeat(3, 1fr); }
+  .steps > div { grid-column: 1 / -1; }
+  .opts { grid-template-columns: 1fr; }
+  .week { grid-template-columns: 1fr; } .wk { padding-top: 0; }
+  .sk { grid-template-columns: 70px 1fr; } .sk .bar { grid-column: 1 / -1; }
+}
+</style>
+<style>/* Website thương hiệu — mọi lớp có tiền tố s- để không đụng giao diện lộ trình (style.css). */
+:root {
+  --navy: #14284b; --navy-2: #1f3a68; --navy-3: #0c1a33; --gold: #f2b705; --gold-2: #d99a00; --cream: #fffaf0;
+  --s-ink: #172036; --s-muted: #5d667a; --s-line: #e5e8ef; --s-bg: #f6f8fb; --s-ok: #18875a;
+}
+body { font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #fff; color: var(--s-ink); }
+.s-wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+section[id] { scroll-margin-top: 72px; }
+.s-ic { width: 22px; height: 22px; flex: none; }
+
+/* Header */
+.s-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); backdrop-filter: saturate(160%) blur(10px); border-bottom: 1px solid var(--s-line); }
+.s-header-in { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+.s-brand { display: flex; align-items: center; gap: 10px; color: var(--s-ink); }
+.s-brand-t b { display: block; font-size: 18px; letter-spacing: -.2px; }
+.s-brand-t small { display: block; font-size: 12px; color: var(--s-muted); }
+.s-nav { display: flex; gap: 2px; align-items: center; }
+.s-nav a { padding: 8px 13px; border-radius: 999px; color: var(--s-muted); font-weight: 500; font-size: 15px; }
+.s-nav a:hover { color: var(--s-ink); background: var(--s-bg); }
+.s-nav a.on { color: var(--navy); background: #edf1f8; font-weight: 600; }
+.s-nav a.s-nav-cta { background: var(--gold); color: var(--navy); font-weight: 700; margin-left: 6px; box-shadow: 0 4px 14px rgba(242,183,5,.35); }
+.s-nav a.s-nav-cta:hover, .s-nav a.s-nav-cta.on { background: #ffc61a; color: var(--navy); }
+.s-burger { display: none; background: none; border: 1px solid var(--s-line); border-radius: 10px; padding: 6px 11px; font-size: 18px; }
+
+/* Nút */
+.s-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; padding: 12px 20px; font-weight: 600; font-size: 15px; border: 1px solid transparent; transition: transform .15s, box-shadow .15s, background .15s; cursor: pointer; font-family: inherit; }
+.s-btn:hover { transform: translateY(-1px); }
+.s-btn.lg { padding: 15px 24px; font-size: 16px; font-weight: 700; }
+.s-btn.sm { padding: 7px 12px; font-size: 14px; margin-top: 8px; }
+.s-btn.full { width: 100%; }
+.s-btn.gold { background: var(--gold); color: var(--navy); box-shadow: 0 8px 24px rgba(242,183,5,.38); }
+.s-btn.gold:hover { background: #ffc61a; }
+.s-btn.navy { background: var(--navy); color: #fff; }
+.s-btn.ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+.s-btn.ghost:hover { background: rgba(255,255,255,.08); }
+.s-btn.line { border-color: var(--s-line); color: var(--s-ink); background: #fff; }
+.s-pill { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: #eef0f4; color: var(--s-muted); }
+.s-pill.ok { background: #e6f5ee; color: var(--s-ok); }
+
+/* Hero */
+.s-hero { background: radial-gradient(900px 480px at 80% -10%, #2b4c86 0%, transparent 60%), linear-gradient(160deg, var(--navy) 0%, var(--navy-3) 100%); color: #fff; }
+.s-hero-in { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; padding: 72px 24px 84px; }
+.s-eyebrow { display: inline-flex; gap: 8px; align-items: center; background: rgba(242,183,5,.14); color: var(--gold); border: 1px solid rgba(242,183,5,.35); padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.s-eyebrow .s-ic { width: 16px; height: 16px; }
+.s-hero h1 { margin: 20px 0 18px; font-weight: 800; letter-spacing: -2px; line-height: 1.02; font-size: clamp(48px, 7vw, 84px); }
+.s-hero h1 span { display: block; }
+.s-hero h1 span.hl { color: var(--gold); }
+.s-hero .lead { font-size: 18px; color: #c9d4e8; max-width: 540px; margin: 0 0 30px; }
+.s-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.s-trust { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 26px; color: #c9d4e8; font-size: 14px; }
+.s-trust span { display: inline-flex; gap: 6px; align-items: center; }
+.s-trust .s-ic { color: var(--gold); width: 18px; height: 18px; }
+
+/* Tháp đếm ngược */
+.s-tower { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.s-tower-hd { display: inline-flex; gap: 8px; align-items: center; color: #9fb0cf; font-size: 13px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; margin-bottom: 6px; }
+.s-tower-hd .s-ic { color: var(--gold); width: 18px; height: 18px; }
+.s-tier { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); }
+.s-tier-t b { display: block; font-size: 14.5px; font-weight: 600; }
+.s-tier-t span { font-size: 12.5px; color: #9fb0cf; }
+.s-tier-n { font-size: 13px; color: #c9d4e8; white-space: nowrap; display: inline-flex; gap: 4px; align-items: center; }
+.s-tier-n b { color: #fff; font-size: 16px; }
+.s-tier-n .s-ic { width: 16px; height: 16px; color: #6fd3a2; }
+.s-tier.past { opacity: .55; }
+.s-tier.goal { flex-direction: column; text-align: center; background: linear-gradient(160deg, #ffcf3a, var(--gold)); color: var(--navy); border: 0; padding: 18px 16px 16px; box-shadow: 0 16px 40px rgba(242,183,5,.25); }
+.s-tier.goal .s-tier-t b { font-size: 16px; font-weight: 700; }
+.s-tier.goal .s-tier-t span { color: #5b4a00; }
+.s-big { font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -2px; }
+.s-big small { font-size: 18px; letter-spacing: 0; margin-left: 6px; font-weight: 700; }
+
+/* Khối chung */
+.s-sec { padding: 88px 0; }
+.s-sec.alt { background: var(--s-bg); }
+.s-head { text-align: center; margin-bottom: 40px; }
+.s-kicker { display: block; color: var(--gold-2); font-weight: 700; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; }
+.s-sec h2, .s-reg h2 { font-size: clamp(28px, 3.6vw, 42px); letter-spacing: -1px; margin: 8px 0 0; line-height: 1.15; }
+
+/* Tất cả trong một */
+.s-feat { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.s-feat-i { background: #fff; border: 1px solid var(--s-line); border-radius: 18px; padding: 22px 16px; text-align: center; transition: transform .15s, box-shadow .15s; }
+.s-feat-i:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(20,40,75,.08); }
+.s-feat-ic { width: 54px; height: 54px; border-radius: 16px; margin: 0 auto 14px; display: grid; place-items: center; background: var(--navy); color: var(--gold); }
+.s-feat-ic .s-ic { width: 26px; height: 26px; }
+.s-feat-i b { display: block; font-size: 15.5px; margin-bottom: 4px; }
+.s-feat-i span { font-size: 13.5px; color: var(--s-muted); }
+.s-diff { max-width: 820px; margin: 44px auto 0; border: 1px solid var(--s-line); border-radius: 18px; overflow: hidden; }
+.s-diff-hd, .s-diff-r { display: grid; grid-template-columns: 1.3fr .9fr 1.1fr; align-items: center; }
+.s-diff-hd span { padding: 12px 16px; font-size: 13px; font-weight: 600; color: var(--s-muted); background: var(--s-bg); }
+.s-diff-hd span.me { background: var(--navy); color: var(--gold); }
+.s-diff-r span { padding: 13px 16px; border-top: 1px solid var(--s-line); font-size: 15px; display: flex; gap: 6px; align-items: center; }
+.s-diff-r .no { color: #c0392b; } .s-diff-r .no .s-ic { width: 18px; height: 18px; }
+.s-diff-r .yes { background: #f2f6fc; color: var(--navy); font-weight: 600; } .s-diff-r .yes .s-ic { color: var(--s-ok); width: 18px; height: 18px; }
+
+/* Học sinh & phụ huynh */
+.s-split { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+.s-ticks { list-style: none; padding: 0; margin: 24px 0 28px; display: grid; gap: 14px; }
+.s-ticks li { display: flex; gap: 10px; font-size: 16px; color: #39425a; }
+.s-ticks .s-ic { color: var(--s-ok); margin-top: 2px; }
+.s-mocks { display: grid; grid-template-columns: .8fr 1.2fr; gap: 16px; align-items: center; }
+.s-phone { background: var(--navy); border-radius: 30px; padding: 10px; box-shadow: 0 24px 50px rgba(20,40,75,.22); }
+.s-phone-in { background: #fff; border-radius: 22px; padding: 14px; }
+.s-ph-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 700; margin-bottom: 10px; }
+.s-ph-row { display: flex; align-items: center; gap: 8px; padding: 8px 6px; border-radius: 10px; font-size: 13px; color: var(--s-muted); }
+.s-ph-row .s-ic { width: 18px; height: 18px; }
+.s-ph-row span { flex: 1; }
+.s-ph-row.done { color: var(--s-ink); }
+.s-ph-row .ok { color: var(--s-ok); }
+.s-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid #cfd5e0; }
+.s-ph-bar { height: 6px; background: #eceef2; border-radius: 9px; overflow: hidden; margin-top: 10px; }
+.s-ph-bar i { display: block; height: 100%; background: var(--gold); }
+.s-ph-note { font-size: 11.5px; color: var(--s-muted); margin-top: 6px; }
+.s-report { background: #fff; border: 1px solid var(--s-line); border-radius: 20px; padding: 18px; box-shadow: 0 18px 40px rgba(20,40,75,.10); }
+.s-rp-hd { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.s-rp-hd small, .s-rp-grid small, .s-rp-sk > small { display: block; font-size: 12px; color: var(--s-muted); }
+.s-rp-hd b { font-size: 15px; }
+.s-rp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0; }
+.s-rp-grid div { background: var(--s-bg); border-radius: 12px; padding: 10px; }
+.s-rp-grid b { font-size: 22px; color: var(--navy); }
+.s-rp-row { display: grid; grid-template-columns: 1fr 90px; gap: 10px; align-items: center; font-size: 13px; margin-top: 7px; }
+.s-rp-bar { height: 7px; background: #eceef2; border-radius: 9px; overflow: hidden; }
+.s-rp-bar i { display: block; height: 100%; border-radius: 9px; }
+.s-rp-note { display: flex; gap: 8px; margin-top: 14px; padding: 10px 12px; background: var(--cream); border: 1px solid #f6e3a6; border-radius: 12px; font-size: 13px; color: #4a4120; }
+.s-rp-note .s-ic { color: var(--gold-2); width: 18px; height: 18px; }
+
+/* Triết lý */
+.s-band { background: linear-gradient(150deg, var(--navy), var(--navy-2)); color: #fff; padding: 72px 0; text-align: center; }
+.s-band-q { font-size: clamp(26px, 3.6vw, 40px); font-weight: 800; letter-spacing: -.8px; margin-bottom: 40px; }
+.s-flow { display: flex; align-items: stretch; justify-content: center; gap: 18px; flex-wrap: wrap; }
+.s-flow-i { width: 250px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 20px; padding: 24px 18px; }
+.s-flow-ic { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 12px; display: grid; place-items: center; background: var(--gold); color: var(--navy); }
+.s-flow-ic .s-ic { width: 26px; height: 26px; }
+.s-flow-i b { display: block; font-size: 20px; margin-bottom: 4px; }
+.s-flow-i span { color: #c9d4e8; font-size: 14px; }
+.s-arrow { font-size: 28px; color: var(--gold); align-self: center; }
+
+/* Người dạy + lộ trình */
+.s-teacher { display: grid; grid-template-columns: auto 1fr 360px; gap: 32px; align-items: center; }
+.s-avatar { width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(150deg, var(--navy-2), var(--navy)); display: grid; place-items: center; color: #fff; font-size: 54px; font-weight: 800; letter-spacing: -2px; overflow: hidden; border: 6px solid var(--cream); box-shadow: 0 0 0 1px #f6e3a6; }
+.s-avatar span { color: var(--gold); }
+.s-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.s-teacher p { font-size: 16.5px; color: #39425a; margin: 10px 0 14px; max-width: 520px; }
+.s-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.s-chip { border: 1px solid var(--s-line); border-radius: 999px; padding: 6px 12px; font-size: 14px; font-weight: 600; }
+.s-chip small { color: var(--s-muted); font-weight: 500; margin-right: 4px; }
+.s-route { display: block; background: var(--navy); color: #fff; border-radius: 22px; padding: 24px; transition: transform .15s; }
+.s-route:hover { transform: translateY(-3px); }
+.s-route b { display: block; font-size: 20px; margin: 4px 0 16px; }
+.s-route-bars { display: grid; gap: 10px; }
+.s-route-bars div { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #c9d4e8; }
+.s-route-bars i { height: 10px; border-radius: 9px; background: linear-gradient(90deg, var(--gold), #ffd75e); min-width: 30px; }
+.s-route-go { display: inline-block; margin-top: 16px; color: var(--gold); font-weight: 700; }
+
+/* Hướng dẫn */
+.s-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.s-step { background: #fff; border: 1px solid var(--s-line); border-radius: 20px; padding: 26px 20px; text-align: center; position: relative; }
+.s-step-n { position: absolute; top: 14px; left: 16px; font-size: 13px; font-weight: 800; color: var(--gold-2); }
+.s-step-ic { width: 58px; height: 58px; border-radius: 18px; margin: 0 auto 14px; display: grid; place-items: center; background: var(--cream); color: var(--navy); border: 1px solid #f6e3a6; }
+.s-step-ic .s-ic { width: 28px; height: 28px; }
+.s-step b { display: block; font-size: 17px; margin-bottom: 4px; }
+.s-step span { font-size: 14px; color: var(--s-muted); }
+.s-faq { max-width: 780px; margin: 48px auto 0; }
+.s-faq details { border-bottom: 1px solid var(--s-line); padding: 16px 0; }
+.s-faq summary { cursor: pointer; font-weight: 600; font-size: 16px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.s-faq summary::-webkit-details-marker { display: none; }
+.s-faq summary::after { content: "+"; color: var(--gold-2); font-size: 22px; line-height: 1; }
+.s-faq details[open] summary::after { content: "–"; }
+.s-faq details p { color: var(--s-muted); margin: 10px 0 0; }
+
+/* Đăng ký */
+.s-reg { background: radial-gradient(700px 360px at 10% 0%, #2b4c86 0%, transparent 60%), linear-gradient(160deg, var(--navy), var(--navy-3)); color: #fff; padding: 88px 0; }
+.s-reg-in { display: grid; grid-template-columns: 1fr 460px; gap: 48px; align-items: center; }
+.s-reg h2 { color: #fff; margin: 16px 0 22px; }
+.s-gifts { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 12px; }
+.s-gifts li { display: flex; gap: 10px; font-size: 17px; }
+.s-gifts .s-ic { color: var(--gold); }
+.s-urgent { display: flex; gap: 10px; align-items: center; background: rgba(242,183,5,.12); border: 1px solid rgba(242,183,5,.35); border-radius: 14px; padding: 12px 16px; color: #ffe08a; }
+.s-urgent b { color: #fff; }
+.s-form { background: #fff; color: var(--s-ink); border-radius: 22px; padding: 26px; box-shadow: 0 30px 60px rgba(0,0,0,.25); display: grid; gap: 12px; }
+.s-form h3 { margin: 0 0 4px; font-size: 20px; }
+.s-form label { display: grid; gap: 6px; font-size: 13.5px; font-weight: 600; color: #39425a; }
+.s-form input, .s-form select { font: inherit; font-weight: 400; border: 1px solid #d5dae4; border-radius: 10px; padding: 11px 12px; background: #fff; color: var(--s-ink); }
+.s-form input:focus, .s-form select:focus { outline: 2px solid rgba(242,183,5,.6); border-color: var(--gold); }
+.s-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.s-form-note { margin: 0; font-size: 12.5px; color: var(--s-muted); text-align: center; }
+.s-form-msg { font-size: 14px; background: var(--s-bg); border-radius: 10px; padding: 10px 12px; }
+.s-form-msg.bad { background: #fdecdf; color: #c2410c; }
+.s-done { text-align: center; padding: 20px 6px; }
+.s-done > .s-ic { width: 56px; height: 56px; color: #fff; background: var(--s-ok); border-radius: 50%; padding: 12px; }
+.s-done h3 { margin: 12px 0 6px; } .s-done p { color: var(--s-muted); }
+
+/* Footer + nút dính */
+.s-footer { background: var(--navy-3); color: #9fb0cf; padding: 32px 0 90px; font-size: 14px; }
+.s-footer .s-wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.s-footer b { color: #fff; } .s-footer a { color: #c9d4e8; }
+.s-sticky { display: none; }
+
+/* Khu lộ trình (nhúng ứng dụng) */
+.s-subnav { background: var(--s-bg); border-bottom: 1px solid var(--s-line); }
+.s-subnav .s-wrap { display: flex; gap: 6px; align-items: center; height: 52px; flex-wrap: wrap; }
+.s-subnav a { padding: 6px 12px; border-radius: 999px; color: var(--s-muted); font-size: 14px; font-weight: 500; }
+.s-subnav a.on { background: #fff; color: var(--navy); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.s-sub-note { margin-left: auto; font-size: 12px; color: var(--s-muted); }
+#s-app-shell main { max-width: 1180px; padding: 26px 24px 60px; }
+#s-app-shell .card, #s-app-shell .q, #s-app-shell table.tb { border-radius: 14px; }
+#s-app-shell .btn.pri { background: var(--navy); border-color: var(--navy); }
+
+@media (max-width: 1060px) {
+  .s-feat { grid-template-columns: repeat(3, 1fr); }
+  .s-teacher { grid-template-columns: auto 1fr; }
+  .s-route { grid-column: 1 / -1; }
+}
+@media (max-width: 900px) {
+  .s-hero-in, .s-split, .s-reg-in { grid-template-columns: 1fr; }
+  .s-hero-in { padding: 48px 24px 60px; gap: 36px; }
+  .s-steps { grid-template-columns: repeat(2, 1fr); }
+  .s-arrow { display: none; }
+}
+@media (max-width: 760px) {
+  .s-burger { display: block; }
+  .s-nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; padding: 10px 16px 16px; border-bottom: 1px solid var(--s-line); }
+  .s-nav.open { display: flex; }
+  .s-nav a.s-nav-cta { margin: 6px 0 0; text-align: center; }
+  .s-feat { grid-template-columns: repeat(2, 1fr); }
+  .s-mocks { grid-template-columns: 1fr; }
+  .s-phone { max-width: 300px; margin: 0 auto; }
+  .s-diff-hd, .s-diff-r { grid-template-columns: 1.2fr .5fr 1.3fr; }
+  .s-diff-r span, .s-diff-hd span { padding: 10px; font-size: 13.5px; }
+  .s-teacher { grid-template-columns: 1fr; text-align: center; }
+  .s-avatar { margin: 0 auto; width: 120px; height: 120px; font-size: 44px; }
+  .s-chips { justify-content: center; } .s-teacher p { margin-left: auto; margin-right: auto; }
+  .s-steps { grid-template-columns: 1fr; }
+  .s-sec, .s-reg { padding: 60px 0; }
+  .s-row2 { grid-template-columns: 1fr; }
+  .s-form { padding: 20px; }
+  .s-sub-note { display: none; }
+  .s-sticky:not([hidden]) { display: block; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; background: var(--gold); color: var(--navy); font-weight: 700; text-align: center; padding: 14px; border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+}
+</style>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [["$", "$"]], displayMath: [["$$", "$$"]] },
+    svg: { fontCache: "global" },
+    startup: { typeset: false }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header class="s-header">
+  <div class="s-wrap s-header-in">
+    <a class="s-brand" href="#trang-chu">
+      <span class="s-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="34" height="34"><rect width="32" height="32" rx="9" fill="#14284b"/><path d="M7 23h5v-4h5v-4h5V9h3" fill="none" stroke="#f2b705" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="25" cy="9" r="2.2" fill="#f2b705"/></svg>
+      </span>
+      <span class="s-brand-t"><b id="s-ten"></b><small id="s-khau-hieu"></small></span>
+    </a>
+    <button class="s-burger" id="s-burger" aria-label="Mở menu">☰</button>
+    <nav class="s-nav" id="s-nav">
+      <a href="#trang-chu" data-nav="trang-chu">Trang chủ</a>
+      <a href="#tinh-nang" data-nav="tinh-nang">Tất cả trong một</a>
+      <a href="#phu-huynh" data-nav="phu-huynh">Cho phụ huynh</a>
+      <a href="#lo-trinh" data-nav="lo-trinh">Lộ trình học</a>
+      <a href="#huong-dan" data-nav="huong-dan">Hướng dẫn</a>
+      <a href="#dang-ky" data-nav="dang-ky" class="s-nav-cta">Đăng ký ngay</a>
+    </nav>
+  </div>
+</header>
+
+<div id="home"></div>
+
+<div id="s-app-shell" hidden>
+  <div class="s-subnav"><div class="s-wrap">
+    <a href="#lo-trinh" data-sub="lo-trinh">Lộ trình</a>
+    <a href="#ky-nang" data-sub="ky-nang">Kỹ năng của em</a>
+    <a href="#san-xuat" data-sub="san-xuat">Góc giáo viên</a>
+    <span class="s-sub-note">Tiến độ lưu trên trình duyệt này · <button class="link" id="xoa-tien-do">Xoá tiến độ</button></span>
+  </div></div>
+  <main id="app"></main>
+</div>
+
+<footer class="s-footer" id="s-footer"></footer>
+<a class="s-sticky" id="s-sticky" href="#dang-ky">Đăng ký ngay – nhận tài liệu miễn phí</a>
+
+<script>
+window.DATA = {"buoi_hoc":[{"ma":"91001","giai_doan":1,"thu_tu":1,"tuan":1,"mach":"DS","loai":"moi","ten":"Bài 1 – Phương trình và hệ hai phương trình bậc nhất hai ẩn","ky_nang":["9010101","9010102","9010103"],"tai_lieu":"T1 tr.5–10; BT 1.1–1.5","kiem_tra":"KT15"},{"ma":"91002","giai_doan":1,"thu_tu":2,"tuan":1,"mach":"HH","loai":"moi","ten":"Bài 11 (1) – Tỉ số lượng giác: định nghĩa, góc đặc biệt","ky_nang":["9041101","9041102"],"tai_lieu":"T1 tr.66–70; BT 4.1–4.4","kiem_tra":"KT15"},{"ma":"91003","giai_doan":1,"thu_tu":3,"tuan":2,"mach":"DS","loai":"moi","ten":"Bài 2 (1) – Giải hệ: phương pháp thế, phương pháp cộng đại số","ky_nang":["9010201","9010202"],"tai_lieu":"T1 tr.11–16; BT 1.6–1.7","kiem_tra":"KT15"},{"ma":"91004","giai_doan":1,"thu_tu":4,"tuan":2,"mach":"HH","loai":"moi","ten":"Bài 11 (2) – Hai góc phụ nhau; máy tính cầm tay; hệ thức giữa các tỉ số lượng giác","ky_nang":["9041103","9041104","9041105"],"tai_lieu":"T1 tr.70–73; BT 4.5–4.7","kiem_tra":"KT30"},{"ma":"91005","giai_doan":1,"thu_tu":5,"tuan":3,"mach":"DS","loai":"moi","ten":"Bài 2 (2) – Số nghiệm của hệ, MTCT, hệ chứa tham số, ứng dụng; Luyện tập chung","ky_nang":["9010203","9010204","9010205","9010206","9010207"],"tai_lieu":"T1 tr.16–20; BT 1.8–1.14","kiem_tra":"KT30"},{"ma":"91006","giai_doan":1,"thu_tu":6,"tuan":3,"mach":"HH","loai":"moi","ten":"Bài 12 (1) – Hệ thức cạnh – góc; giải tam giác vuông","ky_nang":["9041201","9041202","9041203"],"tai_lieu":"T1 tr.74–77; BT 4.8","kiem_tra":"KT15"},{"ma":"91007","giai_doan":1,"thu_tu":7,"tuan":4,"mach":"DS","loai":"moi","ten":"Bài 3 (1) – Lập hệ: tìm số, chuyển động, công việc chung – riêng","ky_nang":["9010301","9010302","9010303"],"tai_lieu":"T1 tr.21–23; BT 1.15, 1.18","kiem_tra":"KT15"},{"ma":"91008","giai_doan":1,"thu_tu":8,"tuan":4,"mach":"HH","loai":"moi","ten":"Bài 12 (2) – Kẻ đường cao trong tam giác thường; bài toán thực tế; hệ thức lượng (mở rộng)","ky_nang":["9041204","9041205","9041206"],"tai_lieu":"T1 tr.77–80; BT 4.9–4.20","kiem_tra":"KT15"},{"ma":"91009","giai_doan":1,"thu_tu":9,"tuan":5,"mach":"DS","loai":"moi","ten":"Bài 3 (2) – Lập hệ: phần trăm, giá – thuế, hình học, thực tế khác","ky_nang":["9010304","9010305"],"tai_lieu":"T1 tr.23; BT 1.16–1.17","kiem_tra":"KT30"},{"ma":"91010","giai_doan":1,"thu_tu":10,"tuan":5,"mach":"HH","loai":true,"ten":"Ôn tập Chương IV + Kiểm tra 45' Chương IV","ky_nang":["9041101","9041102","9041103","9041104","9041201","9041202","9041203","9041204","9041205"],"tai_lieu":"T1 tr.81–82; BT 4.21–4.30","kiem_tra":"KT45"},{"ma":"91011","giai_doan":1,"thu_tu":11,"tuan":6,"mach":"DS","loai":true,"ten":"Ôn tập Chương I + Kiểm tra 45' Chương I","ky_nang":["9010101","9010102","9010103","9010201","9010202","9010203","9010204","9010205","9010301","9010302","9010303","9010304","9010305"],"tai_lieu":"T1 tr.24–25; BT 1.19–1.28","kiem_tra":"KT45"},{"ma":"91012","giai_doan":1,"thu_tu":12,"tuan":6,"mach":"DS","loai":"moi","ten":"Bài 4 – Phương trình tích, phương trình chứa ẩn ở mẫu","ky_nang":["9020401","9020402","9020403","9020404","9020405"],"tai_lieu":"T1 tr.26–30; BT 2.1–2.5","kiem_tra":"KT30"},{"ma":"91013","giai_doan":1,"thu_tu":13,"tuan":7,"mach":"HH","loai":"moi","ten":"Bài 13 – Mở đầu về đường tròn","ky_nang":["9051301","9051302"],"tai_lieu":"T1 tr.83–86; BT 5.1–5.4","kiem_tra":"KT15"},{"ma":"91014","giai_doan":1,"thu_tu":14,"tuan":7,"mach":"DS","loai":"moi","ten":"Bài 5 – Bất đẳng thức và tính chất","ky_nang":["9020501","9020502","9020503","9020504","9020505"],"tai_lieu":"T1 tr.31–35; BT 2.6–2.11","kiem_tra":"KT15"},{"ma":"91015","giai_doan":1,"thu_tu":15,"tuan":8,"mach":"HH","loai":"moi","ten":"Bài 14 – Cung và dây; góc ở tâm, số đo cung","ky_nang":["9051401","9051402"],"tai_lieu":"T1 tr.87–90; BT 5.5–5.8","kiem_tra":"KT15"},{"ma":"91016","giai_doan":1,"thu_tu":16,"tuan":8,"mach":"DS","loai":"moi","ten":"Bài 6 – Bất phương trình bậc nhất một ẩn; Luyện tập chung","ky_nang":["9020601","9020602","9020603","9020604"],"tai_lieu":"T1 tr.36–41; BT 2.12–2.20","kiem_tra":"KT30"},{"ma":"91017","giai_doan":1,"thu_tu":17,"tuan":9,"mach":"DS","loai":true,"ten":"Ôn tập Chương II + Kiểm tra 45' Chương II","ky_nang":["9020401","9020402","9020403","9020404","9020405","9020501","9020502","9020503","9020504","9020601","9020602","9020603","9020604"],"tai_lieu":"T1 tr.42–43; BT 2.21–2.32","kiem_tra":"KT45"},{"ma":"91018","giai_doan":1,"thu_tu":18,"tuan":9,"mach":"TH","loai":true,"ten":"Ôn tập giữa học kì I (Chương I, II, IV)","ky_nang":[],"tai_lieu":"Đề ôn tổng hợp","kiem_tra":""},{"ma":"91019","giai_doan":1,"thu_tu":19,"tuan":10,"mach":"TH","loai":"thi","ten":"KIỂM TRA GIỮA HỌC KÌ I (90')","ky_nang":[],"tai_lieu":"Chương I, II, IV","kiem_tra":"GK"},{"ma":"91020","giai_doan":1,"thu_tu":20,"tuan":10,"mach":"DS","loai":"moi","ten":"Bài 7 – Căn bậc hai và căn thức bậc hai","ky_nang":["9030701","9030702","9030703","9030704","9030705"],"tai_lieu":"T1 tr.44–48; BT 3.1–3.6","kiem_tra":"KT15"},{"ma":"91021","giai_doan":1,"thu_tu":21,"tuan":11,"mach":"HH","loai":"moi","ten":"Bài 15 – Độ dài cung tròn; diện tích hình quạt, hình vành khuyên; Luyện tập chung","ky_nang":["9051501","9051502","9051503"],"tai_lieu":"T1 tr.91–98; BT 5.9–5.19","kiem_tra":"KT30"},{"ma":"91022","giai_doan":1,"thu_tu":22,"tuan":11,"mach":"DS","loai":"moi","ten":"Bài 8 – Khai căn bậc hai với phép nhân và phép chia; Luyện tập chung","ky_nang":["9030801","9030802","9030803"],"tai_lieu":"T1 tr.49–53; BT 3.7–3.16","kiem_tra":"KT30"},{"ma":"91023","giai_doan":1,"thu_tu":23,"tuan":12,"mach":"HH","loai":"moi","ten":"Bài 16 (1) – Vị trí tương đối đường thẳng – đường tròn; dấu hiệu tiếp tuyến","ky_nang":["9051601","9051602"],"tai_lieu":"T1 tr.99–102; BT 5.20–5.21","kiem_tra":"KT15"},{"ma":"91024","giai_doan":1,"thu_tu":24,"tuan":12,"mach":"DS","loai":"moi","ten":"Bài 9 (1) – Đưa thừa số ra ngoài/vào trong dấu căn; khử mẫu; trục căn thức","ky_nang":["9030901","9030902","9030903","9030904"],"tai_lieu":"T1 tr.54–57; BT 3.17–3.20","kiem_tra":"KT15"},{"ma":"91025","giai_doan":1,"thu_tu":25,"tuan":13,"mach":"HH","loai":"moi","ten":"Bài 16 (2) – Tính chất hai tiếp tuyến cắt nhau","ky_nang":["9051603"],"tai_lieu":"T1 tr.102–103; BT 5.22–5.23","kiem_tra":"KT15"},{"ma":"91026","giai_doan":1,"thu_tu":26,"tuan":13,"mach":"DS","loai":"moi","ten":"Bài 9 (2) – Rút gọn biểu thức số và biểu thức chứa biến","ky_nang":["9030905","9030906"],"tai_lieu":"T1 tr.57–59; BT 3.21–3.22","kiem_tra":"KT15"},{"ma":"91027","giai_doan":1,"thu_tu":27,"tuan":14,"mach":"HH","loai":"moi","ten":"Bài 17 – Vị trí tương đối của hai đường tròn; Luyện tập chung","ky_nang":["9051701","9051702"],"tai_lieu":"T1 tr.104–111; BT 5.24–5.31","kiem_tra":"KT30"},{"ma":"91028","giai_doan":1,"thu_tu":28,"tuan":14,"mach":"DS","loai":"luyen","ten":"Chuyên đề: câu hỏi phụ sau rút gọn; phương trình chứa căn (định hướng thi 10)","ky_nang":["9030907","9030908"],"tai_lieu":"Tài liệu tham khảo","kiem_tra":"KT30"},{"ma":"91029","giai_doan":1,"thu_tu":29,"tuan":15,"mach":"DS","loai":"moi","ten":"Bài 10 – Căn bậc ba và căn thức bậc ba; Luyện tập chung","ky_nang":["9031001","9031002","9031003"],"tai_lieu":"T1 tr.60–64; BT 3.23–3.31","kiem_tra":"KT15"},{"ma":"91030","giai_doan":1,"thu_tu":30,"tuan":15,"mach":"DS","loai":true,"ten":"Ôn tập Chương III + Kiểm tra 45' Chương III","ky_nang":["9030702","9030704","9030803","9030904","9030905","9030906","9031002"],"tai_lieu":"T1 tr.65; BT 3.32–3.39","kiem_tra":"KT45"},{"ma":"91031","giai_doan":1,"thu_tu":31,"tuan":16,"mach":"HH","loai":true,"ten":"Ôn tập Chương V + Kiểm tra 45' Chương V","ky_nang":["9051401","9051402","9051501","9051502","9051503","9051601","9051602","9051603","9051701","9051702"],"tai_lieu":"T1 tr.112–113; BT 5.32–5.40","kiem_tra":"KT45"},{"ma":"91032","giai_doan":1,"thu_tu":32,"tuan":16,"mach":"DS","loai":true,"ten":"Ôn tập cuối học kì I – Đại số (Chương I, II, III)","ky_nang":[],"tai_lieu":"Đề ôn tổng hợp","kiem_tra":""},{"ma":"91033","giai_doan":1,"thu_tu":33,"tuan":17,"mach":"HH","loai":true,"ten":"Ôn tập cuối học kì I – Hình học (Chương IV, V)","ky_nang":[],"tai_lieu":"Đề ôn tổng hợp","kiem_tra":""},{"ma":"91034","giai_doan":1,"thu_tu":34,"tuan":17,"mach":"TH","loai":"thi","ten":"KIỂM TRA CUỐI HỌC KÌ I (90')","ky_nang":[],"tai_lieu":"Chương I–V","kiem_tra":"CK"},{"ma":"91035","giai_doan":1,"thu_tu":35,"tuan":18,"mach":"TH","loai":"chua","ten":"Chữa đề cuối HK I; phụ đạo theo kỹ năng yếu","ky_nang":[],"tai_lieu":"Báo cáo kết quả từng học sinh","kiem_tra":""},{"ma":"91036","giai_doan":1,"thu_tu":36,"tuan":18,"mach":"TH","loai":"luyen","ten":"Trải nghiệm (tuỳ chọn): pha chế dung dịch theo nồng độ; đo chiều cao – khoảng cách","ky_nang":["9010305","9041205"],"tai_lieu":"T1 tr.114–117","kiem_tra":""},{"ma":"92001","giai_doan":2,"thu_tu":1,"tuan":19,"mach":"DS","loai":"moi","ten":"Bài 18 (1) – Hàm số y = ax²: bảng giá trị, đồ thị","ky_nang":["9061801","9061802"],"tai_lieu":"T2 tr.4–8; BT 6.1–6.4","kiem_tra":"KT15"},{"ma":"92002","giai_doan":2,"thu_tu":2,"tuan":19,"mach":"HH","loai":"moi","ten":"Bài 27 (1) – Góc nội tiếp: nhận biết, tính số đo","ky_nang":["9092701","9092702"],"tai_lieu":"T2 tr.67–69; BT 9.1–9.3","kiem_tra":"KT15"},{"ma":"92003","giai_doan":2,"thu_tu":3,"tuan":20,"mach":"DS","loai":"moi","ten":"Bài 18 (2) – Xác định hệ số a; bài toán thực tế","ky_nang":["9061803","9061804"],"tai_lieu":"T2 tr.8–9; BT 6.5–6.7","kiem_tra":"KT30"},{"ma":"92004","giai_doan":2,"thu_tu":4,"tuan":20,"mach":"HH","loai":"moi","ten":"Bài 27 (2) – Hệ quả góc nội tiếp; chứng minh quan hệ góc","ky_nang":["9092703","9092704"],"tai_lieu":"T2 tr.69–71; BT 9.4–9.6","kiem_tra":"KT30"},{"ma":"92005","giai_doan":2,"thu_tu":5,"tuan":21,"mach":"DS","loai":"moi","ten":"Bài 19 (1) – Phương trình bậc hai: định nghĩa, dạng đặc biệt, công thức nghiệm","ky_nang":["9061901","9061902","9061903"],"tai_lieu":"T2 tr.10–15; BT 6.8–6.11","kiem_tra":"KT15"},{"ma":"92006","giai_doan":2,"thu_tu":6,"tuan":21,"mach":"HH","loai":"moi","ten":"Bài 28 – Đường tròn ngoại tiếp, nội tiếp tam giác; Luyện tập chung","ky_nang":["9092801","9092802","9092803","9092804"],"tai_lieu":"T2 tr.72–79; BT 9.7–9.17","kiem_tra":"KT30"},{"ma":"92007","giai_doan":2,"thu_tu":7,"tuan":22,"mach":"DS","loai":"moi","ten":"Bài 19 (2) – Công thức nghiệm thu gọn; MTCT; bài toán thực tế; Luyện tập chung","ky_nang":["9061904","9061905","9061906"],"tai_lieu":"T2 tr.15–20; BT 6.12–6.22","kiem_tra":"KT15"},{"ma":"92008","giai_doan":2,"thu_tu":8,"tuan":22,"mach":"HH","loai":"moi","ten":"Bài 29 (1) – Tứ giác nội tiếp: tính góc; đường tròn ngoại tiếp hình chữ nhật, hình vuông","ky_nang":["9092901","9092905","9092906"],"tai_lieu":"T2 tr.80–83; BT 9.18, 9.20–9.23","kiem_tra":"KT15"},{"ma":"92009","giai_doan":2,"thu_tu":9,"tuan":23,"mach":"DS","loai":"luyen","ten":"Chuyên đề: phương trình quy về bậc hai; phương trình bậc hai chứa tham số","ky_nang":["9061907","9061908"],"tai_lieu":"Tài liệu tham khảo","kiem_tra":"KT30"},{"ma":"92010","giai_doan":2,"thu_tu":10,"tuan":23,"mach":"HH","loai":"moi","ten":"Bài 29 (2) – Chứng minh tứ giác nội tiếp; góc có đỉnh trong/ngoài đường tròn; ứng dụng","ky_nang":["9092902","9092903","9092904"],"tai_lieu":"T2 tr.81; BT 9.19 + tài liệu tham khảo","kiem_tra":"KT15"},{"ma":"92011","giai_doan":2,"thu_tu":11,"tuan":24,"mach":"DS","loai":"moi","ten":"Bài 20 (1) – Định lí Viète; nhẩm nghiệm; tìm hai số biết tổng và tích","ky_nang":["9062001","9062002","9062003"],"tai_lieu":"T2 tr.21–24; BT 6.23–6.25, 6.27","kiem_tra":"KT15"},{"ma":"92012","giai_doan":2,"thu_tu":12,"tuan":24,"mach":"HH","loai":"moi","ten":"Bài 30 – Đa giác đều; phép quay; Luyện tập chung","ky_nang":["9093001","9093002","9093003","9093004"],"tai_lieu":"T2 tr.84–91; BT 9.24–9.36","kiem_tra":"KT30"},{"ma":"92013","giai_doan":2,"thu_tu":13,"tuan":25,"mach":"DS","loai":"moi","ten":"Bài 20 (2) – Biểu thức đối xứng hai nghiệm; Viète có tham số; tương giao (P) và (d)","ky_nang":["9062004","9062005","9061805"],"tai_lieu":"T2 tr.24; BT 6.26 + tài liệu tham khảo","kiem_tra":"KT30"},{"ma":"92014","giai_doan":2,"thu_tu":14,"tuan":25,"mach":"HH","loai":"luyen","ten":"Chuyên đề: bài hình tổng hợp kiểu đề thi vào 10 (1)","ky_nang":["9092907"],"tai_lieu":"Tài liệu tham khảo","kiem_tra":"KT15"},{"ma":"92015","giai_doan":2,"thu_tu":15,"tuan":26,"mach":"DS","loai":"moi","ten":"Bài 21 (1) – Lập phương trình: hình học, chuyển động, công việc","ky_nang":["9062101","9062102","9062103"],"tai_lieu":"T2 tr.25–27; BT 6.28, 6.31–6.33","kiem_tra":"KT15"},{"ma":"92016","giai_doan":2,"thu_tu":16,"tuan":26,"mach":"DS","loai":"moi","ten":"Bài 21 (2) – Lập phương trình: %, lãi kép, thực tế khác; Luyện tập chung","ky_nang":["9062104","9062105"],"tai_lieu":"T2 tr.26–29; BT 6.29–6.30, 6.34–6.38","kiem_tra":"KT30"},{"ma":"92017","giai_doan":2,"thu_tu":17,"tuan":27,"mach":"DS","loai":true,"ten":"Ôn tập Chương VI + Kiểm tra 45' Chương VI","ky_nang":["9061802","9061803","9061903","9061904","9062001","9062002","9062003","9062004","9062101","9062104"],"tai_lieu":"T2 tr.30–31; BT 6.39–6.52","kiem_tra":"KT45"},{"ma":"92018","giai_doan":2,"thu_tu":18,"tuan":27,"mach":"TH","loai":true,"ten":"Ôn tập giữa học kì II (Chương VI, Bài 27–29)","ky_nang":[],"tai_lieu":"Đề ôn tổng hợp","kiem_tra":""},{"ma":"92019","giai_doan":2,"thu_tu":19,"tuan":28,"mach":"TH","loai":"thi","ten":"KIỂM TRA GIỮA HỌC KÌ II (90')","ky_nang":[],"tai_lieu":"Chương VI; Bài 27–29","kiem_tra":"GK"},{"ma":"92020","giai_doan":2,"thu_tu":20,"tuan":28,"mach":"TK","loai":"moi","ten":"Bài 22 – Bảng tần số và biểu đồ tần số","ky_nang":["9072201","9072202","9072203"],"tai_lieu":"T2 tr.32–37; BT 7.1–7.5","kiem_tra":"KT15"},{"ma":"92021","giai_doan":2,"thu_tu":21,"tuan":29,"mach":"HH","loai":true,"ten":"Ôn tập Chương IX + Kiểm tra 45' Chương IX","ky_nang":["9092702","9092703","9092704","9092802","9092901","9092903","9092904","9093003"],"tai_lieu":"T2 tr.92; BT 9.37–9.44","kiem_tra":"KT45"},{"ma":"92022","giai_doan":2,"thu_tu":22,"tuan":29,"mach":"TK","loai":"moi","ten":"Bài 23 – Bảng và biểu đồ tần số tương đối; Luyện tập chung","ky_nang":["9072301","9072302","9072303"],"tai_lieu":"T2 tr.38–45; BT 7.6–7.16","kiem_tra":"KT30"},{"ma":"92023","giai_doan":2,"thu_tu":23,"tuan":30,"mach":"HH","loai":"moi","ten":"Bài 31 (1) – Hình trụ","ky_nang":["9103101","9103102"],"tai_lieu":"T2 tr.93–97; BT 10.1–10.2, 10.4","kiem_tra":"KT15"},{"ma":"92024","giai_doan":2,"thu_tu":24,"tuan":30,"mach":"TK","loai":"moi","ten":"Bài 24 – Bảng tần số, tần số tương đối ghép nhóm và biểu đồ","ky_nang":["9072401","9072402","9072403"],"tai_lieu":"T2 tr.46–53; BT 7.17–7.21","kiem_tra":"KT30"},{"ma":"92025","giai_doan":2,"thu_tu":25,"tuan":31,"mach":"HH","loai":"moi","ten":"Bài 31 (2) – Hình nón; vật thể ghép trụ – nón","ky_nang":["9103103","9103104"],"tai_lieu":"T2 tr.97–100; BT 10.3, 10.5–10.6","kiem_tra":"KT15"},{"ma":"92026","giai_doan":2,"thu_tu":26,"tuan":31,"mach":"TK","loai":"moi","ten":"Bài 25 – Phép thử ngẫu nhiên và không gian mẫu","ky_nang":["9082501","9082502"],"tai_lieu":"T2 tr.56–59; BT 8.1–8.4","kiem_tra":"KT15"},{"ma":"92027","giai_doan":2,"thu_tu":27,"tuan":32,"mach":"HH","loai":"moi","ten":"Bài 32 – Hình cầu; Luyện tập chung","ky_nang":["9103201","9103202","9103203"],"tai_lieu":"T2 tr.101–107; BT 10.7–10.16","kiem_tra":"KT30"},{"ma":"92028","giai_doan":2,"thu_tu":28,"tuan":32,"mach":"TK","loai":"moi","ten":"Bài 26 – Xác suất của biến cố; Luyện tập chung","ky_nang":["9082601","9082602","9082603"],"tai_lieu":"T2 tr.60–65; BT 8.5–8.11","kiem_tra":"KT30"},{"ma":"92029","giai_doan":2,"thu_tu":29,"tuan":33,"mach":"TK","loai":true,"ten":"Ôn tập Chương VII, VIII + Kiểm tra 45' Thống kê – Xác suất","ky_nang":["9072201","9072202","9072301","9072302","9072402","9072403","9082602","9082603"],"tai_lieu":"T2 tr.54–55, 66; BT 7.22–7.30, 8.12–8.17","kiem_tra":"KT45"},{"ma":"92030","giai_doan":2,"thu_tu":30,"tuan":33,"mach":"HH","loai":true,"ten":"Ôn tập Chương X + Kiểm tra 45' Chương X","ky_nang":["9103102","9103103","9103104","9103202","9103203"],"tai_lieu":"T2 tr.108–110; BT 10.17–10.30","kiem_tra":"KT45"},{"ma":"92031","giai_doan":2,"thu_tu":31,"tuan":34,"mach":"DS","loai":true,"ten":"Ôn tập cuối năm – Đại số","ky_nang":[],"tai_lieu":"T2 tr.127–128; Ôn tập cuối năm bài 1–8","kiem_tra":""},{"ma":"92032","giai_doan":2,"thu_tu":32,"tuan":34,"mach":"HH","loai":true,"ten":"Ôn tập cuối năm – Hình học, Thống kê – Xác suất","ky_nang":[],"tai_lieu":"T2 tr.128–129; Ôn tập cuối năm bài 9–16","kiem_tra":""},{"ma":"92033","giai_doan":2,"thu_tu":33,"tuan":35,"mach":"TH","loai":"thi","ten":"KIỂM TRA CUỐI HỌC KÌ II (90')","ky_nang":[],"tai_lieu":"Chương VI–X (có thể kèm kiến thức HK I)","kiem_tra":"CK"},{"ma":"92034","giai_doan":2,"thu_tu":34,"tuan":35,"mach":"TH","loai":"chua","ten":"Chữa đề cuối năm; đánh giá năng lực đầu vào giai đoạn ôn thi vào 10","ky_nang":[],"tai_lieu":"Báo cáo kỹ năng yếu theo mã","kiem_tra":""},{"ma":"93001","giai_doan":3,"thu_tu":1,"mach":"DS","loai":"luyen","ten":"CĐ1.1 – Rút gọn biểu thức chứa căn (tổng hợp các kiểu biến đổi)","ky_nang":["9030904","9030905","9030906"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93002","giai_doan":3,"thu_tu":2,"mach":"DS","loai":"luyen","ten":"CĐ1.2 – Câu hỏi phụ: tính giá trị, giải phương trình/bất phương trình với biểu thức A","ky_nang":["9030907","9020602"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93003","giai_doan":3,"thu_tu":3,"mach":"DS","loai":"luyen","ten":"CĐ1.3 – Tìm x nguyên để A nguyên; GTLN – GTNN; phương trình chứa căn","ky_nang":["9030907","9030908","9020505"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93004","giai_doan":3,"thu_tu":4,"mach":"DS","loai":"luyen","ten":"CĐ2.1 – Hệ phương trình (cơ bản, quy về, chứa tham số)","ky_nang":["9010202","9010205","9010207"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93005","giai_doan":3,"thu_tu":5,"mach":"DS","loai":"luyen","ten":"CĐ2.2 – Phương trình bậc hai và phương trình quy về bậc hai","ky_nang":["9061903","9061904","9061907"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93006","giai_doan":3,"thu_tu":6,"mach":"DS","loai":"luyen","ten":"CĐ3.1 – Hàm số y = ax²: đồ thị, điểm thuộc đồ thị, xác định hệ số","ky_nang":["9061802","9061803"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93007","giai_doan":3,"thu_tu":7,"mach":"DS","loai":"luyen","ten":"CĐ3.2 – Tương giao (P) và (d) có tham số","ky_nang":["9061805"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93008","giai_doan":3,"thu_tu":8,"mach":"DS","loai":"luyen","ten":"CĐ4.1 – Điều kiện có nghiệm; Viète tính biểu thức đối xứng","ky_nang":["9061908","9062001","9062004"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93009","giai_doan":3,"thu_tu":9,"mach":"DS","loai":"luyen","ten":"CĐ4.2 – Tìm m để hai nghiệm thoả hệ thức (đối xứng, không đối xứng)","ky_nang":["9062005"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93010","giai_doan":3,"thu_tu":10,"mach":"DS","loai":"luyen","ten":"CĐ4.3 – Viète nâng cao: dấu nghiệm, nghiệm nguyên, GTLN–GTNN biểu thức nghiệm","ky_nang":["9062005"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93011","giai_doan":3,"thu_tu":11,"mach":"DS","loai":"luyen","ten":"CĐ5.1 – Lập phương trình/hệ: chuyển động, công việc","ky_nang":["9010302","9010303","9062102","9062103"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93012","giai_doan":3,"thu_tu":12,"mach":"DS","loai":"luyen","ten":"CĐ5.2 – Lập phương trình/hệ: phần trăm, lãi suất, năng suất, giá cả","ky_nang":["9010304","9062104"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93013","giai_doan":3,"thu_tu":13,"mach":"DS","loai":"luyen","ten":"CĐ5.3 – Lập phương trình/hệ/bất phương trình: hình học và thực tế","ky_nang":["9010305","9062101","9062105","9020604"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93014","giai_doan":3,"thu_tu":14,"mach":"HH","loai":"luyen","ten":"CĐ6.1 – Hệ thức lượng, tỉ số lượng giác và bài toán thực tế","ky_nang":["9041203","9041205","9041206"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93015","giai_doan":3,"thu_tu":15,"mach":"HH","loai":"luyen","ten":"CĐ6.2 – Hình khối thực tế: trụ, nón, cầu","ky_nang":["9103104","9103203"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93016","giai_doan":3,"thu_tu":16,"mach":"HH","loai":"luyen","ten":"CĐ6.3 – Tiếp tuyến, hai tiếp tuyến cắt nhau","ky_nang":["9051602","9051603","9051702"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93017","giai_doan":3,"thu_tu":17,"mach":"HH","loai":"luyen","ten":"CĐ6.4 – Chứng minh tứ giác nội tiếp (các dấu hiệu)","ky_nang":["9092903"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93018","giai_doan":3,"thu_tu":18,"mach":"HH","loai":"luyen","ten":"CĐ6.5 – Ứng dụng tứ giác nội tiếp: góc bằng nhau, đồng dạng, hệ thức","ky_nang":["9092904","9092704"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93019","giai_doan":3,"thu_tu":19,"mach":"HH","loai":"luyen","ten":"CĐ6.6 – Bài hình tổng hợp: câu a, b chắc điểm","ky_nang":["9092907"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93020","giai_doan":3,"thu_tu":20,"mach":"HH","loai":"luyen","ten":"CĐ6.7 – Bài hình tổng hợp: câu c (thẳng hàng, cố định, cực trị hình học)","ky_nang":["9092907"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT30"},{"ma":"93021","giai_doan":3,"thu_tu":21,"mach":"TK","loai":"luyen","ten":"CĐ7.1 – Thống kê: bảng, biểu đồ, tần số tương đối, ghép nhóm","ky_nang":["9072303","9072403"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93022","giai_doan":3,"thu_tu":22,"mach":"TK","loai":"luyen","ten":"CĐ7.2 – Xác suất: không gian mẫu, tính xác suất","ky_nang":["9082502","9082602","9082603"],"tai_lieu":"Ngân hàng đề thi vào 10","kiem_tra":"KT15"},{"ma":"93023","giai_doan":3,"thu_tu":23,"mach":"TH","loai":"thi","ten":"THI THỬ VÀO 10 – Đề số 1 (120')","ky_nang":[],"tai_lieu":"Cấu trúc 5 bài tự luận","kiem_tra":"TT120"},{"ma":"93024","giai_doan":3,"thu_tu":24,"mach":"TH","loai":"chua","ten":"Chữa đề số 1; kĩ năng trình bày và phân bổ thời gian","ky_nang":[],"tai_lieu":"","kiem_tra":""},{"ma":"93025","giai_doan":3,"thu_tu":25,"mach":"TH","loai":"thi","ten":"THI THỬ VÀO 10 – Đề số 2 (120')","ky_nang":[],"tai_lieu":"Cấu trúc 5 bài tự luận","kiem_tra":"TT120"},{"ma":"93026","giai_doan":3,"thu_tu":26,"mach":"TH","loai":"chua","ten":"Chữa đề số 2; phụ đạo theo kỹ năng yếu","ky_nang":[],"tai_lieu":"","kiem_tra":""},{"ma":"93027","giai_doan":3,"thu_tu":27,"mach":"TH","loai":"thi","ten":"THI THỬ VÀO 10 – Đề số 3 (120')","ky_nang":[],"tai_lieu":"Cấu trúc 5 bài tự luận","kiem_tra":"TT120"},{"ma":"93028","giai_doan":3,"thu_tu":28,"mach":"TH","loai":"chua","ten":"Chữa đề số 3; phụ đạo theo kỹ năng yếu","ky_nang":[],"tai_lieu":"","kiem_tra":""},{"ma":"93029","giai_doan":3,"thu_tu":29,"mach":"TH","loai":"thi","ten":"THI THỬ VÀO 10 – Đề số 4 (120', mô phỏng phòng thi)","ky_nang":[],"tai_lieu":"Cấu trúc 5 bài tự luận","kiem_tra":"TT120"},{"ma":"93030","giai_doan":3,"thu_tu":30,"mach":"TH","loai":"chua","ten":"Chữa đề số 4; tổng kết, chiến thuật làm bài","ky_nang":[],"tai_lieu":"","kiem_tra":""}],"loai_kiem_tra":{"KT15":{"ten":"Kiểm tra 15' cuối buổi","loai_csdl":"cuoi_buoi","thoi_gian":15,"hinh_thuc":"8–10 câu tương tác (TN4, Đúng/Sai, trả lời ngắn), tự chấm trên web","pham_vi":"Chỉ các kỹ năng của buổi","nguon_cau":"Câu CAU_TN4/CAU_DS/CAU_TLN đã xác minh đáp án"},"KT30":{"ten":"Kiểm tra 30' cuối bài / cụm bài","loai_csdl":"cuoi_bai","thoi_gian":30,"hinh_thuc":"Phiếu: 4 câu trắc nghiệm + 2–3 bài tự luận ngắn","pham_vi":"Các kỹ năng của bài SGK vừa học (gộp các buổi của bài)","nguon_cau":"BAI_TL + câu tương tác"},"KT45":{"ten":"Kiểm tra 45' cuối chương","loai_csdl":"on_chuong","thoi_gian":45,"hinh_thuc":"≈30% trắc nghiệm + 70% tự luận; ma trận gợi ý NB 40% – TH 30% – VD 20% – VDC 10%","pham_vi":"Toàn chương","nguon_cau":"BAI_TL + câu tương tác; bài cuối chương SGK dùng để ôn, không đưa nguyên văn vào đề"},"GK":{"ten":"Kiểm tra giữa kì (90')","loai_csdl":"giua_ky (CẦN BỔ SUNG vào lược đồ)","thoi_gian":90,"hinh_thuc":"Theo cấu trúc đề của trường (thường kết hợp trắc nghiệm và tự luận)","pham_vi":"Theo tiến độ đến giữa kì","nguon_cau":"Toàn kho"},"CK":{"ten":"Kiểm tra cuối kì (90')","loai_csdl":"cuoi_ky (CẦN BỔ SUNG vào lược đồ)","thoi_gian":90,"hinh_thuc":"Theo cấu trúc đề của trường","pham_vi":"Toàn học kì","nguon_cau":"Toàn kho"},"TT120":{"ten":"Thi thử vào 10 (120')","loai_csdl":"thi_thu","thoi_gian":120,"hinh_thuc":"5 bài tự luận; Đại số 4,5–5,5đ, Hình học 3,0–4,5đ, Thống kê – Xác suất 1,0–1,5đ (theo cấu trúc Gia Lai 2026–2027 ghi trong docs/00-tong-quan.md)","pham_vi":"Toàn bộ Toán 9 (và kiến thức nền lớp 8)","nguon_cau":"Toàn kho + đề các năm"}},"ky_nang":{"9010101":{"ten":"Nhận biết phương trình bậc nhất hai ẩn; kiểm tra một cặp số có là nghiệm","chuong":1,"bai":1,"ten_bai":"Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":[]},"9010102":{"ten":"Viết nghiệm tổng quát và biểu diễn tập nghiệm (đường thẳng ax + by = c) trên mặt phẳng toạ độ","chuong":1,"bai":1,"ten_bai":"Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010101"]},"9010103":{"ten":"Nhận biết hệ hai phương trình bậc nhất hai ẩn; kiểm tra nghiệm của hệ","chuong":1,"bai":1,"ten_bai":"Khái niệm phương trình và hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010101"]},"9010201":{"ten":"Giải hệ bằng phương pháp thế","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010103"]},"9010202":{"ten":"Giải hệ bằng phương pháp cộng đại số","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010103"]},"9010203":{"ten":"Nhận biết hệ vô nghiệm, vô số nghiệm; viết nghiệm tổng quát của hệ","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010201","9010202"]},"9010204":{"ten":"Tìm nghiệm của hệ bằng máy tính cầm tay","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010103"]},"9010205":{"ten":"Tìm tham số/hệ số để hệ (phương trình) có nghiệm cho trước; hệ chứa tham số","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010201","9010202"]},"9010206":{"ten":"Ứng dụng: cân bằng phương trình hoá học, xác định đường thẳng đi qua hai điểm","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"sgk","tien_quyet":["9010202"]},"9010207":{"ten":"Hệ quy về hệ bậc nhất hai ẩn (đặt ẩn phụ, biến đổi tương đương)","chuong":1,"bai":2,"ten_bai":"Giải hệ hai phương trình bậc nhất hai ẩn","pham_vi":"mo_rong","tien_quyet":["9010202"]},"9010301":{"ten":"Lập hệ: bài toán cấu tạo số, tìm số","chuong":1,"bai":3,"ten_bai":"Giải bài toán bằng cách lập hệ phương trình","pham_vi":"sgk","tien_quyet":["9010202"]},"9010302":{"ten":"Lập hệ: chuyển động (cùng chiều, ngược chiều, xuôi – ngược dòng, đường tròn)","chuong":1,"bai":3,"ten_bai":"Giải bài toán bằng cách lập hệ phương trình","pham_vi":"sgk","tien_quyet":["9010202"]},"9010303":{"ten":"Lập hệ: năng suất, làm chung – làm riêng công việc, vòi nước","chuong":1,"bai":3,"ten_bai":"Giải bài toán bằng cách lập hệ phương trình","pham_vi":"sgk","tien_quyet":["9010202"]},"9010304":{"ten":"Lập hệ: phần trăm, giá cả – thuế, năng suất tăng giảm theo %","chuong":1,"bai":3,"ten_bai":"Giải bài toán bằng cách lập hệ phương trình","pham_vi":"sgk","tien_quyet":["9010202"]},"9010305":{"ten":"Lập hệ: hình học (chu vi, diện tích) và các bài toán thực tế khác (hỗn hợp, hợp kim, điểm số)","chuong":1,"bai":3,"ten_bai":"Giải bài toán bằng cách lập hệ phương trình","pham_vi":"sgk","tien_quyet":["9010202"]},"9020401":{"ten":"Giải phương trình tích (ax + b)(cx + d) = 0","chuong":2,"bai":4,"ten_bai":"Phương trình quy về phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":[]},"9020402":{"ten":"Đưa phương trình về dạng tích (phân tích đa thức thành nhân tử) rồi giải","chuong":2,"bai":4,"ten_bai":"Phương trình quy về phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020401"]},"9020403":{"ten":"Tìm điều kiện xác định của phương trình chứa ẩn ở mẫu","chuong":2,"bai":4,"ten_bai":"Phương trình quy về phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":[]},"9020404":{"ten":"Giải phương trình chứa ẩn ở mẫu quy về phương trình bậc nhất","chuong":2,"bai":4,"ten_bai":"Phương trình quy về phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020403"]},"9020405":{"ten":"Bài toán thực tế dẫn đến phương trình tích, phương trình chứa ẩn ở mẫu","chuong":2,"bai":4,"ten_bai":"Phương trình quy về phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020402","9020404"]},"9020501":{"ten":"Thứ tự trên tập số thực; viết bất đẳng thức từ mô tả bằng lời","chuong":2,"bai":5,"ten_bai":"Bất đẳng thức và tính chất","pham_vi":"sgk","tien_quyet":[]},"9020502":{"ten":"Tính chất bắc cầu; liên hệ giữa thứ tự và phép cộng","chuong":2,"bai":5,"ten_bai":"Bất đẳng thức và tính chất","pham_vi":"sgk","tien_quyet":["9020501"]},"9020503":{"ten":"Liên hệ giữa thứ tự và phép nhân (với số dương, số âm)","chuong":2,"bai":5,"ten_bai":"Bất đẳng thức và tính chất","pham_vi":"sgk","tien_quyet":["9020502"]},"9020504":{"ten":"So sánh hai số, chứng minh bất đẳng thức đơn giản bằng tính chất","chuong":2,"bai":5,"ten_bai":"Bất đẳng thức và tính chất","pham_vi":"sgk","tien_quyet":["9020503"]},"9020505":{"ten":"Bất đẳng thức Cauchy (AM–GM) và chứng minh bất đẳng thức, cực trị nâng cao","chuong":2,"bai":5,"ten_bai":"Bất đẳng thức và tính chất","pham_vi":"mo_rong","tien_quyet":["9020504"]},"9020601":{"ten":"Nhận biết bất phương trình bậc nhất một ẩn và nghiệm của nó","chuong":2,"bai":6,"ten_bai":"Bất phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020501"]},"9020602":{"ten":"Giải bất phương trình bậc nhất một ẩn","chuong":2,"bai":6,"ten_bai":"Bất phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020601","9020503"]},"9020603":{"ten":"Giải bất phương trình quy về bậc nhất (khai triển, quy đồng mẫu số)","chuong":2,"bai":6,"ten_bai":"Bất phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020602"]},"9020604":{"ten":"Bài toán thực tế giải bằng bất phương trình (cước taxi, gói cước, tiết kiệm, chở hàng)","chuong":2,"bai":6,"ten_bai":"Bất phương trình bậc nhất một ẩn","pham_vi":"sgk","tien_quyet":["9020602"]},"9030701":{"ten":"Căn bậc hai, căn bậc hai số học của số không âm; tính đúng/gần đúng bằng máy tính cầm tay","chuong":3,"bai":7,"ten_bai":"Căn bậc hai và căn thức bậc hai","pham_vi":"sgk","tien_quyet":[]},"9030702":{"ten":"Nhận biết căn thức bậc hai; tìm điều kiện xác định","chuong":3,"bai":7,"ten_bai":"Căn bậc hai và căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030701"]},"9030703":{"ten":"Tính giá trị căn thức bậc hai tại giá trị cho trước của biến","chuong":3,"bai":7,"ten_bai":"Căn bậc hai và căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030702"]},"9030704":{"ten":"Hằng đẳng thức √(A²) = |A| để rút gọn căn thức","chuong":3,"bai":7,"ten_bai":"Căn bậc hai và căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030702"]},"9030705":{"ten":"Bài toán thực tế với căn bậc hai (vật rơi tự do, diện tích – cạnh)","chuong":3,"bai":7,"ten_bai":"Căn bậc hai và căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030701"]},"9030801":{"ten":"Khai căn bậc hai của một tích; nhân các căn bậc hai","chuong":3,"bai":8,"ten_bai":"Khai căn bậc hai với phép nhân và phép chia","pham_vi":"sgk","tien_quyet":["9030704"]},"9030802":{"ten":"Khai căn bậc hai của một thương; chia các căn bậc hai","chuong":3,"bai":8,"ten_bai":"Khai căn bậc hai với phép nhân và phép chia","pham_vi":"sgk","tien_quyet":["9030704"]},"9030803":{"ten":"Tính toán, rút gọn, chứng minh đẳng thức bằng quy tắc tích – thương","chuong":3,"bai":8,"ten_bai":"Khai căn bậc hai với phép nhân và phép chia","pham_vi":"sgk","tien_quyet":["9030801","9030802"]},"9030901":{"ten":"Đưa thừa số ra ngoài dấu căn","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030801"]},"9030902":{"ten":"Đưa thừa số vào trong dấu căn; so sánh các căn","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030901"]},"9030903":{"ten":"Khử mẫu của biểu thức lấy căn","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030802"]},"9030904":{"ten":"Trục căn thức ở mẫu (một hạng tử, liên hợp)","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030903"]},"9030905":{"ten":"Rút gọn biểu thức số chứa căn bậc hai","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030901","9030904"]},"9030906":{"ten":"Rút gọn biểu thức chứa biến dưới dấu căn (có điều kiện xác định)","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"sgk","tien_quyet":["9030905"]},"9030907":{"ten":"Câu hỏi phụ sau rút gọn: tính giá trị, tìm x để A = k / A < k, tìm x nguyên để A nguyên, GTLN–GTNN","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"mo_rong","tien_quyet":["9030906"]},"9030908":{"ten":"Phương trình chứa căn bậc hai dạng đơn giản","chuong":3,"bai":9,"ten_bai":"Biến đổi đơn giản và rút gọn biểu thức chứa căn thức bậc hai","pham_vi":"mo_rong","tien_quyet":["9030704"]},"9031001":{"ten":"Căn bậc ba của số thực; tính bằng máy tính cầm tay","chuong":3,"bai":10,"ten_bai":"Căn bậc ba và căn thức bậc ba","pham_vi":"sgk","tien_quyet":[]},"9031002":{"ten":"Căn thức bậc ba; rút gọn, tính giá trị biểu thức chứa căn bậc ba","chuong":3,"bai":10,"ten_bai":"Căn bậc ba và căn thức bậc ba","pham_vi":"sgk","tien_quyet":["9031001"]},"9031003":{"ten":"Bài toán thực tế với căn bậc ba (cạnh hình lập phương từ thể tích)","chuong":3,"bai":10,"ten_bai":"Căn bậc ba và căn thức bậc ba","pham_vi":"sgk","tien_quyet":["9031001"]},"9041101":{"ten":"Định nghĩa sin, côsin, tang, côtang; tính tỉ số lượng giác khi biết độ dài cạnh","chuong":4,"bai":11,"ten_bai":"Tỉ số lượng giác của góc nhọn","pham_vi":"sgk","tien_quyet":[]},"9041102":{"ten":"Tỉ số lượng giác của các góc đặc biệt 30°, 45°, 60°; dựng góc khi biết tỉ số","chuong":4,"bai":11,"ten_bai":"Tỉ số lượng giác của góc nhọn","pham_vi":"sgk","tien_quyet":["9041101"]},"9041103":{"ten":"Tỉ số lượng giác của hai góc phụ nhau","chuong":4,"bai":11,"ten_bai":"Tỉ số lượng giác của góc nhọn","pham_vi":"sgk","tien_quyet":["9041101"]},"9041104":{"ten":"Dùng máy tính cầm tay tính tỉ số lượng giác và tìm số đo góc","chuong":4,"bai":11,"ten_bai":"Tỉ số lượng giác của góc nhọn","pham_vi":"sgk","tien_quyet":["9041101"]},"9041105":{"ten":"Hệ thức giữa các tỉ số lượng giác (sin²+cos²=1, tan = sin/cos…), so sánh – sắp xếp tỉ số lượng giác","chuong":4,"bai":11,"ten_bai":"Tỉ số lượng giác của góc nhọn","pham_vi":"mo_rong","tien_quyet":["9041103"]},"9041201":{"ten":"Hệ thức giữa cạnh huyền và cạnh góc vuông (qua sin, côsin)","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"sgk","tien_quyet":["9041101"]},"9041202":{"ten":"Hệ thức giữa hai cạnh góc vuông (qua tang, côtang)","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"sgk","tien_quyet":["9041101"]},"9041203":{"ten":"Giải tam giác vuông","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"sgk","tien_quyet":["9041201","9041202","9041104"]},"9041204":{"ten":"Tính cạnh, góc trong tam giác thường, hình thang, hình thoi bằng cách kẻ đường cao","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"sgk","tien_quyet":["9041203"]},"9041205":{"ten":"Bài toán thực tế: chiều cao, khoảng cách không tới được, góc dốc, góc nghiêng","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"sgk","tien_quyet":["9041203"]},"9041206":{"ten":"Hệ thức lượng về cạnh và đường cao (b² = ab', h² = b'c', ah = bc, 1/h² = 1/b² + 1/c²)","chuong":4,"bai":12,"ten_bai":"Một số hệ thức giữa cạnh, góc trong tam giác vuông và ứng dụng","pham_vi":"mo_rong","tien_quyet":[]},"9051301":{"ten":"Vị trí điểm và đường tròn; chứng minh các điểm cùng thuộc một đường tròn","chuong":5,"bai":13,"ten_bai":"Mở đầu về đường tròn","pham_vi":"sgk","tien_quyet":[]},"9051302":{"ten":"Tính đối xứng của đường tròn","chuong":5,"bai":13,"ten_bai":"Mở đầu về đường tròn","pham_vi":"sgk","tien_quyet":[]},"9051401":{"ten":"Quan hệ đường kính và dây; khoảng cách từ tâm đến dây","chuong":5,"bai":14,"ten_bai":"Cung và dây của một đường tròn","pham_vi":"sgk","tien_quyet":["9051301"]},"9051402":{"ten":"Góc ở tâm, số đo cung","chuong":5,"bai":14,"ten_bai":"Cung và dây của một đường tròn","pham_vi":"sgk","tien_quyet":["9051301"]},"9051501":{"ten":"Độ dài đường tròn, độ dài cung","chuong":5,"bai":15,"ten_bai":"Độ dài của cung tròn. Diện tích hình quạt tròn và hình vành khuyên","pham_vi":"sgk","tien_quyet":["9051402"]},"9051502":{"ten":"Diện tích hình tròn, hình quạt tròn, hình vành khuyên","chuong":5,"bai":15,"ten_bai":"Độ dài của cung tròn. Diện tích hình quạt tròn và hình vành khuyên","pham_vi":"sgk","tien_quyet":["9051402"]},"9051503":{"ten":"Bài toán thực tế về độ dài, diện tích liên quan đường tròn","chuong":5,"bai":15,"ten_bai":"Độ dài của cung tròn. Diện tích hình quạt tròn và hình vành khuyên","pham_vi":"sgk","tien_quyet":["9051501","9051502"]},"9051601":{"ten":"Vị trí tương đối giữa đường thẳng và đường tròn","chuong":5,"bai":16,"ten_bai":"Vị trí tương đối của đường thẳng và đường tròn","pham_vi":"sgk","tien_quyet":["9051401"]},"9051602":{"ten":"Dấu hiệu nhận biết và tính chất tiếp tuyến","chuong":5,"bai":16,"ten_bai":"Vị trí tương đối của đường thẳng và đường tròn","pham_vi":"sgk","tien_quyet":["9051601"]},"9051603":{"ten":"Tính chất hai tiếp tuyến cắt nhau","chuong":5,"bai":16,"ten_bai":"Vị trí tương đối của đường thẳng và đường tròn","pham_vi":"sgk","tien_quyet":["9051602"]},"9051701":{"ten":"Vị trí tương đối của hai đường tròn","chuong":5,"bai":17,"ten_bai":"Vị trí tương đối của hai đường tròn","pham_vi":"sgk","tien_quyet":["9051601"]},"9051702":{"ten":"Bài toán tổng hợp: tiếp tuyến chung, hai đường tròn tiếp xúc","chuong":5,"bai":17,"ten_bai":"Vị trí tương đối của hai đường tròn","pham_vi":"sgk","tien_quyet":["9051701","9051603"]},"9061801":{"ten":"Lập bảng giá trị, tính giá trị của hàm số y = ax²","chuong":6,"bai":18,"ten_bai":"Hàm số y = ax² (a ≠ 0)","pham_vi":"sgk","tien_quyet":[]},"9061802":{"ten":"Vẽ đồ thị (parabol), nhận biết đỉnh, trục đối xứng, tính chất đồ thị","chuong":6,"bai":18,"ten_bai":"Hàm số y = ax² (a ≠ 0)","pham_vi":"sgk","tien_quyet":["9061801"]},"9061803":{"ten":"Xác định hệ số a; kiểm tra điểm thuộc đồ thị; tìm điểm trên đồ thị thoả điều kiện","chuong":6,"bai":18,"ten_bai":"Hàm số y = ax² (a ≠ 0)","pham_vi":"sgk","tien_quyet":["9061801"]},"9061804":{"ten":"Bài toán thực tế với hàm số y = ax² (cầu treo, cổng vòm, động năng, diện tích)","chuong":6,"bai":18,"ten_bai":"Hàm số y = ax² (a ≠ 0)","pham_vi":"sgk","tien_quyet":["9061803"]},"9061805":{"ten":"Tương giao parabol (P) và đường thẳng (d): toạ độ giao điểm, điều kiện cắt/tiếp xúc","chuong":6,"bai":18,"ten_bai":"Hàm số y = ax² (a ≠ 0)","pham_vi":"mo_rong","tien_quyet":["9061802","9061903"]},"9061901":{"ten":"Nhận biết phương trình bậc hai một ẩn, xác định hệ số a, b, c","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":[]},"9061902":{"ten":"Giải phương trình bậc hai dạng đặc biệt (khuyết b, khuyết c, đưa về bình phương)","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":["9061901","9020401"]},"9061903":{"ten":"Giải bằng công thức nghiệm; biệt thức Δ và số nghiệm","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":["9061901"]},"9061904":{"ten":"Giải bằng công thức nghiệm thu gọn (Δ')","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":["9061903"]},"9061905":{"ten":"Tìm nghiệm (gần đúng) bằng máy tính cầm tay","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":["9061901"]},"9061906":{"ten":"Bài toán thực tế dẫn đến phương trình bậc hai (độ cao vật phóng, kích thước màn hình…)","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"sgk","tien_quyet":["9061903"]},"9061907":{"ten":"Phương trình quy về bậc hai: trùng phương, chứa ẩn ở mẫu, đặt ẩn phụ","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"mo_rong","tien_quyet":["9061903","9020404"]},"9061908":{"ten":"Phương trình bậc hai chứa tham số: điều kiện có nghiệm, vô nghiệm, nghiệm kép","chuong":6,"bai":19,"ten_bai":"Phương trình bậc hai một ẩn","pham_vi":"mo_rong","tien_quyet":["9061903"]},"9062001":{"ten":"Định lí Viète: tính tổng và tích các nghiệm không giải phương trình","chuong":6,"bai":20,"ten_bai":"Định lí Viète và ứng dụng","pham_vi":"sgk","tien_quyet":["9061903"]},"9062002":{"ten":"Nhẩm nghiệm khi a + b + c = 0 hoặc a − b + c = 0","chuong":6,"bai":20,"ten_bai":"Định lí Viète và ứng dụng","pham_vi":"sgk","tien_quyet":["9062001"]},"9062003":{"ten":"Tìm hai số khi biết tổng và tích","chuong":6,"bai":20,"ten_bai":"Định lí Viète và ứng dụng","pham_vi":"sgk","tien_quyet":["9062001"]},"9062004":{"ten":"Tính giá trị biểu thức đối xứng của hai nghiệm; phân tích tam thức thành nhân tử","chuong":6,"bai":20,"ten_bai":"Định lí Viète và ứng dụng","pham_vi":"sgk","tien_quyet":["9062001"]},"9062005":{"ten":"Viète có tham số: tìm m để hai nghiệm thoả hệ thức, dấu các nghiệm","chuong":6,"bai":20,"ten_bai":"Định lí Viète và ứng dụng","pham_vi":"mo_rong","tien_quyet":["9062004","9061908"]},"9062101":{"ten":"Lập phương trình bậc hai: bài toán hình học (diện tích, kích thước)","chuong":6,"bai":21,"ten_bai":"Giải bài toán bằng cách lập phương trình","pham_vi":"sgk","tien_quyet":["9061903"]},"9062102":{"ten":"Lập phương trình bậc hai: chuyển động","chuong":6,"bai":21,"ten_bai":"Giải bài toán bằng cách lập phương trình","pham_vi":"sgk","tien_quyet":["9061903"]},"9062103":{"ten":"Lập phương trình bậc hai: năng suất, làm chung – làm riêng","chuong":6,"bai":21,"ten_bai":"Giải bài toán bằng cách lập phương trình","pham_vi":"sgk","tien_quyet":["9061903"]},"9062104":{"ten":"Lập phương trình bậc hai: tăng trưởng %, lãi kép, dân số","chuong":6,"bai":21,"ten_bai":"Giải bài toán bằng cách lập phương trình","pham_vi":"sgk","tien_quyet":["9061903"]},"9062105":{"ten":"Lập phương trình bậc hai: bài toán thực tế khác (doanh thu, vật lí, cắt ghép hình)","chuong":6,"bai":21,"ten_bai":"Giải bài toán bằng cách lập phương trình","pham_vi":"sgk","tien_quyet":["9061903"]},"9072201":{"ten":"Xác định tần số, lập bảng tần số","chuong":7,"bai":22,"ten_bai":"Bảng tần số và biểu đồ tần số","pham_vi":"sgk","tien_quyet":[]},"9072202":{"ten":"Vẽ và đọc biểu đồ tần số (cột, đoạn thẳng)","chuong":7,"bai":22,"ten_bai":"Bảng tần số và biểu đồ tần số","pham_vi":"sgk","tien_quyet":["9072201"]},"9072203":{"ten":"Giải thích ý nghĩa, vai trò của tần số trong thực tiễn; nhận xét số liệu","chuong":7,"bai":22,"ten_bai":"Bảng tần số và biểu đồ tần số","pham_vi":"sgk","tien_quyet":["9072202"]},"9072301":{"ten":"Tính tần số tương đối, lập bảng tần số tương đối","chuong":7,"bai":23,"ten_bai":"Bảng tần số tương đối và biểu đồ tần số tương đối","pham_vi":"sgk","tien_quyet":["9072201"]},"9072302":{"ten":"Vẽ và đọc biểu đồ tần số tương đối (cột, hình quạt tròn)","chuong":7,"bai":23,"ten_bai":"Bảng tần số tương đối và biểu đồ tần số tương đối","pham_vi":"sgk","tien_quyet":["9072301"]},"9072303":{"ten":"Chuyển đổi giữa các dạng biểu diễn; phân tích, giải thích số liệu thực tế","chuong":7,"bai":23,"ten_bai":"Bảng tần số tương đối và biểu đồ tần số tương đối","pham_vi":"sgk","tien_quyet":["9072302"]},"9072401":{"ten":"Chia nhóm số liệu, lập bảng tần số ghép nhóm","chuong":7,"bai":24,"ten_bai":"Bảng tần số, tần số tương đối ghép nhóm và biểu đồ","pham_vi":"sgk","tien_quyet":["9072201"]},"9072402":{"ten":"Lập bảng tần số tương đối ghép nhóm","chuong":7,"bai":24,"ten_bai":"Bảng tần số, tần số tương đối ghép nhóm và biểu đồ","pham_vi":"sgk","tien_quyet":["9072401","9072301"]},"9072403":{"ten":"Vẽ và đọc biểu đồ tần số tương đối ghép nhóm (dạng cột, dạng đoạn thẳng)","chuong":7,"bai":24,"ten_bai":"Bảng tần số, tần số tương đối ghép nhóm và biểu đồ","pham_vi":"sgk","tien_quyet":["9072402"]},"9082501":{"ten":"Nhận biết phép thử ngẫu nhiên, mô tả kết quả có thể","chuong":8,"bai":25,"ten_bai":"Phép thử ngẫu nhiên và không gian mẫu","pham_vi":"sgk","tien_quyet":[]},"9082502":{"ten":"Mô tả không gian mẫu bằng liệt kê, bảng, sơ đồ cây (phép thử hai bước, có/không hoàn lại)","chuong":8,"bai":25,"ten_bai":"Phép thử ngẫu nhiên và không gian mẫu","pham_vi":"sgk","tien_quyet":["9082501"]},"9082601":{"ten":"Xác định các kết quả thuận lợi cho một biến cố","chuong":8,"bai":26,"ten_bai":"Xác suất của biến cố liên quan tới phép thử","pham_vi":"sgk","tien_quyet":["9082502"]},"9082602":{"ten":"Tính xác suất khi các kết quả đồng khả năng (gieo xúc xắc, đồng xu, rút thẻ, chọn người)","chuong":8,"bai":26,"ten_bai":"Xác suất của biến cố liên quan tới phép thử","pham_vi":"sgk","tien_quyet":["9082601"]},"9082603":{"ten":"Bài toán thực tế: di truyền, trò chơi công bằng, chọn ngẫu nhiên","chuong":8,"bai":26,"ten_bai":"Xác suất của biến cố liên quan tới phép thử","pham_vi":"sgk","tien_quyet":["9082602"]},"9092701":{"ten":"Nhận biết góc nội tiếp, cung bị chắn","chuong":9,"bai":27,"ten_bai":"Góc nội tiếp","pham_vi":"sgk","tien_quyet":["9051402"]},"9092702":{"ten":"Tính số đo góc nội tiếp, cung, góc ở tâm","chuong":9,"bai":27,"ten_bai":"Góc nội tiếp","pham_vi":"sgk","tien_quyet":["9092701"]},"9092703":{"ten":"Hệ quả: góc nội tiếp cùng chắn một cung; góc chắn nửa đường tròn","chuong":9,"bai":27,"ten_bai":"Góc nội tiếp","pham_vi":"sgk","tien_quyet":["9092702"]},"9092704":{"ten":"Chứng minh quan hệ góc, song song, vuông góc bằng góc nội tiếp","chuong":9,"bai":27,"ten_bai":"Góc nội tiếp","pham_vi":"sgk","tien_quyet":["9092703"]},"9092801":{"ten":"Xác định tâm đường tròn ngoại tiếp, nội tiếp tam giác","chuong":9,"bai":28,"ten_bai":"Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác","pham_vi":"sgk","tien_quyet":[]},"9092802":{"ten":"Tính bán kính R, r (tam giác vuông, tam giác đều)","chuong":9,"bai":28,"ten_bai":"Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác","pham_vi":"sgk","tien_quyet":["9092801"]},"9092803":{"ten":"Bài toán tổng hợp về đường tròn ngoại tiếp, nội tiếp tam giác","chuong":9,"bai":28,"ten_bai":"Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác","pham_vi":"sgk","tien_quyet":["9092802"]},"9092804":{"ten":"Đường tròn bàng tiếp tam giác","chuong":9,"bai":28,"ten_bai":"Đường tròn ngoại tiếp và đường tròn nội tiếp của một tam giác","pham_vi":"mo_rong","tien_quyet":["9092801"]},"9092901":{"ten":"Tính góc của tứ giác nội tiếp","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"sgk","tien_quyet":["9092703"]},"9092902":{"ten":"Góc có đỉnh bên trong, bên ngoài đường tròn","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"mo_rong","tien_quyet":["9092702"]},"9092903":{"ten":"Chứng minh tứ giác nội tiếp (bốn điểm cách đều một điểm, hai đỉnh cùng nhìn một cạnh, tổng góc đối)","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"mo_rong","tien_quyet":["9092901"]},"9092904":{"ten":"Ứng dụng tứ giác nội tiếp: chứng minh góc bằng nhau, hệ thức","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"sgk","tien_quyet":["9092903"]},"9092905":{"ten":"Đường tròn ngoại tiếp hình chữ nhật, hình vuông: tâm, bán kính","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"sgk","tien_quyet":["9092801"]},"9092906":{"ten":"Bài toán thực tế gắn với đường tròn ngoại tiếp tứ giác","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"sgk","tien_quyet":["9092905"]},"9092907":{"ten":"Bài hình tổng hợp kiểu đề thi vào 10 (tiếp tuyến – tứ giác nội tiếp – hệ thức – tam giác đồng dạng)","chuong":9,"bai":29,"ten_bai":"Tứ giác nội tiếp","pham_vi":"mo_rong","tien_quyet":["9092903","9092904","9051603"]},"9093001":{"ten":"Nhận biết đa giác đều, tính góc","chuong":9,"bai":30,"ten_bai":"Đa giác đều","pham_vi":"sgk","tien_quyet":[]},"9093002":{"ten":"Phép quay giữ nguyên đa giác đều","chuong":9,"bai":30,"ten_bai":"Đa giác đều","pham_vi":"sgk","tien_quyet":["9093001"]},"9093003":{"ten":"Đa giác đều nội tiếp đường tròn: tính cạnh, bán kính, chu vi, diện tích","chuong":9,"bai":30,"ten_bai":"Đa giác đều","pham_vi":"sgk","tien_quyet":["9093001","9092802"]},"9093004":{"ten":"Hình phẳng đều trong tự nhiên, nghệ thuật, kiến trúc; bài toán thực tế","chuong":9,"bai":30,"ten_bai":"Đa giác đều","pham_vi":"sgk","tien_quyet":["9093001"]},"9103101":{"ten":"Nhận biết đường sinh, chiều cao, bán kính đáy; tạo lập hình trụ, hình nón bằng phép quay","chuong":10,"bai":31,"ten_bai":"Hình trụ và hình nón","pham_vi":"sgk","tien_quyet":[]},"9103102":{"ten":"Tính diện tích xung quanh, diện tích toàn phần, thể tích hình trụ","chuong":10,"bai":31,"ten_bai":"Hình trụ và hình nón","pham_vi":"sgk","tien_quyet":["9103101","9051501"]},"9103103":{"ten":"Tính diện tích xung quanh, thể tích hình nón","chuong":10,"bai":31,"ten_bai":"Hình trụ và hình nón","pham_vi":"sgk","tien_quyet":["9103101","9051501"]},"9103104":{"ten":"Bài toán thực tế, vật thể ghép từ hình trụ – hình nón","chuong":10,"bai":31,"ten_bai":"Hình trụ và hình nón","pham_vi":"sgk","tien_quyet":["9103102","9103103"]},"9103201":{"ten":"Tâm, bán kính hình cầu, mặt cầu; giao của mặt phẳng và hình cầu","chuong":10,"bai":32,"ten_bai":"Hình cầu","pham_vi":"sgk","tien_quyet":[]},"9103202":{"ten":"Tính diện tích mặt cầu, thể tích hình cầu","chuong":10,"bai":32,"ten_bai":"Hình cầu","pham_vi":"sgk","tien_quyet":["9103201"]},"9103203":{"ten":"Bài toán thực tế, vật thể ghép cầu – trụ – nón; bài toán nước dâng","chuong":10,"bai":32,"ten_bai":"Hình cầu","pham_vi":"sgk","tien_quyet":["9103202","9103104"]}},"chuong":{"1":"Phương trình và hệ hai phương trình bậc nhất hai ẩn","2":"Phương trình và bất phương trình bậc nhất một ẩn","3":"Căn bậc hai và căn bậc ba","4":"Hệ thức lượng trong tam giác vuông","5":"Đường tròn","6":"Hàm số y = ax² (a ≠ 0). Phương trình bậc hai một ẩn","7":"Tần số và tần số tương đối","8":"Xác suất của biến cố trong một số mô hình xác suất đơn giản","9":"Đường tròn ngoại tiếp và đường tròn nội tiếp","10":"Một số hình khối trong thực tiễn"},"goi":{"91001":{"buoi":{"ma":"91001","ten":"Bài 1 – Phương trình và hệ hai phương trình bậc nhất hai ẩn","khung":"chuong-trinh/khung-chuong-trinh-toan9.yaml","ky_nang":["9010101","9010102","9010103"],"thoi_luong_phut":90,"muc_tieu":"- Nhận biết phương trình, hệ hai phương trình bậc nhất hai ẩn.\n- Kiểm tra một cặp số có là nghiệm của phương trình, của hệ.\n- Viết nghiệm tổng quát, vẽ đường thẳng biểu diễn tập nghiệm.\n","tai_lieu_sgk":"Toán 9 KNTT tập 1, tr. 5–10; bài tập 1.1–1.5","phan":[{"ten":"Bài giảng – lý thuyết chung","phut":15,"noi_dung":[{"khoi":"LT-01","vai_tro":"bai_giang"},{"khoi":"LT-02","vai_tro":"bai_giang"},{"khoi":"LT-03","vai_tro":"bai_giang"}]},{"ten":"Dạng 1 – Nhận biết, kiểm tra nghiệm","ky_nang":"9010101","phut":20,"noi_dung":[{"khoi":"PP-01","vai_tro":"bai_giang"},{"khoi":"VD-01","vai_tro":"vi_du"},{"khoi":"VD-02","vai_tro":"vi_du"},{"video":"VID-01"},{"khoi":"TN-01","vai_tro":"luyen_tap"},{"khoi":"TL-01","vai_tro":"luyen_tap"},{"khoi":"TL-04","vai_tro":"luyen_tap","bat_buoc":false}]},{"ten":"Dạng 2 – Nghiệm tổng quát, đường thẳng nghiệm","ky_nang":"9010102","phut":20,"noi_dung":[{"khoi":"PP-02","vai_tro":"bai_giang"},{"khoi":"VD-03","vai_tro":"vi_du"},{"video":"VID-02"},{"khoi":"TN-03","vai_tro":"luyen_tap"},{"khoi":"TL-02","vai_tro":"luyen_tap"}]},{"ten":"Dạng 3 – Nghiệm của hệ","ky_nang":"9010103","phut":20,"noi_dung":[{"khoi":"PP-03","vai_tro":"bai_giang"},{"khoi":"VD-04","vai_tro":"vi_du"},{"video":"VID-03"},{"khoi":"TL-03","vai_tro":"luyen_tap"},{"khoi":"TL-05","vai_tro":"luyen_tap","bat_buoc":false}]}],"kiem_tra":{"ten":"Kiểm tra 15' – Bài 1","loai":"cuoi_buoi","thoi_gian_phut":15,"cach_tao":"ngau_nhien","so_lan_lam_toi_da":2,"hien_dap_an":"sau_khi_nop","ma_tran":[{"loai":"CAU_TN4","so_cau":3,"diem_moi_cau":1.0,"ky_nang":["9010101","9010102","9010103"],"muc_do":["NB","TH"]},{"loai":"CAU_DS","so_cau":1,"diem_moi_cau":4.0,"ky_nang":["9010102","9010103"]},{"loai":"CAU_TLN","so_cau":2,"diem_moi_cau":1.5,"ky_nang":["9010101","9010102"],"muc_do":["NB","TH"]}]},"btvn":[{"khoi":"TL-02","han":"buoi_sau"},{"khoi":"TL-04","han":"buoi_sau"},{"khoi":"TLN-03","han":"buoi_sau"}]},"noi_dung":{"nguon":{"ten":"Gói tự soạn 91001","nguon_goc":"thay_soan","quyen_su_dung":"cong_khai","xac_minh":"sympy"},"khoi":[{"id":"LT-01","loai":"LY_THUYET","ky_nang":"9010101","tieu_de":"Phương trình bậc nhất hai ẩn","noi_dung":"**Phương trình bậc nhất hai ẩn** $x, y$ là hệ thức dạng $ax + by = c$,\ntrong đó $a, b, c$ là các số đã biết và $a \\neq 0$ hoặc $b \\neq 0$.\n\nNếu $ax_0 + by_0 = c$ là khẳng định đúng thì cặp số $(x_0; y_0)$ là **một nghiệm** của phương trình.\n"},{"id":"LT-02","loai":"LY_THUYET","ky_nang":"9010102","tieu_de":"Tập nghiệm và đường thẳng biểu diễn","noi_dung":"Mỗi phương trình bậc nhất hai ẩn có **vô số nghiệm**. Trên mặt phẳng toạ độ, tập nghiệm\nlà một **đường thẳng** $ax + by = c$:\n\n- $a \\neq 0,\\ b \\neq 0$: đường thẳng $y = -\\dfrac{a}{b}x + \\dfrac{c}{b}$;\n- $a = 0,\\ b \\neq 0$: đường thẳng $y = \\dfrac{c}{b}$, song song (hoặc trùng) trục $Ox$;\n- $a \\neq 0,\\ b = 0$: đường thẳng $x = \\dfrac{c}{a}$, song song (hoặc trùng) trục $Oy$.\n"},{"id":"LT-03","loai":"LY_THUYET","ky_nang":"9010103","tieu_de":"Hệ hai phương trình bậc nhất hai ẩn","noi_dung":"Hệ hai phương trình bậc nhất hai ẩn có dạng\n$\\begin{cases} ax + by = c \\\\ a'x + b'y = c' \\end{cases}$\n\nCặp số $(x_0; y_0)$ là **nghiệm của hệ** nếu nó là nghiệm của **cả hai** phương trình.\nVề hình học, đó là toạ độ giao điểm của hai đường thẳng.\n"},{"id":"PP-01","loai":"PHUONG_PHAP","ky_nang":"9010101","tieu_de":"Dạng 1. Nhận biết phương trình bậc nhất hai ẩn; kiểm tra nghiệm","noi_dung":"1. Đưa hệ thức về dạng $ax + by = c$; kiểm tra **không** có $x^2$, $xy$, $\\dfrac{1}{x}$, …\n2. Kiểm tra điều kiện $a \\neq 0$ hoặc $b \\neq 0$.\n3. Kiểm tra nghiệm: thay $x = x_0,\\ y = y_0$ vào vế trái, so sánh với $c$.\n"},{"id":"PP-02","loai":"PHUONG_PHAP","ky_nang":"9010102","tieu_de":"Dạng 2. Viết nghiệm tổng quát và vẽ đường thẳng nghiệm","noi_dung":"1. Nếu $b \\neq 0$: rút $y = \\dfrac{c - ax}{b}$, nghiệm tổng quát $\\left(x; \\dfrac{c-ax}{b}\\right)$, $x \\in \\mathbb{R}$.\n2. Nếu $b = 0$: nghiệm $\\left(\\dfrac{c}{a}; y\\right)$, $y \\in \\mathbb{R}$.\n3. Vẽ: lấy hai điểm dễ tính (thường là giao với hai trục) rồi nối.\n"},{"id":"PP-03","loai":"PHUONG_PHAP","ky_nang":"9010103","tieu_de":"Dạng 3. Kiểm tra một cặp số có là nghiệm của hệ","noi_dung":"Thay cặp số vào **từng** phương trình. Chỉ khi thoả mãn cả hai mới là nghiệm của hệ.\nMẹo: thử phương trình dễ trước — sai ở phương trình nào thì loại ngay.\n"},{"id":"VD-01","loai":"VI_DU","ky_nang":"9010101","muc_do":"NB","de":"Trong các hệ thức $2x - 5y = 3$; $\\ 0x + 3y = 6$; $\\ x^2 + y = 1$; $\\ 0x + 0y = 2$,\nhệ thức nào là phương trình bậc nhất hai ẩn?\n","loi_giai":["$2x - 5y = 3$ có $a = 2 \\neq 0$: là phương trình bậc nhất hai ẩn.","$0x + 3y = 6$ có $b = 3 \\neq 0$: là phương trình bậc nhất hai ẩn.","$x^2 + y = 1$ chứa $x^2$: không phải.","$0x + 0y = 2$ có $a = b = 0$: không phải."],"dap_an":"$2x - 5y = 3$ và $0x + 3y = 6$"},{"id":"VD-02","loai":"VI_DU","ky_nang":"9010101","muc_do":"NB","de":"Cặp số nào là nghiệm của phương trình $3x + 2y = -1$: $(1; -2)$ hay $(2; 1)$?\n","loi_giai":["Với $(1;-2)$: $3 \\cdot 1 + 2 \\cdot (-2) = -1$ đúng.","Với $(2;1)$: $3 \\cdot 2 + 2 \\cdot 1 = 8 \\neq -1$."],"dap_an":"$(1; -2)$"},{"id":"VD-03","loai":"VI_DU","ky_nang":"9010102","muc_do":"TH","de":"Viết nghiệm tổng quát của phương trình $2x - y = 4$ và vẽ đường thẳng biểu diễn tập nghiệm.\n","loi_giai":["Rút $y = 2x - 4$. Nghiệm tổng quát: $(x; 2x - 4)$ với $x \\in \\mathbb{R}$.","Cho $x = 0 \\Rightarrow y = -4$: điểm $A(0; -4)$. Cho $y = 0 \\Rightarrow x = 2$: điểm $B(2; 0)$.","Đường thẳng $AB$ là đường thẳng $2x - y = 4$."],"dap_an":"$(x; 2x-4),\\ x \\in \\mathbb{R}$"},{"id":"VD-04","loai":"VI_DU","ky_nang":"9010103","muc_do":"TH","de":"Cho hệ $\\begin{cases} x + y = 5 \\\\ 2x - y = 1 \\end{cases}$.\nCặp số $(2; 3)$ và $(3; 2)$, cặp nào là nghiệm của hệ?\n","loi_giai":["Với $(2;3)$: $2 + 3 = 5$ đúng; $2 \\cdot 2 - 3 = 1$ đúng ⇒ là nghiệm của hệ.","Với $(3;2)$: $3 + 2 = 5$ đúng; $2 \\cdot 3 - 2 = 4 \\neq 1$ ⇒ không là nghiệm."],"dap_an":"$(2; 3)$"},{"id":"TL-01","loai":"BAI_TL","ky_nang":"9010101","muc_do":"TH","thoi_gian":120,"de":"Tìm $m$ để cặp số $(2; -1)$ là nghiệm của phương trình $mx + 3y = 5$.","loi_giai":[{"noi_dung":"Thay $x = 2,\\ y = -1$: $2m - 3 = 5$.","diem":0.5},{"noi_dung":"$\\Rightarrow m = 4$.","diem":0.5}],"dap_an":{"gia_tri":"4","kieu":"so"}},{"id":"TL-02","loai":"BAI_TL","ky_nang":"9010102","muc_do":"TH","thoi_gian":240,"de":"Viết nghiệm tổng quát và vẽ đường thẳng biểu diễn tập nghiệm của mỗi phương trình:\na) $x - 3y = 6$; $\\quad$ b) $0x + 2y = 4$; $\\quad$ c) $3x + 0y = -6$.\n","loi_giai":[{"noi_dung":"a) $y = \\dfrac{x - 6}{3}$, nghiệm $\\left(x; \\dfrac{x-6}{3}\\right)$, $x\\in\\mathbb{R}$; đường thẳng qua $(0;-2)$ và $(6;0)$.","diem":0.5},{"noi_dung":"b) $y = 2$, nghiệm $(x; 2)$, $x\\in\\mathbb{R}$; đường thẳng song song $Ox$.","diem":0.25},{"noi_dung":"c) $x = -2$, nghiệm $(-2; y)$, $y\\in\\mathbb{R}$; đường thẳng song song $Oy$.","diem":0.25}]},{"id":"TL-03","loai":"BAI_TL","ky_nang":"9010103","muc_do":"TH","thoi_gian":150,"de":"Trong các cặp số $(3; 1)$, $(2; 3)$, $(-1; 9)$, cặp nào là nghiệm của hệ\n$\\begin{cases} 2x + y = 7 \\\\ x - 3y = -7 \\end{cases}$?\n","loi_giai":[{"noi_dung":"$(3;1)$: $2\\cdot3+1=7$ đúng; $3-3\\cdot1=0\\neq-7$ ⇒ loại.","diem":0.25},{"noi_dung":"$(2;3)$: $2\\cdot2+3=7$ đúng; $2-3\\cdot3=-7$ đúng ⇒ là nghiệm.","diem":0.5},{"noi_dung":"$(-1;9)$: $-2+9=7$ đúng; $-1-27=-28\\neq-7$ ⇒ loại.","diem":0.25}],"dap_an":{"gia_tri":"(2; 3)","kieu":"cap_so"}},{"id":"TL-04","loai":"BAI_TL","ky_nang":"9010101","muc_do":"VD","thoi_gian":300,"boi_canh":"thuc_te","de":"Vé xem xiếc giá 50 nghìn đồng/vé người lớn và 30 nghìn đồng/vé trẻ em.\nMột nhóm mua hết đúng 400 nghìn đồng. Gọi $x, y$ là số vé người lớn, trẻ em.\na) Viết phương trình liên hệ $x, y$. b) Liệt kê mọi khả năng $(x; y)$ với $x, y$ là số tự nhiên.\n","loi_giai":[{"noi_dung":"a) $50x + 30y = 400 \\Leftrightarrow 5x + 3y = 40$.","diem":0.25},{"noi_dung":"b) $3y = 40 - 5x$ chia hết cho $3$ và $\\geq 0$ ⇒ $x \\in \\{2; 5; 8\\}$.","diem":0.5},{"noi_dung":"Các khả năng: $(2;10)$, $(5;5)$, $(8;0)$.","diem":0.25}],"dap_an":{"gia_tri":"(2;10),(5;5),(8;0)","kieu":"van_ban"}},{"id":"TL-05","loai":"BAI_TL","ky_nang":"9010103","muc_do":"VD","thoi_gian":180,"de":"Tìm $a, b$ để hệ $\\begin{cases} ax + y = 5 \\\\ x + by = 4 \\end{cases}$ nhận $(1; 2)$ làm nghiệm.\n","loi_giai":[{"noi_dung":"Thay vào phương trình thứ nhất: $a + 2 = 5 \\Rightarrow a = 3$.","diem":0.5},{"noi_dung":"Thay vào phương trình thứ hai: $1 + 2b = 4 \\Rightarrow b = \\dfrac{3}{2}$.","diem":0.5}],"dap_an":{"gia_tri":"a=3; b=3/2","kieu":"van_ban"}},{"id":"TN-01","loai":"CAU_TN4","ky_nang":"9010101","muc_do":"NB","thoi_gian":45,"de":"Phương trình nào sau đây là phương trình bậc nhất hai ẩn?","lua_chon":{"A":{"noi_dung":"$x^2 + y = 2$","loi_sai":"Có $x^2$ nên không bậc nhất."},"B":{"noi_dung":"$0x + 0y = 1$","loi_sai":"Quên điều kiện $a \\neq 0$ hoặc $b \\neq 0$."},"C":{"noi_dung":"$3x - 0y = 5$"},"D":{"noi_dung":"$xy = 1$","loi_sai":"Tích $xy$ không phải dạng $ax + by$."}},"dap_an":"C","loi_giai":["$3x - 0y = 5$ có $a = 3 \\neq 0$ nên là phương trình bậc nhất hai ẩn."]},{"id":"TN-02","loai":"CAU_TN4","ky_nang":"9010101","muc_do":"NB","thoi_gian":45,"de":"Cặp số nào là nghiệm của phương trình $2x - y = 3$?","lua_chon":{"A":{"noi_dung":"$(1; -1)$"},"B":{"noi_dung":"$(1; 1)$","loi_sai":"Tính $2 - 1 = 1$ nhưng nhầm dấu."},"C":{"noi_dung":"$(2; -1)$","loi_sai":"Nhầm $-(-1)$ thành $-1$."},"D":{"noi_dung":"$(0; 3)$","loi_sai":"Đổi chỗ $x, y$ khi thay."}},"dap_an":"A","loi_giai":["$2 \\cdot 1 - (-1) = 3$."]},{"id":"TN-03","loai":"CAU_TN4","ky_nang":"9010102","muc_do":"TH","thoi_gian":60,"de":"Tập nghiệm của phương trình $0x + y = -3$ được biểu diễn bởi đường thẳng","lua_chon":{"A":{"noi_dung":"song song với trục $Ox$, cắt trục $Oy$ tại điểm $(0; -3)$"},"B":{"noi_dung":"song song với trục $Oy$, cắt trục $Ox$ tại điểm $(-3; 0)$","loi_sai":"Nhầm vai trò $x$ và $y$."},"C":{"noi_dung":"đi qua gốc toạ độ","loi_sai":"Bỏ qua hằng số $-3$."},"D":{"noi_dung":"$y = -3x$","loi_sai":"Hiểu $0x$ thành $x$."}},"dap_an":"A","loi_giai":["Phương trình viết gọn $y = -3$: đường thẳng song song $Ox$, cắt $Oy$ tại $(0;-3)$."]},{"id":"TN-04","loai":"CAU_TN4","ky_nang":"9010103","muc_do":"TH","thoi_gian":60,"de":"Cặp số nào là nghiệm của hệ $\\begin{cases} x + 2y = 4 \\\\ 3x - y = 5 \\end{cases}$?","lua_chon":{"A":{"noi_dung":"$(2; 1)$"},"B":{"noi_dung":"$(0; 2)$","loi_sai":"Chỉ thử phương trình thứ nhất."},"C":{"noi_dung":"$(4; 0)$","loi_sai":"Chỉ thử phương trình thứ nhất."},"D":{"noi_dung":"$(1; -2)$","loi_sai":"Chỉ thử phương trình thứ hai."}},"dap_an":"A","loi_giai":["$2 + 2 = 4$ và $6 - 1 = 5$."]},{"id":"TN-05","loai":"CAU_TN4","ky_nang":"9010103","muc_do":"NB","thoi_gian":45,"de":"Hệ nào sau đây là hệ hai phương trình bậc nhất hai ẩn?","lua_chon":{"A":{"noi_dung":"$\\begin{cases} x + y = 2 \\\\ xy = 1 \\end{cases}$","loi_sai":"Có tích $xy$."},"B":{"noi_dung":"$\\begin{cases} x^2 - y = 0 \\\\ x + y = 1 \\end{cases}$","loi_sai":"Có $x^2$."},"C":{"noi_dung":"$\\begin{cases} 2x - y = 1 \\\\ 0x + 3y = 6 \\end{cases}$"},"D":{"noi_dung":"$\\begin{cases} \\dfrac{1}{x} + y = 1 \\\\ x - y = 0 \\end{cases}$","loi_sai":"Ẩn ở mẫu."}},"dap_an":"C","loi_giai":["Hệ $\\begin{cases} 2x - y = 1 \\\\ 0x + 3y = 6 \\end{cases}$ có cả hai phương trình dạng $ax + by = c$ với $a, b$ không đồng thời bằng $0$; các hệ còn lại có $xy$, $x^2$ hoặc ẩn ở mẫu."]},{"id":"TN-06","loai":"CAU_TN4","ky_nang":"9010102","muc_do":"TH","thoi_gian":60,"de":"Điểm nào thuộc đường thẳng $x - 2y = 4$?","lua_chon":{"A":{"noi_dung":"$(0; 2)$","loi_sai":"Nhầm dấu khi rút $y$."},"B":{"noi_dung":"$(2; -1)$"},"C":{"noi_dung":"$(4; 1)$","loi_sai":"Chỉ để ý $x = 4$."},"D":{"noi_dung":"$(-2; 1)$","loi_sai":"Đổi dấu cả hai toạ độ."}},"dap_an":"B","loi_giai":["$2 - 2 \\cdot (-1) = 4$."]},{"id":"DS-01","loai":"CAU_DS","ky_nang":"9010102","muc_do":"TH","thoi_gian":120,"de":"Cho phương trình $3x - 2y = 6$ (d).","y":[{"nhan":"a","menh_de":"$(2; 0)$ là một nghiệm của phương trình.","dung":true,"muc_do":"NB"},{"nhan":"b","menh_de":"$(0; 3)$ là một nghiệm của phương trình.","dung":false,"muc_do":"NB"},{"nhan":"c","menh_de":"Nghiệm tổng quát là $\\left(x; \\dfrac{3x-6}{2}\\right)$, $x \\in \\mathbb{R}$.","dung":true,"muc_do":"TH"},{"nhan":"d","menh_de":"Đường thẳng (d) song song với trục hoành.","dung":false,"muc_do":"TH"}]},{"id":"DS-02","loai":"CAU_DS","ky_nang":"9010103","muc_do":"TH","thoi_gian":120,"de":"Cho hệ phương trình $\\begin{cases} x - y = 1 \\\\ 2x + y = 5 \\end{cases}$.","y":[{"nhan":"a","menh_de":"$(2; 1)$ là nghiệm của hệ.","dung":true,"muc_do":"NB"},{"nhan":"b","menh_de":"$(1; 0)$ là nghiệm của phương trình thứ nhất.","dung":true,"muc_do":"NB"},{"nhan":"c","menh_de":"$(1; 0)$ là nghiệm của hệ.","dung":false,"muc_do":"TH"},{"nhan":"d","menh_de":"Hai đường thẳng biểu diễn hai phương trình cắt nhau tại điểm $(2; 1)$.","dung":true,"muc_do":"TH"}]},{"id":"TLN-01","loai":"CAU_TLN","ky_nang":"9010101","muc_do":"TH","thoi_gian":60,"de":"Tìm $m$ để cặp số $(-1; 2)$ là nghiệm của phương trình $2x + my = 6$.","dap_an":{"gia_tri":"4","kieu":"so","sai_so":0},"loi_giai":["$-2 + 2m = 6 \\Rightarrow m = 4$."]},{"id":"TLN-02","loai":"CAU_TLN","ky_nang":"9010102","muc_do":"TH","thoi_gian":60,"de":"Đường thẳng $x + 2y = 6$ cắt trục hoành tại điểm có hoành độ bằng bao nhiêu?","dap_an":{"gia_tri":"6","kieu":"so","sai_so":0},"loi_giai":["Cho $y = 0$ thì $x = 6$."]},{"id":"TLN-03","loai":"CAU_TLN","ky_nang":"9010101","muc_do":"VD","thoi_gian":120,"de":"Phương trình $4x + 5y = 40$ có bao nhiêu nghiệm $(x; y)$ với $x, y$ là số nguyên dương?","dap_an":{"gia_tri":"1","kieu":"so","sai_so":0},"loi_giai":["$5y = 40 - 4x$ nên $4x$ chia hết cho $5$ ⇒ $x$ chia hết cho $5$.","$x = 5 \\Rightarrow y = 4$; $x = 10 \\Rightarrow y = 0$ (loại). Có $1$ nghiệm."]}],"video":[{"id":"VID-01","ma":"901010101","tieu_de":"Dạng 1 – Nhận biết phương trình bậc nhất hai ẩn và kiểm tra nghiệm","ky_nang":["9010101"],"thoi_luong_du_kien":240,"giai_khoi":["VD-01","VD-02"],"kich_ban":[{"giay":0,"tieu_de":"Mở đầu: câu đố quýt – cam","loi":"Đặt vấn đề: có hai đại lượng chưa biết thì viết phương trình thế nào?"},{"giay":30,"tieu_de":"Nhận biết","loi":"Dạng ax + by = c, điều kiện a ≠ 0 hoặc b ≠ 0. Giải VD-01 trên bảng."},{"giay":120,"tieu_de":"Kiểm tra nghiệm","loi":"Thay x0, y0 vào vế trái. Giải VD-02, nhấn mạnh lỗi dấu âm."},{"giay":210,"tieu_de":"Chốt","loi":"Hai câu hỏi tự kiểm tra trước khi sang bài tập."}]},{"id":"VID-02","ma":"901010201","tieu_de":"Dạng 2 – Viết nghiệm tổng quát và vẽ đường thẳng nghiệm","ky_nang":["9010102"],"thoi_luong_du_kien":300,"giai_khoi":["VD-03"],"kich_ban":[{"giay":0,"tieu_de":"Vì sao có vô số nghiệm","loi":"Cho x tuỳ ý, luôn tìm được y."},{"giay":60,"tieu_de":"Rút y theo x","loi":"Giải VD-03, viết (x; 2x − 4)."},{"giay":150,"tieu_de":"Vẽ bằng hai giao điểm với trục","loi":"Vẽ trực tiếp trên GeoGebra."},{"giay":240,"tieu_de":"Hai trường hợp đặc biệt","loi":"a = 0: song song Ox; b = 0: song song Oy."}]},{"id":"VID-03","ma":"901010301","tieu_de":"Dạng 3 – Kiểm tra nghiệm của hệ hai phương trình","ky_nang":["9010103"],"thoi_luong_du_kien":180,"giai_khoi":["VD-04"],"kich_ban":[{"giay":0,"tieu_de":"Nghiệm của hệ là gì","loi":"Phải thoả mãn cả hai phương trình — giao điểm hai đường thẳng."},{"giay":45,"tieu_de":"Giải VD-04","loi":"Thử (2;3) và (3;2); chỉ ra cái bẫy đúng một phương trình."},{"giay":150,"tieu_de":"Chốt","loi":"Thử phương trình dễ trước để loại nhanh."}]}]}}}};
+window.CFG = {"thuong_hieu":"Việt Anh Edu","triet_ly":"Kiên trì từng bước – tới thành công","giao_vien":"Thầy Việt Anh","chuyen_mon":"Toán 9 · Ôn thi vào lớp 10","khau_hieu":["Học kỹ.","Chắc gốc.","Điểm cao."],"mo_ta_ngan":"Học Toán 9 online cùng Thầy Việt Anh: bài giảng, video, luyện tập, kiểm tra và báo cáo cho phụ huynh – tất cả trong một.","anh_dai_dien":"","gioi_thieu_ngan":"Giáo viên Toán 9 và ôn thi vào lớp 10. Tác giả kênh TikTok “2K12 Toán 9” – mẹo giải từng dạng toán ngắn gọn, dễ nhớ.","moc_thi":[{"ten":"Kiểm tra giữa học kì I","ngay":"2026-11-02","du_kien":true},{"ten":"Kiểm tra cuối học kì I","ngay":"2026-12-28","du_kien":true},{"ten":"Kiểm tra giữa học kì II","ngay":"2027-03-15","du_kien":true},{"ten":"Kiểm tra cuối học kì II","ngay":"2027-05-03","du_kien":true},{"ten":"Thi tuyển sinh vào lớp 10","ngay":"2027-06-26","du_kien":true}],"qua_tang":["Bộ tài liệu ôn tập Toán 9 theo từng dạng (PDF)","Học thử miễn phí các buổi mẫu trên website","Tư vấn lộ trình phù hợp với học lực của con"],"dang_ky":{"google_form_action":"https://docs.google.com/forms/d/e/1FAIpQLScXWgupYimZi76UyRlfz4k8n0_Vs_pqusiuwqJFLBx3fdoznA/formResponse","truong":{"ho_ten":"entry.573197191","lop":"entry.1972712729","sdt":"entry.898241795","hoc_luc":"entry.1253216567","muc_tieu":"entry.430878894"}},"lien_he":{"dien_thoai":"","zalo":"","facebook":"","tiktok_ten":"2K12 Toán 9","tiktok_url":"","email":""}};
+window.TV9_NHUNG = true;
+/* Web demo Toán 9 – lộ trình + buổi học + kiểm tra ngắn. Dữ liệu: window.DATA (dựng từ repo). */
+(function () {
+  "use strict";
+  const D = window.DATA;
+  const $ = (s, el = document) => el.querySelector(s);
+  const app = $("#app");
+  const MACH = { DS: "Đại số", HH: "Hình học", TK: "Thống kê – XS", TH: "Tổng hợp" };
+  const LOAI = { moi: "Học mới", luyen: "Chuyên đề", on: "Ôn tập", thi: "Kiểm tra", chua: "Chữa đề" };
+  const GD = { 1: "Học kì I", 2: "Học kì II", 3: "Ôn thi vào 10" };
+  const KT = { KT15: "KT 15'", KT30: "KT 30'", KT45: "KT 45'", GK: "Giữa kì", CK: "Cuối kì", TT120: "Thi thử 120'" };
+  const LOAI_CAU = { CAU_TN4: "Trắc nghiệm", CAU_DS: "Đúng/Sai", CAU_TLN: "Trả lời ngắn", BAI_TL: "Tự luận", VI_DU: "Ví dụ" };
+  const THANG_DS = [0, 0.1, 0.25, 0.5, 1];
+  const BUOC = [
+    ["bai_giang", "Bài giảng"], ["vi_du", "Ví dụ"], ["video", "Video"],
+    ["luyen_tap", "Luyện tập"], ["kiem_tra", "Kiểm tra 15'"], ["btvn", "Bài tập về nhà"],
+  ];
+
+  // ------------------------------------------------------------ lưu tiến độ (chỉ trong trình duyệt này)
+  const KEY = "tv9-demo-v1";
+  let S = { buoi: {}, kn: {} };
+  try { S = JSON.parse(localStorage.getItem(KEY)) || S; } catch (e) { /* không có localStorage */ }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* bỏ qua */ } };
+  const sb = (ma) => (S.buoi[ma] = S.buoi[ma] || { buoc: {}, kt: [], lt: {} });
+  function ghiKn(ma, dung, tong) {
+    const k = (S.kn[ma] = S.kn[ma] || { dung: 0, tong: 0 });
+    k.dung += dung; k.tong += tong; save();
+  }
+  const thanhThao = (ma) => { const k = S.kn[ma]; return k && k.tong ? k.dung / k.tong : null; };
+  const mucTT = (v) => v == null ? ["Chưa học", ""] : v >= 0.8 ? ["Thành thạo", "ok"] : v >= 0.5 ? ["Đang học", "gold"] : ["Còn hổng", "bad"];
+  const ktTot = (ma) => { const k = (S.buoi[ma] || {}).kt || []; return k.length ? Math.max(...k.map((x) => x.diem)) : null; };
+  const xong = (ma) => ktTot(ma) != null;
+
+  // ------------------------------------------------------------ tiện ích hiển thị
+  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  function inl(s) {
+    const math = [];
+    s = String(s ?? "").replace(/\$\$[\s\S]+?\$\$|\$[^$]+\$/g, (m) => { math.push(m); return "\u0000" + (math.length - 1) + "\u0000"; });
+    s = esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\*(.+?)\*/g, "<i>$1</i>");
+    return s.replace(/\u0000(\d+)\u0000/g, (_, i) => esc(math[+i]));
+  }
+  function md(s) {
+    const out = []; let list = null;
+    const flush = () => { if (list) { out.push(`<${list.t}>${list.items.map((x) => `<li>${inl(x)}</li>`).join("")}</${list.t}>`); list = null; } };
+    let para = [];
+    const fp = () => { if (para.length) { out.push(`<p>${inl(para.join(" "))}</p>`); para = []; } };
+    for (const raw of String(s ?? "").split("\n")) {
+      const l = raw.trim();
+      const ul = l.match(/^[-*] (.*)/), ol = l.match(/^\d+\. (.*)/);
+      if (!l) { fp(); flush(); continue; }
+      if (ul || ol) { fp(); const t = ul ? "ul" : "ol"; if (!list || list.t !== t) { flush(); list = { t, items: [] }; } list.items.push((ul || ol)[1]); continue; }
+      flush(); para.push(l);
+    }
+    fp(); flush();
+    return `<div class="md">${out.join("")}</div>`;
+  }
+  function typeset(el) {
+    if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([el]).catch(() => {});
+    else setTimeout(() => typeset(el), 250);
+  }
+  const chip = (t, c = "") => `<span class="chip ${c}">${esc(t)}</span>`;
+  const knTen = (ma) => (D.ky_nang[ma] || {}).ten || ma;
+  const buocList = (k) => (k.loi_giai || []).map((b) => (typeof b === "string" ? { noi_dung: b } : b));
+  function rng(seed) { // mulberry32
+    return function () { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  }
+  const tron = (a, r) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const so = (x) => parseFloat(String(x).trim().replace(",", "."));
+
+  // ------------------------------------------------------------ định tuyến (#lo-trinh, #buoi-91001, #ky-nang, #san-xuat)
+  let tabGD = 1;
+  function route() {
+    const h = location.hash.slice(1) || "lo-trinh";
+    document.querySelectorAll("nav a").forEach((a) => a.classList.toggle("on", h.startsWith(a.dataset.nav) || (a.dataset.nav === "lo-trinh" && h.startsWith("buoi-"))));
+    clearInterval(window.__timer); clearInterval(window.__play);
+    if (h.startsWith("buoi-")) viewBuoi(h.slice(5));
+    else if (h === "ky-nang") viewKyNang();
+    else if (h === "san-xuat") viewSanXuat();
+    else viewLoTrinh();
+    window.scrollTo(0, 0);
+    typeset(app);
+  }
+  const xoaTienDo = () => { S = { buoi: {}, kn: {} }; save(); route(); };
+  const nutXoa = $("#xoa-tien-do"); if (nutXoa) nutXoa.onclick = xoaTienDo;
+
+  // ------------------------------------------------------------ LỘ TRÌNH
+  function sesCard(b) {
+    const co = !!D.goi[b.ma], d = ktTot(b.ma);
+    let tt = co ? chip("Có nội dung", "gold") : chip("Đang soạn");
+    if (d != null) tt = chip(`Xong · ${d.toFixed(1)}đ`, "ok");
+    const cls = ["ses", co ? "co" : "", d != null ? "xong" : "", b.loai === "thi" ? "thi" : ""].join(" ");
+    return `<a class="${cls}" href="#buoi-${b.ma}">
+      <div class="row"><span class="ma">${b.ma}</span>${chip(MACH[b.mach], b.mach)}${b.kiem_tra ? chip(KT[b.kiem_tra] || b.kiem_tra) : ""}</div>
+      <div class="t">${esc(b.ten)}</div>
+      <div class="row">${chip(LOAI[b.loai])}${tt}</div></a>`;
+  }
+  function viewLoTrinh() {
+    const all = D.buoi_hoc, nXong = all.filter((b) => xong(b.ma)).length;
+    const knDaHoc = Object.keys(D.ky_nang).filter((m) => (thanhThao(m) ?? 0) >= 0.8).length;
+    const tiep = all.find((b) => !xong(b.ma));
+    const hong = tiep ? tiep.ky_nang.flatMap((m) => (D.ky_nang[m] || {}).tien_quyet || [])
+      .filter((t, i, a) => a.indexOf(t) === i && thanhThao(t) != null && thanhThao(t) < 0.5) : [];
+    const ds = all.filter((b) => b.giai_doan === tabGD);
+    const nhom = {};
+    ds.forEach((b, i) => { const k = b.tuan ? `Tuần ${b.tuan}` : `Đợt ${Math.floor(i / 4) + 1}`; (nhom[k] = nhom[k] || []).push(b); });
+    app.innerHTML = `
+      <h1>Lộ trình Toán 9 cả năm</h1>
+      <p class="muted">${all.length} buổi · 3 giai đoạn · mỗi buổi gắn với kỹ năng có mã trong cây kỹ năng SGK Kết nối tri thức.</p>
+      <div class="hero">
+        <div class="card next">
+          <div class="small muted">Buổi tiếp theo của em</div>
+          ${tiep ? `<h2 style="margin:4px 0">${tiep.ma} · ${esc(tiep.ten)}</h2>
+          <div class="row">${chip(GD[tiep.giai_doan])}${tiep.tuan ? chip("Tuần " + tiep.tuan) : ""}${chip(MACH[tiep.mach], tiep.mach)}</div>
+          <p class="small">Kỹ năng: ${tiep.ky_nang.map((m) => esc(knTen(m))).join(" · ") || "tổng hợp"}</p>
+          ${hong.length ? `<div class="fb bad">Cần ôn trước: ${hong.map((m) => esc(knTen(m))).join("; ")}</div>` : ""}
+          <a class="btn pri" href="#buoi-${tiep.ma}">Vào học</a>` : "<p>Em đã hoàn thành toàn bộ lộ trình!</p>"}
+        </div>
+        <div class="card">
+          <div class="small muted">Tiến độ</div>
+          <p style="margin:6px 0 4px"><b>${nXong}</b> / ${all.length} buổi đã hoàn thành</p>
+          <div class="bar"><i style="width:${(100 * nXong) / all.length}%"></i></div>
+          <p style="margin:12px 0 4px"><b>${knDaHoc}</b> / ${Object.keys(D.ky_nang).length} kỹ năng thành thạo</p>
+          <div class="bar"><i style="width:${(100 * knDaHoc) / Object.keys(D.ky_nang).length}%"></i></div>
+          <p class="small muted" style="margin-top:10px">Buổi được tính hoàn thành khi em nộp bài kiểm tra cuối buổi.</p>
+        </div>
+      </div>
+      <div class="tabs">${[1, 2, 3].map((g) => `<button data-gd="${g}" class="${g === tabGD ? "on" : ""}">${GD[g]} · ${all.filter((b) => b.giai_doan === g).length} buổi</button>`).join("")}</div>
+      <div class="card">${Object.entries(nhom).map(([k, v]) => `<div class="week"><div class="wk">${k}</div><div class="sessions">${v.map(sesCard).join("")}</div></div>`).join("")}</div>
+      <div class="legend"><span>▍<b style="color:var(--gold)">viền vàng</b>: buổi đã có nội dung (demo: 91001)</span><span>nền xanh: đã hoàn thành</span><span>nền kem: kiểm tra định kì / thi thử</span></div>`;
+    app.querySelectorAll("[data-gd]").forEach((b) => (b.onclick = () => { tabGD = +b.dataset.gd; viewLoTrinh(); typeset(app); }));
+  }
+
+  // ------------------------------------------------------------ BUỔI HỌC
+  let buoc = "bai_giang", videoChon = null;
+  function viewBuoi(ma) {
+    clearInterval(window.__timer); clearInterval(window.__play);
+    const b = D.buoi_hoc.find((x) => x.ma === ma);
+    if (!b) { app.innerHTML = `<p>Không tìm thấy buổi ${esc(ma)}.</p>`; return; }
+    const g = D.goi[ma];
+    const head = `<div class="crumb"><a href="#lo-trinh">Lộ trình</a> › ${GD[b.giai_doan]}${b.tuan ? " › Tuần " + b.tuan : ""}</div>
+      <h1>${b.ma} · ${esc(b.ten)}</h1>
+      <div class="row">${chip(MACH[b.mach], b.mach)}${chip(LOAI[b.loai])}${b.kiem_tra ? chip(KT[b.kiem_tra] || b.kiem_tra) : ""}${chip(b.tai_lieu)}</div>`;
+    if (!g) {
+      app.innerHTML = head + `<div class="banner" style="margin-top:14px">Nội dung buổi này <b>đang được soạn</b>. Bản demo có đủ nội dung cho buổi mẫu <a href="#buoi-91001">91001</a>.</div>
+        <h2>Kỹ năng của buổi</h2>
+        <div class="card">${b.ky_nang.length ? b.ky_nang.map((m) => `<div class="row" style="padding:4px 0"><code>${m}</code> ${esc(knTen(m))} ${D.ky_nang[m]?.pham_vi === "mo_rong" ? chip("Mở rộng thi 10", "star") : ""}</div>`).join("") : '<span class="muted">Buổi tổng hợp / kiểm tra.</span>'}</div>
+        <h2>Khi soạn xong, buổi này sẽ có</h2>
+        <div class="card"><ol>${BUOC.map(([, t]) => `<li>${t}</li>`).join("")}</ol></div>`;
+      return;
+    }
+    const st = sb(ma);
+    st.buoc[buoc] = true; save();
+    app.innerHTML = head + `<div class="layout">
+      <div class="steps">${BUOC.map(([k, t], i) => `<button data-b="${k}" class="${k === buoc ? "on" : ""} ${st.buoc[k] ? "done" : ""}"><span class="n">${i + 1}</span>${t}</button>`).join("")}
+        <div class="small muted" style="padding:8px 10px">${ktTot(ma) != null ? chip(`Điểm KT tốt nhất: ${ktTot(ma).toFixed(1)}`, "ok") : "Nộp bài kiểm tra để hoàn thành buổi."}</div></div>
+      <div class="pane" id="pane"></div></div>`;
+    app.querySelectorAll("[data-b]").forEach((x) => (x.onclick = () => { buoc = x.dataset.b; viewBuoi(ma); typeset(app); }));
+    const pane = $("#pane");
+    ({ bai_giang: pBaiGiang, vi_du: pViDu, video: pVideo, luyen_tap: pLuyenTap, kiem_tra: pKiemTra, btvn: pBtvn })[buoc](pane, g, ma);
+  }
+  const khoiMap = (g) => Object.fromEntries(g.noi_dung.khoi.map((k) => [k.id, k]));
+  const vidMap = (g) => Object.fromEntries((g.noi_dung.video || []).map((v) => [v.id, v]));
+  const phanDang = (g) => g.buoi.phan.filter((p) => p.ky_nang);
+  const vaiTro = (p, vt) => p.noi_dung.filter((x) => x.vai_tro === vt);
+  const diBuoc = (ma, b, vid) => { buoc = b; if (vid) videoChon = vid; viewBuoi(ma); typeset(app); };
+
+  function pBaiGiang(pane, g, ma) {
+    const K = khoiMap(g), V = vidMap(g);
+    let h = `<div class="card"><h3>Mục tiêu</h3>${md(g.buoi.muc_tieu)}</div><h2>Kiến thức cần nhớ</h2>`;
+    g.buoi.phan.filter((p) => !p.ky_nang).forEach((p) => vaiTro(p, "bai_giang").forEach((x) => {
+      const k = K[x.khoi]; h += `<div class="card theory"><h3>${esc(k.tieu_de)}</h3>${md(k.noi_dung)}</div>`;
+    }));
+    phanDang(g).forEach((p) => {
+      const pp = vaiTro(p, "bai_giang").map((x) => K[x.khoi])[0];
+      const v = p.noi_dung.find((x) => x.video);
+      h += `<h2>${esc(p.ten)}</h2><div class="card method"><h3>Phương pháp</h3>${md(pp.noi_dung)}
+        <div class="row" style="margin-top:8px">${v ? `<button class="btn gold" data-vid="${v.video}">▶ Video: ${esc(V[v.video].tieu_de.split("–")[0])}(${Math.round(V[v.video].thoi_luong_du_kien / 60)}')</button>` : ""}
+        <button class="btn" data-go="vi_du">Xem ví dụ</button></div></div>`;
+    });
+    h += `<div class="row" style="margin-top:14px"><span class="small muted">File PDF bài giảng được xuất tự động từ chính các khối này (ADR-0009).</span></div>`;
+    pane.innerHTML = h;
+    pane.querySelectorAll("[data-vid]").forEach((x) => (x.onclick = () => diBuoc(ma, "video", x.dataset.vid)));
+    pane.querySelectorAll("[data-go]").forEach((x) => (x.onclick = () => diBuoc(ma, x.dataset.go)));
+  }
+
+  function pViDu(pane, g, ma) {
+    const K = khoiMap(g); let h = "", n = 0;
+    phanDang(g).forEach((p) => {
+      const v = p.noi_dung.find((x) => x.video);
+      h += `<h2>${esc(p.ten)}</h2>`;
+      vaiTro(p, "vi_du").forEach((x) => {
+        const k = K[x.khoi], bs = buocList(k); n++;
+        h += `<div class="card" data-vd="${k.id}"><div class="row">${chip("Ví dụ " + n, "gold")}${k.muc_do ? chip(k.muc_do) : ""}</div>${md(k.de)}
+          <div class="sol"><ol>${bs.map((b) => `<li class="hide">${inl(b.noi_dung)}</li>`).join("")}</ol>
+          ${k.dap_an ? `<div class="fb ok hide-da" style="display:none">Đáp số: ${inl(typeof k.dap_an === "object" ? k.dap_an.gia_tri : k.dap_an)}</div>` : ""}
+          <div class="row" style="margin-top:6px"><button class="btn pri" data-mo>Hiện bước tiếp theo (0/${bs.length})</button>
+          ${v ? `<button class="btn" data-vid="${v.video}">▶ Xem giải trong video</button>` : ""}</div></div></div>`;
+      });
+    });
+    pane.innerHTML = h + `<p class="small muted">Lời giải lưu theo từng bước (bảng <code>khoi_buoc</code>): em thử tự làm trước, rồi mở dần từng bước.</p>`;
+    pane.querySelectorAll("[data-vd]").forEach((c) => {
+      const btn = c.querySelector("[data-mo]"), li = [...c.querySelectorAll("li")];
+      btn.onclick = () => {
+        const i = li.findIndex((x) => x.classList.contains("hide"));
+        if (i >= 0) li[i].classList.remove("hide");
+        const con = li.filter((x) => x.classList.contains("hide")).length;
+        btn.textContent = con ? `Hiện bước tiếp theo (${li.length - con}/${li.length})` : "Đã hiện hết lời giải";
+        if (!con) { btn.disabled = true; const d = c.querySelector(".hide-da"); if (d) d.style.display = "block"; }
+      };
+    });
+    pane.querySelectorAll("[data-vid]").forEach((x) => (x.onclick = () => diBuoc(ma, "video", x.dataset.vid)));
+  }
+
+  function pVideo(pane, g) {
+    const vs = g.noi_dung.video || [];
+    const v = vs.find((x) => x.id === videoChon) || vs[0];
+    let i = 0;
+    const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+    pane.innerHTML = `<div class="tabs" style="margin-top:0">${vs.map((x) => `<button data-v="${x.id}" class="${x.id === v.id ? "on" : ""}">${esc(x.tieu_de.split("–")[0])}</button>`).join("")}</div>
+      <div class="card"><h3 style="margin-top:0">${esc(v.tieu_de)}</h3>
+      <div class="row small muted">Mã video <code>${v.ma}</code> · dự kiến ${fmt(v.thoi_luong_du_kien)} · dạng: ${v.ky_nang.map((m) => esc(knTen(m))).join(", ")}</div>
+      <div class="video" style="margin-top:10px">
+        <div class="screen" id="scr"></div>
+        <div class="chap" id="chap">${v.kich_ban.map((m, j) => `<button data-c="${j}">${fmt(m.giay)} · ${esc(m.tieu_de)}</button>`).join("")}
+          <button class="btn gold" id="play">▶ Phát mô phỏng</button></div>
+      </div>
+      <p class="small muted">Bản demo chưa có video thật: màn hình hiển thị <b>kịch bản</b> từng mốc chương. Khi quay xong, khung này nhúng trình phát YouTube (không công khai) hoặc Bunny Stream theo <code>video.ma_ngoai</code> (ADR-0008); các mốc chương dùng lại y nguyên.</p></div>`;
+    const show = (j) => {
+      if (!$("#scr")) { clearInterval(window.__play); return; }
+      i = j; const m = v.kich_ban[j];
+      $("#scr").innerHTML = `<div><div class="small">Chương ${j + 1}/${v.kich_ban.length}</div><div class="now">${esc(m.tieu_de)}</div><p>${esc(m.loi)}</p></div><span class="tm">${fmt(m.giay)} / ${fmt(v.thoi_luong_du_kien)}</span>`;
+      pane.querySelectorAll("[data-c]").forEach((b) => b.classList.toggle("on", +b.dataset.c === j));
+    };
+    show(0);
+    pane.querySelectorAll("[data-c]").forEach((b) => (b.onclick = () => { clearInterval(window.__play); show(+b.dataset.c); }));
+    pane.querySelectorAll("[data-v]").forEach((b) => (b.onclick = () => { clearInterval(window.__play); videoChon = b.dataset.v; pVideo(pane, g); typeset(pane); }));
+    $("#play").onclick = () => { clearInterval(window.__play); show(0); window.__play = setInterval(() => { if (i + 1 >= v.kich_ban.length) clearInterval(window.__play); else show(i + 1); }, 2500); };
+  }
+
+  // ------------------------------------------------------------ câu hỏi (luyện tập: chấm ngay; kiểm tra: thu đáp án)
+  function qHTML(k, idx, mode, thuTu) {
+    const top = `<div class="hd">${idx ? `<b>Câu ${idx}.</b>` : ""}${chip(LOAI_CAU[k.loai] || k.loai)}${k.muc_do ? chip(k.muc_do) : ""}<span class="small muted">${esc(knTen(k.ky_nang))}</span></div>${md(k.de)}`;
+    if (k.loai === "CAU_TN4") {
+      const ord = thuTu || ["A", "B", "C", "D"];
+      return top + `<div class="opts">${ord.map((goc, j) => `<button class="opt" data-o="${goc}"><b>${"ABCD"[j]}.</b><span>${inl(k.lua_chon[goc].noi_dung)}</span></button>`).join("")}</div>` + (mode === "lt" ? `<div class="fbx"></div>` : "");
+    }
+    if (k.loai === "CAU_DS") {
+      return top + `<table class="ds">${k.y.map((y) => `<tr data-y="${y.nhan}"><td><b>${y.nhan})</b> ${inl(y.menh_de)}</td><td class="c"><button data-v="Đ">Đúng</button><button data-v="S">Sai</button></td></tr>`).join("")}</table>`
+        + (mode === "lt" ? `<div class="row" style="margin-top:8px"><button class="btn pri" data-kiem>Kiểm tra</button></div><div class="fbx"></div>` : "");
+    }
+    if (k.loai === "CAU_TLN") {
+      return top + `<div class="tln"><input placeholder="Đáp số" inputmode="decimal">${mode === "lt" ? '<button class="btn pri" data-kiem>Kiểm tra</button>' : ""}</div>` + (mode === "lt" ? `<div class="fbx"></div>` : "");
+    }
+    // tự luận
+    const bs = buocList(k);
+    return top + `<div class="row" style="margin-top:8px"><button class="btn" data-mo>Em đã làm vào vở – xem thang điểm</button></div>
+      <div class="sol" style="display:none"><ol>${bs.map((b) => `<li>${inl(b.noi_dung)}${b.diem != null ? ` ${chip(b.diem + "đ", "gold")}` : ""}</li>`).join("")}</ol>
+      <div class="row" style="margin-top:6px"><span class="small">Em tự chấm:</span><button class="btn" data-tu="1">Làm đúng</button><button class="btn" data-tu="0.5">Đúng một phần</button><button class="btn" data-tu="0">Chưa đúng</button></div><div class="fbx"></div></div>`;
+  }
+  const loiGiai = (k) => buocList(k).length ? `<div class="small" style="margin-top:6px">${buocList(k).map((b) => inl(b.noi_dung)).join("<br>")}</div>` : "";
+
+  function ganLuyen(el, k, ma, ctx) {
+    const fb = (ok, html) => { const f = el.querySelector(".fbx"); f.innerHTML = `<div class="fb ${ok ? "ok" : "bad"}">${html}</div>`; typeset(f); };
+    const ghi = (diem) => { const st = sb(ma); if (st.lt[ctx + k.id] == null) { st.lt[ctx + k.id] = diem; ghiKn(k.ky_nang, diem, 1); } };
+    if (k.loai === "CAU_TN4") {
+      el.querySelectorAll(".opt").forEach((b) => (b.onclick = () => {
+        const o = b.dataset.o, ok = o === k.dap_an;
+        el.querySelectorAll(".opt").forEach((x) => x.classList.remove("sel", "right", "wrong"));
+        b.classList.add(ok ? "right" : "wrong");
+        if (!ok) el.querySelector(`[data-o="${k.dap_an}"]`).classList.add("right");
+        ghi(ok ? 1 : 0);
+        fb(ok, ok ? "Chính xác! " + loiGiai(k) : `Chưa đúng. ${k.lua_chon[o].loi_sai ? "<b>Lỗi hay gặp:</b> " + inl(k.lua_chon[o].loi_sai) : ""}${loiGiai(k)}`);
+      }));
+    } else if (k.loai === "CAU_DS") {
+      dsChon(el);
+      el.querySelector("[data-kiem]").onclick = () => {
+        let n = 0;
+        k.y.forEach((y) => { const tr = el.querySelector(`[data-y="${y.nhan}"]`), v = tr.dataset.v, ok = (v === "Đ") === y.dung && v; tr.classList.toggle("right", !!ok); tr.classList.toggle("wrong", !ok); if (ok) n++; });
+        ghi(THANG_DS[n]);
+        fb(n === 4, `Đúng ${n}/4 ý → được ${THANG_DS[n] * 100}% điểm câu. Đáp án: ${k.y.map((y) => y.nhan + ") " + (y.dung ? "Đúng" : "Sai")).join(", ")}.`);
+      };
+    } else if (k.loai === "CAU_TLN") {
+      el.querySelector("[data-kiem]").onclick = () => {
+        const v = el.querySelector("input").value, ok = chamTLN(k, v);
+        ghi(ok ? 1 : 0);
+        fb(ok, ok ? "Chính xác! " + loiGiai(k) : `Chưa đúng. Đáp số: <b>${esc(k.dap_an.gia_tri)}</b>.${loiGiai(k)}`);
+      };
+    } else {
+      el.querySelector("[data-mo]").onclick = () => { el.querySelector(".sol").style.display = "block"; typeset(el); };
+      el.querySelectorAll("[data-tu]").forEach((b) => (b.onclick = () => { ghi(+b.dataset.tu); fb(+b.dataset.tu === 1, "Đã ghi nhận. Bài tự luận ở web thật sẽ do thầy chấm theo thang điểm từng bước."); }));
+    }
+  }
+  function dsChon(el) {
+    el.querySelectorAll("[data-y] button").forEach((b) => (b.onclick = () => {
+      const tr = b.closest("tr"); tr.dataset.v = b.dataset.v;
+      tr.querySelectorAll("button").forEach((x) => x.classList.toggle("sel", x === b));
+    }));
+  }
+  function chamTLN(k, v) {
+    const a = so(k.dap_an.gia_tri), b = so(v);
+    if (!isNaN(a) && !isNaN(b)) return Math.abs(a - b) <= (k.dap_an.sai_so || 0) + 1e-9;
+    return String(v).replace(/\s/g, "") === String(k.dap_an.gia_tri).replace(/\s/g, "");
+  }
+
+  function pLuyenTap(pane, g, ma) {
+    const K = khoiMap(g); let h = "";
+    phanDang(g).forEach((p) => {
+      const ds = vaiTro(p, "luyen_tap"); if (!ds.length) return;
+      h += `<h2>${esc(p.ten)}</h2>` + ds.map((x) => `<div class="q" data-k="${x.khoi}">${x.bat_buoc === false ? chip("Mở rộng – học sinh khá", "star") : ""}${qHTML(K[x.khoi], 0, "lt")}</div>`).join("");
+    });
+    pane.innerHTML = `<div class="banner">Luyện tập xếp từ dễ đến khó trong từng dạng. Câu trắc nghiệm, Đúng/Sai, trả lời ngắn được chấm ngay; tự luận em làm vào vở rồi đối chiếu thang điểm.</div>` + h;
+    pane.querySelectorAll("[data-k]").forEach((el) => ganLuyen(el, K[el.dataset.k], ma, "lt:"));
+  }
+
+  function pBtvn(pane, g, ma) {
+    const K = khoiMap(g), st = sb(ma);
+    pane.innerHTML = `<div class="banner">Bài tập về nhà – hạn: buổi học sau. ${st.btvnNop ? chip("Đã nộp", "ok") : ""}</div>` +
+      g.buoi.btvn.map((x) => `<div class="q" data-k="${x.khoi}">${qHTML(K[x.khoi], 0, "lt")}</div>`).join("") +
+      `<div class="row" style="margin-top:12px"><button class="btn pri" id="nop">${st.btvnNop ? "Nộp lại" : "Nộp bài tập về nhà"}</button><span class="small muted">Web thật: học sinh chụp bài tự luận, thầy chấm theo thang điểm từng bước.</span></div>`;
+    pane.querySelectorAll("[data-k]").forEach((el) => ganLuyen(el, K[el.dataset.k], ma, "btvn:"));
+    $("#nop").onclick = () => { st.btvnNop = true; st.buoc.btvn = true; save(); viewBuoi(ma); typeset(app); };
+  }
+
+  // ------------------------------------------------------------ KIỂM TRA NGẮN (bốc đề theo ma trận)
+  function khoCau(g, dong) {
+    const daDung = new Set(g.buoi.phan.flatMap((p) => p.noi_dung).filter((x) => ["luyen_tap", "btvn"].includes(x.vai_tro)).map((x) => x.khoi)
+      .concat(g.buoi.btvn.map((x) => x.khoi)));
+    return g.noi_dung.khoi.filter((k) => k.loai === dong.loai && dong.ky_nang.includes(k.ky_nang)
+      && (!dong.muc_do || dong.muc_do.includes(k.muc_do)) && !daDung.has(k.id));
+  }
+  function pKiemTra(pane, g, ma) {
+    const kt = g.buoi.kiem_tra, st = sb(ma), conLan = (kt.so_lan_lam_toi_da || 99) - st.kt.length;
+    pane.innerHTML = `<div class="card"><h3 style="margin-top:0">${esc(kt.ten)}</h3>
+      <p>${kt.thoi_gian_phut} phút · tối đa ${kt.so_lan_lam_toi_da} lần · đáp án hiện sau khi nộp. Mỗi lượt làm, máy <b>bốc một đề khác</b> theo ma trận, không lấy câu em đã gặp ở luyện tập/BTVN.</p>
+      <table class="tb"><tr><th>Dạng câu</th><th>Kỹ năng</th><th>Mức độ</th><th>Số câu</th><th>Điểm/câu</th><th>Kho câu</th></tr>
+      ${kt.ma_tran.map((d) => `<tr><td>${LOAI_CAU[d.loai]}</td><td>${d.ky_nang.join(", ")}</td><td>${(d.muc_do || ["mọi mức"]).join(", ")}</td><td>${d.so_cau}</td><td>${d.diem_moi_cau}</td><td>${khoCau(g, d).length}</td></tr>`).join("")}
+      </table>
+      ${st.kt.length ? `<p>Các lần đã làm: ${st.kt.map((x, i) => chip(`Lần ${i + 1}: ${x.diem.toFixed(1)}đ`, x.diem >= 5 ? "ok" : "bad")).join(" ")}</p>` : ""}
+      <div class="row"><button class="btn pri" id="bd" ${conLan > 0 ? "" : "disabled"}>${conLan > 0 ? `Bắt đầu làm bài (còn ${conLan} lần)` : "Đã hết lượt làm"}</button>
+      <span class="small muted">Thang Đúng/Sai: đúng 1/2/3/4 ý được 10/25/50/100% điểm câu.</span></div></div>`;
+    if (conLan > 0) $("#bd").onclick = () => batDau(pane, g, ma);
+  }
+  function batDau(pane, g, ma) {
+    const kt = g.buoi.kiem_tra, hat = Date.now() % 2147483647, r = rng(hat);
+    const de = [];
+    kt.ma_tran.forEach((d) => tron(khoCau(g, d), r).slice(0, d.so_cau).forEach((k) => de.push({ k, diem: d.diem_moi_cau, ord: k.loai === "CAU_TN4" ? tron(["A", "B", "C", "D"], r) : null })));
+    let con = kt.thoi_gian_phut * 60;
+    pane.innerHTML = `<div class="card row" style="justify-content:space-between;position:sticky;top:62px;z-index:5">
+        <span>Mã đề <code>${hat.toString(36).toUpperCase()}</code> · ${de.length} câu · 10 điểm</span><span class="timer" id="tm"></span></div>
+      ${de.map((c, i) => `<div class="q" data-i="${i}">${qHTML(c.k, i + 1, "kt", c.ord)}</div>`).join("")}
+      <div class="row" style="margin-top:12px"><button class="btn pri" id="nop">Nộp bài</button></div>`;
+    pane.querySelectorAll(".q").forEach((el) => {
+      el.querySelectorAll(".opt").forEach((b) => (b.onclick = () => { el.querySelectorAll(".opt").forEach((x) => x.classList.toggle("sel", x === b)); el.dataset.tl = b.dataset.o; }));
+      dsChon(el);
+    });
+    const tick = () => { if (!$("#tm")) { clearInterval(window.__timer); return; } $("#tm").textContent = `${Math.floor(con / 60)}:${String(con % 60).padStart(2, "0")}`; if (con-- <= 0) nop(); };
+    tick(); window.__timer = setInterval(tick, 1000);
+    const nop = () => {
+      clearInterval(window.__timer);
+      let tong = 0; const theoKn = {};
+      const kq = de.map((c, i) => {
+        const el = pane.querySelector(`[data-i="${i}"]`), k = c.k; let ty = 0, tl = "";
+        if (k.loai === "CAU_TN4") { tl = el.dataset.tl || ""; ty = tl === k.dap_an ? 1 : 0; }
+        if (k.loai === "CAU_DS") { const n = k.y.filter((y) => { const v = el.querySelector(`[data-y="${y.nhan}"]`).dataset.v; return v && (v === "Đ") === y.dung; }).length; ty = THANG_DS[n]; tl = n + "/4 ý đúng"; }
+        if (k.loai === "CAU_TLN") { tl = el.querySelector("input").value; ty = chamTLN(k, tl) ? 1 : 0; }
+        const d = c.diem * ty; tong += d;
+        (theoKn[k.ky_nang] = theoKn[k.ky_nang] || [0, 0]); theoKn[k.ky_nang][0] += ty; theoKn[k.ky_nang][1] += 1;
+        return { c, d, ty, tl };
+      });
+      Object.entries(theoKn).forEach(([m, [a, b]]) => ghiKn(m, a, b));
+      const st = sb(ma); st.kt.push({ diem: tong, ngay: new Date().toISOString(), ma_de: hat }); st.buoc.kiem_tra = true; save();
+      const yeu = Object.entries(theoKn).filter(([, [a, b]]) => a / b < 0.6).map(([m]) => m);
+      const V = (g.noi_dung.video || []);
+      pane.innerHTML = `<div class="card"><div class="row" style="justify-content:space-between"><div><div class="small muted">Kết quả</div><div class="score" style="color:${tong >= 5 ? "var(--ok)" : "var(--bad)"}">${tong.toFixed(2).replace(/\.?0+$/, "")}<span style="font-size:18px">/10</span></div></div>
+        <div class="skills" style="min-width:260px">${Object.entries(theoKn).map(([m, [a, b]]) => `<div class="small">${esc(knTen(m))}<div class="bar"><i style="width:${(100 * a) / b}%;background:${a / b >= 0.6 ? "var(--ok)" : "var(--bad)"}"></i></div></div>`).join("")}</div></div>
+        ${yeu.length ? `<div class="fb bad">Dạng cần ôn lại: ${yeu.map((m) => { const v = V.find((x) => x.ky_nang.includes(m)); return esc(knTen(m)) + (v ? ` — <a href="#" data-vid="${v.id}">xem video</a>` : ""); }).join("; ")}</div>` : `<div class="fb ok">Em đã nắm được các dạng của buổi này. Buổi đã được tính hoàn thành trên lộ trình.</div>`}
+        <div class="row" style="margin-top:8px"><a class="btn" href="#lo-trinh">Về lộ trình</a><button class="btn" id="lai">Xem thông tin bài kiểm tra</button></div></div>
+        <h2>Đáp án và lời giải</h2>
+        ${kq.map(({ c, d, tl }, i) => { const k = c.k; const da = k.loai === "CAU_TN4" ? `Đáp án đúng: <b>${"ABCD"[c.ord.indexOf(k.dap_an)]}</b>` : k.loai === "CAU_DS" ? "Đáp án: " + k.y.map((y) => y.nhan + ") " + (y.dung ? "Đ" : "S")).join(" ") : `Đáp số: <b>${esc(k.dap_an.gia_tri)}</b>`;
+          const em = k.loai === "CAU_TN4" ? (tl ? "ABCD"[c.ord.indexOf(tl)] : "bỏ trống") : esc(tl || "bỏ trống");
+          return `<div class="q"><div class="hd"><b>Câu ${i + 1}.</b>${chip(LOAI_CAU[k.loai])}${chip(`${+d.toFixed(2)}/${c.diem}đ`, d === c.diem ? "ok" : d > 0 ? "gold" : "bad")}</div>${md(k.de)}<div class="small">Em trả lời: ${em} · ${da}</div>${loiGiai(k)}</div>`; }).join("")}`;
+      pane.querySelectorAll("[data-vid]").forEach((x) => (x.onclick = (e) => { e.preventDefault(); diBuoc(ma, "video", x.dataset.vid); }));
+      $("#lai").onclick = () => { pKiemTra(pane, g, ma); typeset(pane); };
+      typeset(pane);
+    };
+    $("#nop").onclick = nop;
+  }
+
+  // ------------------------------------------------------------ KỸ NĂNG CỦA EM
+  function viewKyNang() {
+    const byC = {};
+    Object.entries(D.ky_nang).forEach(([m, k]) => (byC[k.chuong] = byC[k.chuong] || []).push([m, k]));
+    const LA = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+    app.innerHTML = `<h1>Kỹ năng của em</h1><p class="muted">Mức thành thạo tính từ câu luyện tập và kiểm tra em đã làm (web thật: bảng <code>thanh_thao</code>). Dạng còn hổng sẽ được gợi ý ôn trước buổi cần nó.</p>` +
+      Object.entries(byC).map(([c, ds]) => {
+        const hoc = ds.filter(([m]) => thanhThao(m) != null).length;
+        return `<h2>Chương ${LA[c]}. ${esc(D.chuong[c])} <span class="small muted">· ${hoc}/${ds.length} kỹ năng đã có dữ liệu</span></h2><div class="card skills">${ds.map(([m, k]) => {
+          const v = thanhThao(m), [t, cl] = mucTT(v);
+          return `<div class="sk"><code>${m}</code><span>${esc(k.ten)} ${k.pham_vi === "mo_rong" ? chip("⭐ thi 10", "star") : ""}</span><span class="row">${chip(t, cl)}${v != null ? `<span class="small muted">${Math.round(v * 100)}%</span>` : ""}</span></div>`;
+        }).join("")}</div>`;
+      }).join("");
+  }
+
+  // ------------------------------------------------------------ GÓC GIÁO VIÊN: tiến độ sản xuất nội dung
+  function sanSang(b) {
+    const g = D.goi[b.ma];
+    if (!g) return null;
+    const all = g.buoi.phan.flatMap((p) => p.noi_dung), K = khoiMap(g);
+    const dangOk = phanDang(g).every((p) => vaiTro(p, "bai_giang").length && vaiTro(p, "vi_du").length && p.noi_dung.some((x) => x.video));
+    const lt = all.filter((x) => x.vai_tro === "luyen_tap").map((x) => K[x.khoi]);
+    const ktOk = (g.buoi.kiem_tra?.ma_tran || []).every((d) => khoCau(g, d).length >= d.so_cau);
+    return {
+      bai_giang: all.some((x) => x.vai_tro === "bai_giang"), vi_du: all.some((x) => x.vai_tro === "vi_du"),
+      video: all.some((x) => x.video), luyen_tap: lt.length >= 5, kiem_tra: ktOk, btvn: (g.buoi.btvn || []).length > 0, dangOk,
+    };
+  }
+  function viewSanXuat() {
+    const hoc = D.buoi_hoc.filter((b) => ["moi", "luyen"].includes(b.loai));
+    const rows = hoc.map((b) => [b, sanSang(b)]);
+    const xongN = rows.filter(([, s]) => s && Object.values(s).every(Boolean)).length;
+    const LV = { kich_ban: 0 };
+    const nVid = Object.values(D.goi).reduce((a, g) => a + (g.noi_dung.video || []).length, LV.kich_ban);
+    const tongKn = new Set(hoc.flatMap((b) => b.ky_nang)).size;
+    app.innerHTML = `<h1>Góc giáo viên – tiến độ soạn nội dung</h1>
+      <p class="muted">Mỗi buổi học mới/chuyên đề phải đủ 6 thành phần mới được xuất bản (định nghĩa "xong" trong <code>docs/06</code>).</p>
+      <div class="hero"><div class="card"><div class="small muted">Buổi đã đủ 6 thành phần</div><div class="score">${xongN}<span style="font-size:18px">/${hoc.length}</span></div><div class="bar"><i style="width:${(100 * xongN) / hoc.length}%"></i></div></div>
+      <div class="card"><div class="small muted">Video theo dạng</div><div class="score">${nVid}<span style="font-size:18px">/${tongKn}</span></div><p class="small muted">Mỗi kỹ năng (dạng bài) một video 3–6 phút. Hiện ở trạng thái <b>kịch bản</b>.</p></div></div>
+      <h2>Buổi học mới & chuyên đề</h2>
+      <table class="tb"><tr><th>Mã</th><th>Buổi</th><th>Bài giảng</th><th>Ví dụ</th><th>Video</th><th>Luyện tập ≥5</th><th>KT đủ kho</th><th>BTVN</th></tr>
+      ${rows.map(([b, s]) => `<tr><td><a href="#buoi-${b.ma}">${b.ma}</a></td><td>${esc(b.ten)}</td>${["bai_giang", "vi_du", "video", "luyen_tap", "kiem_tra", "btvn"].map((k) => `<td><span class="dot ${s && s[k] ? "on" : ""}"></span></td>`).join("")}</tr>`).join("")}</table>`;
+  }
+
+  // Dùng chung: web demo tự chạy; website thương hiệu nhúng (window.TV9_NHUNG = true) và tự định tuyến.
+  window.TV9 = { route, laApp: (h) => /^(lo-trinh|buoi-|ky-nang|san-xuat)/.test(h), xoaTienDo };
+  if (!window.TV9_NHUNG) { window.addEventListener("hashchange", route); route(); }
+})();
+
+/* Website thương hiệu: trang chủ trực quan + đăng ký + nhúng ứng dụng lộ trình (app.js). */
+(function () {
+  "use strict";
+  const C = window.CFG, D = window.DATA;
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const HOME = ["trang-chu", "tinh-nang", "phu-huynh", "triet-ly", "gioi-thieu", "huong-dan", "dang-ky"];
+  const L = C.lien_he || {};
+
+  $("#s-ten").textContent = C.thuong_hieu;
+  $("#s-khau-hieu").textContent = C.triet_ly;
+
+  // ------------------------------------------------------------------ biểu tượng (nét, 24×24)
+  const P = {
+    book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M8 7h7M8 11h7"/>',
+    play: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',
+    pen: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+    clock: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
+    map: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    report: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+    check: '<path d="M5 12l5 5L20 7"/>',
+    x: '<path d="M6 6l12 12M18 6L6 18"/>',
+    flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+    seed: '<path d="M12 21v-8"/><path d="M12 13c0-4 3-7 7-7 0 4-3 7-7 7zM12 13c0-3-2-5-5-5 0 3 2 5 5 5z"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+    gift: '<rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1zM12 8c2-4 6-4 6-1s-6 1-6 1z"/>',
+  };
+  const ic = (n, cl = "") => `<svg class="s-ic ${cl}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+
+  // ------------------------------------------------------------------ tháp đếm ngược các kỳ thi
+  const homNay = new Date(); homNay.setHours(0, 0, 0, 0);
+  const moc = (C.moc_thi || []).map((m) => {
+    const d = new Date(m.ngay + "T00:00:00");
+    return { ...m, d, con: Math.round((d - homNay) / 86400000) };
+  }).sort((a, b) => a.d - b.d);
+  const dich = moc[moc.length - 1];
+  const ngayVN = (d) => `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+  function thap() {
+    const tren = moc.slice().reverse(); // xa nhất (đích) ở đỉnh tháp
+    return `<div class="s-tower" aria-label="Tháp đếm ngược tới kỳ thi vào lớp 10">
+      <div class="s-tower-hd">${ic("flag")} Đếm ngược tới lớp 10</div>
+      ${tren.map((m, i) => {
+        const la = m === dich, qua = m.con < 0, w = 62 + i * (38 / Math.max(1, tren.length - 1));
+        return `<div class="s-tier ${la ? "goal" : ""} ${qua ? "past" : ""}" style="width:${w}%">
+          ${la ? `<div class="s-big">${Math.max(0, m.con)}<small>ngày</small></div>` : ""}
+          <div class="s-tier-t"><b>${esc(m.ten)}</b><span>${ngayVN(m.d)}${m.du_kien ? " · dự kiến" : ""}</span></div>
+          ${la ? "" : `<div class="s-tier-n">${qua ? ic("check") + " đã qua" : `còn <b>${m.con}</b> ngày`}</div>`}
+        </div>`;
+      }).join("")}
+    </div>`;
+  }
+
+  // ------------------------------------------------------------------ mẫu giao diện minh hoạ
+  const mauDienThoai = `
+    <div class="s-phone"><div class="s-phone-in">
+      <div class="s-ph-top"><span>Bài 1 · Hệ phương trình</span><span class="s-pill ok">Đang học</span></div>
+      ${[["book", "Bài giảng", 1], ["pen", "Ví dụ từng bước", 1], ["play", "Video 4 phút", 1], ["seed", "Luyện tập", 1], ["clock", "Kiểm tra 15'", 0], ["report", "Bài về nhà", 0]]
+        .map(([i, t, x]) => `<div class="s-ph-row ${x ? "done" : ""}">${ic(i)}<span>${t}</span>${x ? ic("check", "ok") : '<i class="s-dot"></i>'}</div>`).join("")}
+      <div class="s-ph-bar"><i style="width:66%"></i></div><div class="s-ph-note">4/6 bước · tiếp theo: kiểm tra 15'</div>
+    </div></div>`;
+  const mauBaoCao = `
+    <div class="s-report">
+      <div class="s-rp-hd"><div><small>Báo cáo tuần · ví dụ minh hoạ</small><b>Học sinh: Nguyễn Văn A · lớp 9</b></div><span class="s-pill ok">Tiến bộ</span></div>
+      <div class="s-rp-grid">
+        <div><small>Buổi đã học</small><b>2/2</b></div>
+        <div><small>Điểm kiểm tra</small><b>8,5</b></div>
+        <div><small>Chuyên cần</small><b>100%</b></div>
+      </div>
+      <div class="s-rp-sk"><small>Kỹ năng</small>
+        ${[["Giải hệ bằng phương pháp thế", 90], ["Nghiệm tổng quát, đường thẳng", 75], ["Lập hệ – bài toán chuyển động", 45]]
+          .map(([t, v]) => `<div class="s-rp-row"><span>${t}</span><div class="s-rp-bar"><i style="width:${v}%;background:${v >= 70 ? "#18875a" : "#e9a908"}"></i></div></div>`).join("")}
+      </div>
+      <div class="s-rp-note">${ic("pen")}<span><b>Thầy nhận xét:</b> con nắm chắc cách giải hệ; tuần này ôn thêm dạng lập hệ chuyển động (đã giao video + 3 bài).</span></div>
+    </div>`;
+
+  // ------------------------------------------------------------------ liên hệ
+  const lh = [];
+  if (L.dien_thoai) lh.push(["Điện thoại", esc(L.dien_thoai)]);
+  if (L.zalo) lh.push(["Zalo", /^https?:/.test(L.zalo) ? `<a href="${esc(L.zalo)}">Nhắn Zalo</a>` : esc(L.zalo)]);
+  if (L.facebook) lh.push(["Facebook", `<a href="${esc(L.facebook)}">Trang Facebook</a>`]);
+  if (L.tiktok_ten) lh.push(["TikTok", L.tiktok_url ? `<a href="${esc(L.tiktok_url)}">${esc(L.tiktok_ten)}</a>` : esc(L.tiktok_ten)]);
+  if (L.email) lh.push(["Email", esc(L.email)]);
+
+  const kh = C.khau_hieu || [];
+  const tinhNang = [
+    ["book", "Bài giảng online", "Ngắn gọn, đúng trọng tâm từng dạng"],
+    ["play", "Video từng dạng", "3–6 phút, xem lại bất cứ lúc nào"],
+    ["seed", "Luyện tập chấm ngay", "Sai ở đâu, biết ngay lỗi ở đó"],
+    ["clock", "Kiểm tra mỗi buổi", "15 phút, mỗi lần một đề khác"],
+    ["map", "Bản đồ kỹ năng", "Thấy rõ con vững – hổng ở đâu"],
+    ["report", "Báo cáo phụ huynh", "Tóm tắt tiến độ và nhận xét"],
+  ];
+
+  $("#home").innerHTML = `
+  <section class="s-hero" id="trang-chu">
+    <div class="s-wrap s-hero-in">
+      <div class="s-hero-copy">
+        <span class="s-eyebrow">${esc(C.chuyen_mon)}</span>
+        <h1>${kh.map((t, i) => `<span class="${i === kh.length - 1 ? "hl" : ""}">${esc(t)}</span>`).join("")}</h1>
+        <p class="lead">${esc(C.mo_ta_ngan)}</p>
+        <div class="s-cta"><a class="s-btn gold lg" href="#dang-ky">${ic("gift")} Đăng ký ngay – nhận tài liệu miễn phí</a><a class="s-btn ghost" href="#buoi-91001">Học thử miễn phí</a></div>
+        <div class="s-trust">${["Bài giảng + video", "Kiểm tra sau mỗi buổi", "Báo cáo cho phụ huynh"].map((t) => `<span>${ic("check")}${t}</span>`).join("")}</div>
+      </div>
+      <div class="s-hero-art">${thap()}</div>
+    </div>
+  </section>
+
+  <section class="s-sec" id="tinh-nang"><div class="s-wrap">
+    <div class="s-head"><span class="s-kicker">Tất cả trong một</span><h2>Một nơi học trọn Toán 9</h2></div>
+    <div class="s-feat">${tinhNang.map(([i, t, d]) => `<div class="s-feat-i"><div class="s-feat-ic">${ic(i)}</div><b>${t}</b><span>${d}</span></div>`).join("")}</div>
+    <div class="s-diff">
+      <div class="s-diff-hd"><span></span><span>Học thêm thông thường</span><span class="me">${esc(C.thuong_hieu)}</span></div>
+      ${[["Xem lại bài giảng ở nhà", "Video từng dạng"], ["Biết con hổng kỹ năng nào", "Bản đồ kỹ năng"], ["Kiểm tra sau mỗi buổi", "Tự chấm, có lời giải"], ["Báo cáo cho phụ huynh", "Tóm tắt từng tuần"]]
+        .map(([t, b]) => `<div class="s-diff-r"><span>${t}</span><span class="no">${ic("x")}</span><span class="yes">${ic("check")} ${b}</span></div>`).join("")}
+    </div>
+  </div></section>
+
+  <section class="s-sec alt" id="phu-huynh"><div class="s-wrap s-split">
+    <div>
+      <span class="s-kicker">Cho học sinh & phụ huynh</span>
+      <h2>Con học từng bước.<br>Bố mẹ thấy từng bước.</h2>
+      <ul class="s-ticks">
+        <li>${ic("check")}<span><b>Học sinh</b> đi lần lượt 6 bước mỗi buổi – rõ ràng, không bị ngợp.</span></li>
+        <li>${ic("check")}<span><b>Phụ huynh</b> nhận báo cáo ngắn: đã học gì, điểm bao nhiêu, cần ôn gì.</span></li>
+        <li>${ic("check")}<span><b>Thầy</b> theo sát từng kỹ năng và giao bài ôn đúng chỗ con còn yếu.</span></li>
+      </ul>
+      <a class="s-btn navy" href="#dang-ky">Đăng ký cho con</a>
+    </div>
+    <div class="s-mocks">${mauDienThoai}${mauBaoCao}</div>
+  </div></section>
+
+  <section class="s-band" id="triet-ly"><div class="s-wrap">
+    <div class="s-band-q">“${esc(C.triet_ly)}”</div>
+    <div class="s-flow">
+      ${[["book", "Học kỹ", "Hiểu bản chất từng dạng, không học vẹt"], ["seed", "Chắc gốc", "Lấp lỗ hổng trước khi đi tiếp"], ["target", "Điểm cao", "Luyện đề, tự tin bước vào phòng thi"]]
+        .map(([i, t, d], k) => `${k ? '<div class="s-arrow">→</div>' : ""}<div class="s-flow-i"><div class="s-flow-ic">${ic(i)}</div><b>${t}</b><span>${d}</span></div>`).join("")}
+    </div>
+  </div></section>
+
+  <section class="s-sec" id="gioi-thieu"><div class="s-wrap s-teacher">
+    <div class="s-avatar">${C.anh_dai_dien ? `<img src="${esc(C.anh_dai_dien)}" alt="${esc(C.giao_vien)}">` : "<b>V<span>A</span></b>"}</div>
+    <div>
+      <span class="s-kicker">Người đồng hành</span>
+      <h2>${esc(C.giao_vien)}</h2>
+      <p>${esc(C.gioi_thieu_ngan)}</p>
+      <div class="s-chips">${lh.map(([k, v]) => `<span class="s-chip"><small>${k}</small> ${v}</span>`).join("")}</div>
+    </div>
+    <a class="s-route" href="#lo-trinh">
+      <span class="s-kicker">Lộ trình học</span>
+      <b>Xem toàn bộ lộ trình</b>
+      <div class="s-route-bars">${(() => { const n = [1, 2, 3].map((g) => D.buoi_hoc.filter((b) => b.giai_doan === g).length), mx = Math.max(...n);
+        return n.map((x, i) => `<div><i style="width:${Math.round((60 * x) / mx)}%"></i><span>${["Học kì I", "Học kì II", "Ôn thi vào 10"][i]}</span></div>`).join(""); })()}</div>
+      <span class="s-route-go">Mở lộ trình →</span>
+    </a>
+  </div></section>
+
+  <section class="s-sec alt" id="huong-dan"><div class="s-wrap">
+    <div class="s-head"><span class="s-kicker">Hướng dẫn</span><h2>Bắt đầu chỉ với 4 bước</h2></div>
+    <div class="s-steps">
+      ${[["gift", "Đăng ký", "Điền thông tin, nhận tài liệu miễn phí"], ["map", "Mở lộ trình", "Chọn buổi tiếp theo được gợi ý sẵn"], ["play", "Học 6 bước", "Bài giảng → video → luyện tập → kiểm tra"], ["report", "Xem tiến bộ", "Bản đồ kỹ năng & báo cáo cho phụ huynh"]]
+        .map(([i, t, d], k) => `<div class="s-step"><div class="s-step-n">${k + 1}</div><div class="s-step-ic">${ic(i)}</div><b>${t}</b><span>${d}</span></div>`).join("")}
+    </div>
+    <div class="s-faq">
+      <details><summary>Con mất gốc có theo được không?</summary><p>Được. Lộ trình chia nhỏ theo từng kỹ năng; dạng nào còn hổng, hệ thống gợi ý ôn lại đúng video và bài luyện của dạng đó.</p></details>
+      <details><summary>Học trên điện thoại được không?</summary><p>Được, không cần cài đặt. Mở website là học.</p></details>
+      <details><summary>Phụ huynh theo dõi bằng cách nào?</summary><p>Qua báo cáo tóm tắt: số buổi đã học, điểm kiểm tra, kỹ năng cần ôn và nhận xét của thầy.</p></details>
+      <details><summary>Hai bạn làm bài kiểm tra có cùng đề không?</summary><p>Không. Mỗi lượt làm, máy bốc câu theo ma trận và xáo thứ tự đáp án, độ khó tương đương.</p></details>
+    </div>
+  </div></section>
+
+  <section class="s-reg" id="dang-ky"><div class="s-wrap s-reg-in">
+    <div class="s-reg-copy">
+      <span class="s-eyebrow">${ic("gift")} Quà tặng miễn phí</span>
+      <h2>Đăng ký ngay – nhận trọn bộ quà học tập</h2>
+      <ul class="s-gifts">${(C.qua_tang || []).map((q) => `<li>${ic("check")}<span>${esc(q)}</span></li>`).join("")}</ul>
+      ${dich && dich.con >= 0 ? `<div class="s-urgent">${ic("clock")}<span>Chỉ còn <b>${dich.con} ngày</b> đến kỳ ${esc(dich.ten.toLowerCase())} – bắt đầu càng sớm, nền càng chắc.</span></div>` : ""}
+    </div>
+    <form class="s-form" id="s-form" novalidate>
+      <h3>Thông tin đăng ký</h3>
+      <label>Họ tên học sinh *<input name="ho_ten" required autocomplete="name" placeholder="Ví dụ: Nguyễn Văn A"></label>
+      <div class="s-row2">
+        <label>Lớp<select name="lop"><option>Lớp 9</option><option>Lớp 8</option><option>Khác</option></select></label>
+        <label>Học lực hiện tại<select name="hoc_luc"><option>Cần lấy gốc</option><option>Trung bình</option><option>Khá</option><option>Giỏi</option></select></label>
+      </div>
+      <label>Số điện thoại phụ huynh (Zalo) *<input name="sdt" required inputmode="tel" autocomplete="tel" placeholder="Ví dụ: 0905 123 456"></label>
+      <label>Mục tiêu<select name="muc_tieu"><option>Lấy lại gốc Toán</option><option>Đạt điểm cao vào lớp 10</option><option>Ôn thi trường chuyên</option></select></label>
+      <button class="s-btn gold lg full" type="submit">${ic("gift")} Đăng ký ngay – nhận tài liệu</button>
+      <p class="s-form-note">Thông tin chỉ dùng để thầy liên hệ tư vấn và gửi tài liệu.</p>
+      <div class="s-form-msg" id="s-form-msg" hidden></div>
+    </form>
+  </div></section>`;
+
+  $("#s-footer").innerHTML = `<div class="s-wrap"><div><b>${esc(C.thuong_hieu)}</b> · ${esc(C.triet_ly)}<br>${esc(C.giao_vien)} · ${esc(C.chuyen_mon)}</div>
+    <div>© ${new Date().getFullYear()} ${esc(C.thuong_hieu)} · <a href="#lo-trinh">Lộ trình học</a> · <a href="#dang-ky">Đăng ký</a></div></div>`;
+
+  // ------------------------------------------------------------------ đăng ký
+  const form = $("#s-form"), msg = $("#s-form-msg");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = Object.fromEntries(new FormData(form));
+    const sdt = (f.sdt || "").replace(/[\s.]/g, "");
+    if (!f.ho_ten.trim() || !/^(0|\+84)\d{9,10}$/.test(sdt)) {
+      msg.hidden = false; msg.className = "s-form-msg bad"; msg.textContent = "Vui lòng nhập họ tên và số điện thoại hợp lệ (10 số).";
+      return;
+    }
+    const dk = C.dang_ky || {}, tr = dk.truong || {};
+    if (dk.google_form_action && tr.ho_ten && tr.sdt) {
+      const body = new FormData();
+      Object.entries(tr).forEach(([k, entry]) => { if (entry) body.append(entry, f[k] || ""); });
+      try { await fetch(dk.google_form_action, { method: "POST", mode: "no-cors", body }); } catch (err) { /* no-cors không đọc được phản hồi */ }
+      form.innerHTML = `<div class="s-done">${ic("check")}<h3>Đăng ký thành công!</h3><p>Cảm ơn phụ huynh. ${esc(C.giao_vien)} sẽ liên hệ qua số <b>${esc(f.sdt)}</b> để gửi tài liệu và tư vấn lộ trình.</p><a class="s-btn navy" href="#buoi-91001">Học thử ngay</a></div>`;
+      return;
+    }
+    const noiDung = `Đăng ký ${C.thuong_hieu}: ${f.ho_ten} – ${f.lop} – học lực: ${f.hoc_luc} – mục tiêu: ${f.muc_tieu} – SĐT phụ huynh: ${f.sdt}`;
+    msg.hidden = false; msg.className = "s-form-msg";
+    msg.innerHTML = L.zalo
+      ? `Gửi thông tin cho thầy qua Zalo để hoàn tất: <b>${esc(L.zalo)}</b><br><button type="button" class="s-btn line sm" id="s-copy">Sao chép nội dung đăng ký</button>`
+      : `<b>Bản xem thử:</b> website chưa kết nối nơi nhận đăng ký (Google Form) nên thông tin chưa được gửi đi. Thầy điền mục <code>dang_ky</code> trong <code>website/cau-hinh.yaml</code>.`;
+    const nut = $("#s-copy");
+    if (nut) nut.onclick = () => navigator.clipboard.writeText(noiDung).then(() => (nut.textContent = "Đã sao chép ✓"), () => (nut.textContent = noiDung));
+  });
+
+  // ------------------------------------------------------------------ định tuyến
+  const home = $("#home"), shell = $("#s-app-shell"), sticky = $("#s-sticky");
+  function dinhTuyen() {
+    const h = location.hash.slice(1) || "trang-chu";
+    $("#s-nav").classList.remove("open");
+    if (window.TV9.laApp(h)) {
+      home.hidden = true; shell.hidden = false; sticky.hidden = true;
+      window.TV9.route();
+      document.querySelectorAll(".s-subnav a").forEach((a) => a.classList.toggle("on", h.startsWith(a.dataset.sub) || (a.dataset.sub === "lo-trinh" && h.startsWith("buoi-"))));
+      document.title = `Lộ trình học · ${C.thuong_hieu}`;
+      dat("lo-trinh");
+    } else {
+      shell.hidden = true; home.hidden = false; sticky.hidden = h === "dang-ky";
+      const muc = HOME.includes(h) ? h : "trang-chu";
+      dat(muc);
+      document.title = `${C.thuong_hieu} – ${C.giao_vien} · ${C.chuyen_mon}`;
+      if (muc === "trang-chu") window.scrollTo(0, 0);
+      else requestAnimationFrame(() => document.getElementById(muc).scrollIntoView());
+    }
+  }
+  function dat(muc) { document.querySelectorAll(".s-nav a").forEach((a) => a.classList.toggle("on", a.dataset.nav === muc)); }
+  $("#s-burger").onclick = () => $("#s-nav").classList.toggle("open");
+  $("#xoa-tien-do").onclick = () => window.TV9.xoaTienDo();
+  window.addEventListener("hashchange", dinhTuyen);
+  dinhTuyen();
+})();
+
+</script>
+</body>
+</html>
