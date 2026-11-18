@@ -305,14 +305,22 @@ section[id] { scroll-margin-top: 72px; }
 .s-kh { background: #fff; border: 1px solid var(--s-line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
 .s-kh:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(20,40,75,.12); }
 .s-kh-th { position: relative; display: block; aspect-ratio: 16 / 9; padding: 20px 22px; color: #fff; overflow: hidden; }
-.s-kh-th.t1 { background: linear-gradient(135deg, #2f6fd6, var(--navy)); }
-.s-kh-th.t2 { background: linear-gradient(135deg, #17907a, #0f4b5c); }
-.s-kh-th.t3 { background: linear-gradient(135deg, #e3542b, #8e1f2d); }
+.s-kh-th.toan1 { background: linear-gradient(135deg, #2f6fd6, var(--navy)); }
+.s-kh-th.toan2 { background: linear-gradient(135deg, #17907a, #0f4b5c); }
+.s-kh-th.toan3 { background: linear-gradient(135deg, #e3542b, #8e1f2d); }
+/* Hoá 9: tím – lục ngọc – hồng đậm; Vật lí 9: xanh trời – chàm – cam */
+.s-kh-th.hoa1 { background: linear-gradient(135deg, #8b5cf6, #3b1d7a); }
+.s-kh-th.hoa2 { background: linear-gradient(135deg, #10a37f, #0b4f4a); }
+.s-kh-th.hoa3 { background: linear-gradient(135deg, #db2777, #6b1340); }
+.s-kh-th.ly1 { background: linear-gradient(135deg, #0ea5e9, #0b3e78); }
+.s-kh-th.ly2 { background: linear-gradient(135deg, #4f46e5, #1e1b5e); }
+.s-kh-th.ly3 { background: linear-gradient(135deg, #f59e0b, #9a3412); }
+.s-kh-mon { position: absolute; left: -18px; bottom: -26px; width: 132px; height: 132px; color: #fff; opacity: .12; stroke-width: 1.4; pointer-events: none; }
 .s-kh-tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; background: rgba(255,255,255,.18); padding: 4px 10px; border-radius: 999px; }
 .s-kh-th b { display: block; margin-top: 12px; font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; letter-spacing: -1px; line-height: 1.05; text-transform: uppercase; }
 .s-kh-th small { display: block; margin-top: 6px; color: rgba(255,255,255,.85); font-weight: 500; }
 .s-kh-stairs { position: absolute; right: 14px; bottom: 10px; width: 46%; color: var(--gold); opacity: .9; }
-.s-kh-th.t3 .s-kh-stairs { color: #ffd34d; }
+.s-kh-th.toan3 .s-kh-stairs, .s-kh-th.ly3 .s-kh-stairs, .s-kh-th.hoa3 .s-kh-stairs { color: #ffe08a; }
 .s-kh-rib { position: absolute; top: 16px; right: -38px; transform: rotate(35deg); background: var(--gold); color: var(--navy); font-size: 11.5px; font-weight: 800; padding: 5px 44px; box-shadow: 0 4px 10px rgba(0,0,0,.2); }
 .s-kh-b { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .s-kh-b h3 { margin: 0; font-size: 16px; letter-spacing: -.2px; }
@@ -326,6 +334,16 @@ section[id] { scroll-margin-top: 72px; }
 .s-kh-st li .s-ic { width: 18px; height: 18px; color: var(--navy); margin-bottom: 4px; }
 .s-kh-st b { font-size: 20px; color: var(--s-ink); line-height: 1.1; }
 .s-kh-b .s-btn { margin-top: auto; }
+
+/* Chọn môn ở "Lộ trình nổi bật" */
+.s-mon-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; margin: -6px 0 20px; }
+.s-mon-tabs button { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px; font-size: 15px; }
+.s-mon-tabs button .s-ic { width: 18px; height: 18px; }
+.s-mon-tabs button.on .s-ic { color: var(--gold); }
+.s-mon-mo { margin: 0; font-size: 14px; color: var(--s-muted); }
+.s-fade > * { animation: s-len .35s ease both; }
+.s-fade > *:nth-child(2) { animation-delay: .05s; } .s-fade > *:nth-child(3) { animation-delay: .1s; }
+@keyframes s-len { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
 /* Tab giai đoạn + ô chương */
 .s-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -846,7 +864,11 @@ window.TV9_NHUNG = true;
     else if (h === "quan-tri") viewQuanTri();
     else if (h === "ky-nang") viewKyNang();
     else if (h === "san-xuat") viewSanXuat();
-    else viewLoTrinh();
+    else {
+      const m = h.match(/^lo-trinh-(toan|hoa|ly)(?:-(\d))?$/); // #lo-trinh-hoa, #lo-trinh-ly-8: mở đúng môn, đúng giai đoạn
+      if (m) { tabMon = m[1]; tabGD = m[2] && MON[tabMon].gd.includes(+m[2]) ? +m[2] : MON[tabMon].gd[0]; }
+      viewLoTrinh();
+    }
     window.scrollTo(0, 0);
     typeset(app);
   }
@@ -1540,6 +1562,9 @@ window.TV9_NHUNG = true;
     gift: '<rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s6 1 6 1zM12 8c2-4 6-4 6-1s-6 1-6 1z"/>',
     cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
     stairs: '<path d="M3 20h5v-5h5v-5h5V5h3"/>',
+    sigma: '<path d="M18 5H6l6 7-6 7h12"/>',
+    flask: '<path d="M9 3h6M10 3v6l-5.6 9.6A1.6 1.6 0 0 0 5.8 21h12.4a1.6 1.6 0 0 0 1.4-2.4L14 9V3"/><path d="M7.2 15h9.6"/>',
+    atom: '<circle cx="12" cy="12" r="1.6"/><ellipse cx="12" cy="12" rx="9.5" ry="3.8"/><ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(120 12 12)"/>',
     user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>',
     star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
     send: '<path d="M21 3L3 11l7 3 3 7z"/><path d="M10 14l4-4"/>',
@@ -1550,13 +1575,29 @@ window.TV9_NHUNG = true;
   const tieuDe = (i, t, phai = "") => `<div class="s-sh"><h2>${ic(i)}<span>${t}</span></h2>${phai}</div>`;
 
   // ------------------------------------------------------------------ số liệu thật từ khung chương trình
-  const GD = ["Học kì I", "Học kì II", "Ôn thi vào 10"];
-  const theoGD = [1, 2, 3].map((g) => {
-    const bs = BHT.filter((b) => b.giai_doan === g);
-    const kn = new Set(bs.flatMap((b) => b.ky_nang));
-    const ch = [...new Set([...kn].map((k) => D.ky_nang[k] && D.ky_nang[k].chuong).filter(Boolean))].sort((a, b) => a - b);
-    return { g, bs, kn: kn.size, kt: bs.filter((b) => b.kiem_tra).length, ch };
+  // Ba môn cùng một khuôn thẻ: Toán 9 (giai đoạn 1–3), Hoá 9 (4–6), Vật lí 9 (7–9)
+  const MON = {
+    toan: { ten: "Toán 9", tag: "Toán 9 · 2K12", icon: "sigma", gd: [1, 2, 3], tenGD: ["Học kì I", "Học kì II", "Ôn thi vào 10"],
+      dv: "dạng toán", tenC: D.chuong || {}, nhanC: (c) => `Chương ${c}`, mo: "Bám sát SGK Toán 9 Kết nối tri thức · 3 giai đoạn tới kì thi vào lớp 10" },
+    hoa: { ten: "Hoá 9", tag: "Hoá 9 · Mất gốc", icon: "flask", gd: [4, 5, 6], tenGD: ["Lấy lại gốc", "Học kì I", "Học kì II"],
+      dv: "kỹ năng", tenC: D.chuong_hoa || {}, mo: "Lấy lại gốc Hoá THCS rồi bám KHTN 9 – phần Hoá học (Bài 18–35)" },
+    ly: { ten: "Vật lí 9", tag: "Vật lí 9 · Mất gốc", icon: "atom", gd: [7, 8, 9], tenGD: ["Lấy lại gốc", "Học kì I", "Học kì II"],
+      dv: "kỹ năng", tenC: D.chuong_ly || {}, mo: "Lấy lại gốc Lý THCS rồi bám KHTN 9 – phần Vật lí (Bài 2–17)" },
+  };
+  const THEO_MON = {};
+  Object.entries(MON).forEach(([m, M]) => {
+    const tat = D.buoi_hoc.filter((b) => (b.mon || "toan") === m);
+    const chM = [...new Set(tat.flatMap((b) => b.ky_nang).map((k) => D.ky_nang[k] && D.ky_nang[k].chuong).filter(Boolean))].sort((a, b) => a - b);
+    THEO_MON[m] = M.gd.map((g, i) => {
+      const bs = tat.filter((b) => b.giai_doan === g);
+      const kn = new Set(bs.flatMap((b) => b.ky_nang));
+      const ch = [...new Set([...kn].map((k) => D.ky_nang[k] && D.ky_nang[k].chuong).filter(Boolean))].sort((a, b) => a - b);
+      const thu = bs.find((b) => (D.buoi_hoc_thu || []).includes(b.ma));
+      return { m, i, g, bs, kn: kn.size, kt: bs.filter((b) => b.kiem_tra).length, ch, chM, thu: i === 0 && thu ? thu.ma : null };
+    });
   });
+  const theoGD = THEO_MON.toan;
+  let monKH = "toan";
   const tongKT = BHT.filter((b) => b.kiem_tra).length;
   const tongKN = Object.values(D.ky_nang).filter((k) => (k.mon || "toan") === "toan").length;
 
@@ -1659,32 +1700,41 @@ window.TV9_NHUNG = true;
   // Thẻ "khoá học" theo 3 giai đoạn của lộ trình
   const thumbArt = '<svg class="s-kh-stairs" viewBox="0 0 120 80" aria-hidden="true"><path d="M6 74h22V56h22V38h22V20h22V6h20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const theKhoa = (x) => {
-    const thu = x.g === 1;
+    const M = MON[x.m], ten = M.tenGD[x.i], lt = `#lo-trinh-${x.m}-${x.g}`, href = x.thu ? `#buoi-${x.thu}` : lt;
+    const nC = x.m === "toan" ? `${x.ch.length} chương` : `${x.ch.length} chủ đề`;
     return `<article class="s-kh">
-      <a class="s-kh-th t${x.g}" href="${thu ? "#buoi-91001" : "#lo-trinh"}">
-        ${thu ? '<span class="s-kh-rib">Học thử miễn phí</span>' : ""}
-        <span class="s-kh-tag">Toán 9 · 2K12</span>
-        <b>${GD[x.g - 1]}</b>
-        <small>${x.ch.length} chương · ${x.bs.length} buổi</small>
+      <a class="s-kh-th ${x.m}${x.i + 1}" href="${href}">
+        ${x.thu ? '<span class="s-kh-rib">Học thử miễn phí</span>' : ""}
+        <span class="s-kh-tag">${esc(M.tag)}</span>
+        <b>${esc(ten)}</b>
+        <small>${nC} · ${x.bs.length} buổi</small>
+        ${ic(M.icon, "s-kh-mon")}
         ${thumbArt}
       </a>
       <div class="s-kh-b">
-        <h3>TOÁN 9 | ${GD[x.g - 1].toUpperCase()}</h3>
+        <h3>${esc(M.ten.toUpperCase())} | ${esc(ten.toUpperCase())}</h3>
         <p>Giáo viên: ${esc(C.giao_vien)}</p>
-        <div class="s-kh-tags"><span class="v">${ic("play")}Video</span><span class="k">${ic("clock")}Kiểm tra</span><span class="r">${ic("report")}Báo cáo</span></div>
+        <div class="s-kh-tags"><span class="v">${ic("play")}${x.m === "toan" ? "Video" : "Zoom trực tiếp"}</span><span class="k">${ic("clock")}Kiểm tra</span><span class="r">${ic("report")}Báo cáo</span></div>
         <ul class="s-kh-st">
           <li>${ic("book")}<b>${x.bs.length}</b> buổi học</li>
-          <li>${ic("map")}<b>${x.kn}</b> dạng toán</li>
+          <li>${ic("map")}<b>${x.kn}</b> ${M.dv}</li>
           <li>${ic("pen")}<b>${x.kt}</b> bài kiểm tra</li>
         </ul>
-        <a class="s-btn ${thu ? "gold" : "line"} full" href="${thu ? "#buoi-91001" : "#lo-trinh"}">${thu ? "Học thử ngay" : "Xem lộ trình"}</a>
+        <a class="s-btn ${x.thu ? "gold" : "line"} full" href="${href}">${x.thu ? "Học thử ngay" : "Xem lộ trình"}</a>
       </div>
     </article>`;
   };
+  // tên chủ đề Hoá/Lý: bỏ phần ngoặc "(KHTN 9 – Bài …)" đưa xuống dòng phụ
+  const tachTen = (t) => { const m = String(t || "").match(/^(.*?)\s*\((.*)\)\s*$/); return m ? [m[1], m[2]] : [t, ""]; };
   const oChuong = (x) => x.ch.map((c) => {
-    const n = x.bs.filter((b) => b.ky_nang.some((k) => D.ky_nang[k] && D.ky_nang[k].chuong === c)).length;
-    return `<a class="s-ch" href="#lo-trinh"><small>Chương ${c}</small><b>${esc(D.chuong[c])}</b><span>${n} buổi ${ic("arrow")}</span></a>`;
+    const M = MON[x.m], n = x.bs.filter((b) => b.ky_nang.some((k) => D.ky_nang[k] && D.ky_nang[k].chuong === c)).length;
+    const [t, phu] = tachTen(M.tenC[c]);
+    const nhan = M.nhanC ? M.nhanC(c) : `Chủ đề ${x.chM.indexOf(c) + 1}`;
+    return `<a class="s-ch" href="#lo-trinh-${x.m}-${x.g}"><small>${nhan}${phu ? ` · ${esc(phu)}` : ""}</small><b>${esc(t)}</b><span>${n} buổi ${ic("arrow")}</span></a>`;
   }).join("");
+  const tabMon = () => `<div class="s-tabs s-mon-tabs" role="tablist">${Object.entries(MON).map(([m, M]) =>
+    `<button type="button" role="tab" data-mon="${m}" class="${m === monKH ? "on" : ""}">${ic(M.icon)}${M.ten}</button>`).join("")}</div>`;
+  const tabGD = () => MON[monKH].tenGD.map((t, i) => `<button type="button" role="tab" data-g="${i}" class="${i ? "" : "on"}">${t}</button>`).join("");
 
   const bv = C.bang_vang || [], cn = C.cam_nhan || [];
   const vinhDanh = bv.length || cn.length ? `<section class="s-sec" id="vinh-danh"><div class="s-wrap">
@@ -1712,10 +1762,11 @@ window.TV9_NHUNG = true;
   ${moc.length ? demNguoc() : ""}
 
   <section class="s-sec" id="khoa-hoc"><div class="s-wrap">
-    ${tieuDe("book", "Lộ trình nổi bật", `<a class="s-more" href="#lo-trinh">Xem toàn bộ lộ trình ${ic("arrow")}</a>`)}
-    <div class="s-kh-grid">${theoGD.map(theKhoa).join("")}</div>
+    ${tieuDe("book", "Lộ trình nổi bật", `<a class="s-more" id="s-kh-more" href="#lo-trinh-toan">Xem toàn bộ lộ trình ${ic("arrow")}</a>`)}
+    <div class="s-mon-bar">${tabMon()}<p class="s-mon-mo" id="s-mon-mo">${esc(MON.toan.mo)}</p></div>
+    <div class="s-kh-grid" id="s-kh-grid">${theoGD.map(theKhoa).join("")}</div>
 
-    ${tieuDe("map", "Học gì ở từng giai đoạn", `<div class="s-tabs" role="tablist">${GD.map((t, i) => `<button type="button" role="tab" data-g="${i}" class="${i ? "" : "on"}">${t}</button>`).join("")}</div>`)}
+    ${tieuDe("map", "Học gì ở từng giai đoạn", `<div class="s-tabs s-gd-tabs" role="tablist" id="s-gd-tabs">${tabGD()}</div>`)}
     <div class="s-ch-grid" id="s-ch-grid">${oChuong(theoGD[0])}</div>
   </div></section>
 
@@ -1818,9 +1869,20 @@ window.TV9_NHUNG = true;
   document.querySelectorAll(".s-cd-i").forEach((el) => (el.onclick = () => { chon = +el.dataset.i; capNhatDem(); }));
   capNhatDem();
   setInterval(capNhatDem, 1000);
-  document.querySelectorAll(".s-tabs button").forEach((b) => (b.onclick = () => {
-    document.querySelectorAll(".s-tabs button").forEach((x) => x.classList.toggle("on", x === b));
-    $("#s-ch-grid").innerHTML = oChuong(theoGD[+b.dataset.g]);
+  const ganTabGD = () => document.querySelectorAll("#s-gd-tabs button").forEach((b) => (b.onclick = () => {
+    document.querySelectorAll("#s-gd-tabs button").forEach((x) => x.classList.toggle("on", x === b));
+    $("#s-ch-grid").innerHTML = oChuong(THEO_MON[monKH][+b.dataset.g]);
+  }));
+  ganTabGD();
+  document.querySelectorAll(".s-mon-tabs button").forEach((b) => (b.onclick = () => {
+    monKH = b.dataset.mon;
+    document.querySelectorAll(".s-mon-tabs button").forEach((x) => x.classList.toggle("on", x === b));
+    const g = $("#s-kh-grid"); g.classList.remove("s-fade"); void g.offsetWidth; g.classList.add("s-fade");
+    g.innerHTML = THEO_MON[monKH].map(theKhoa).join("");
+    $("#s-mon-mo").textContent = MON[monKH].mo;
+    $("#s-kh-more").href = `#lo-trinh-${monKH}`;
+    $("#s-gd-tabs").innerHTML = tabGD(); ganTabGD();
+    $("#s-ch-grid").innerHTML = oChuong(THEO_MON[monKH][0]);
   }));
 
   // ------------------------------------------------------------------ đăng ký
