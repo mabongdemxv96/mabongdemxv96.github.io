@@ -703,6 +703,29 @@ section[id] { scroll-margin-top: 72px; }
 @media (max-width: 760px) { .s-qua-noi { display: none; } }
 @media (prefers-reduced-motion: reduce) { .s-btn.s-qua.gold { animation: none; } .s-qua-noi { transition: none; } }
 @media (max-width: 760px) { .s-sticky.s-qua:not([hidden]) { display: flex; } }
+
+/* Băng chuyền lộ trình 3 môn */
+.s-bc { position: relative; margin-bottom: 56px; }
+.s-bc .s-kh-grid { margin-bottom: 0; }
+.s-bc-khung { overflow: hidden; margin: -14px 0; padding: 14px 0 18px; }
+.s-bc-day { display: flex; align-items: flex-start; transition: transform .7s cubic-bezier(.65,0,.35,1); will-change: transform; }
+.s-bc-trang { flex: 0 0 100%; min-width: 0; box-sizing: border-box; padding: 0 2px; }
+.s-bc-nut { position: absolute; top: 42%; z-index: 3; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--s-line); background: #fff; color: var(--navy);
+  display: grid; place-items: center; cursor: pointer; box-shadow: 0 8px 22px rgba(20,40,75,.14); transition: background .15s, transform .15s; }
+.s-bc-nut:hover { background: var(--navy); color: var(--gold); }
+.s-bc-nut.trai { left: -22px; } .s-bc-nut.trai .s-ic { transform: rotate(180deg); }
+.s-bc-nut.phai { right: -22px; }
+.s-bc-cham { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.s-bc-cham button { position: relative; width: 28px; height: 6px; padding: 0; border: 0; border-radius: 6px; background: #d6dbe6; cursor: pointer; overflow: hidden; transition: width .3s; }
+.s-bc-cham button.on { width: 56px; background: #e8ecf3; }
+.s-bc-cham button i { position: absolute; inset: 0; width: 0; background: var(--navy); border-radius: 6px; }
+.s-bc-cham button.on i { animation: s-bc-tien 7s linear forwards; }
+.s-bc.dung .s-bc-cham button.on i { animation: none; width: 100%; background: var(--gold); }
+@keyframes s-bc-tien { to { width: 100%; } }
+.s-fade1 { animation: s-len .35s ease both; }
+@media (max-width: 1320px) { .s-bc-nut.trai { left: -8px; } .s-bc-nut.phai { right: -8px; } }
+@media (max-width: 760px) { .s-bc-nut { display: none; } }
+@media (prefers-reduced-motion: reduce) { .s-bc-day { transition: none; } }
 </style>
 <script>
   window.MathJax = {
@@ -1914,7 +1937,14 @@ window.TV9_NHUNG = true;
   <section class="s-sec" id="khoa-hoc"><div class="s-wrap">
     ${tieuDe("book", "Lộ trình nổi bật", `<a class="s-more" id="s-kh-more" href="#lo-trinh-toan">Xem toàn bộ lộ trình ${ic("arrow")}</a>`)}
     <div class="s-mon-bar">${tabMon()}<p class="s-mon-mo" id="s-mon-mo">${esc(MON.toan.mo)}</p></div>
-    <div class="s-kh-grid" id="s-kh-grid">${theoGD.map(theKhoa).join("")}</div>
+    <div class="s-bc" id="s-bc" aria-roledescription="băng chuyền" aria-label="Lộ trình các môn">
+      <button type="button" class="s-bc-nut trai" aria-label="Môn trước">${ic("arrow")}</button>
+      <div class="s-bc-khung"><div class="s-bc-day" id="s-bc-day">
+        ${Object.keys(MON).map((m, i) => `<div class="s-bc-trang" data-mon="${m}" role="group" aria-label="${esc(MON[m].ten)}"${i ? " inert aria-hidden=\"true\"" : ""}><div class="s-kh-grid">${THEO_MON[m].map(theKhoa).join("")}</div></div>`).join("")}
+      </div></div>
+      <button type="button" class="s-bc-nut phai" aria-label="Môn tiếp theo">${ic("arrow")}</button>
+      <div class="s-bc-cham">${Object.entries(MON).map(([m, M], i) => `<button type="button" data-mon="${m}" class="${i ? "" : "on"}" aria-label="${esc(M.ten)}"><i></i></button>`).join("")}</div>
+    </div>
 
     ${tieuDe("map", "Học gì ở từng giai đoạn", `<div class="s-tabs s-gd-tabs" role="tablist" id="s-gd-tabs">${tabGD()}</div>`)}
     <div class="s-ch-grid" id="s-ch-grid">${oChuong(theoGD[0])}</div>
@@ -2027,16 +2057,52 @@ window.TV9_NHUNG = true;
     $("#s-ch-grid").innerHTML = oChuong(THEO_MON[monKH][+b.dataset.g]);
   }));
   ganTabGD();
-  document.querySelectorAll(".s-mon-tabs button").forEach((b) => (b.onclick = () => {
-    monKH = b.dataset.mon;
-    document.querySelectorAll(".s-mon-tabs button").forEach((x) => x.classList.toggle("on", x === b));
-    const g = $("#s-kh-grid"); g.classList.remove("s-fade"); void g.offsetWidth; g.classList.add("s-fade");
-    g.innerHTML = THEO_MON[monKH].map(theKhoa).join("");
-    $("#s-mon-mo").textContent = MON[monKH].mo;
-    $("#s-kh-more").href = `#lo-trinh-${monKH}`;
+  // ------------------------------------------------------------------ băng chuyền lộ trình 3 môn
+  const DS_MON = Object.keys(MON), bc = $("#s-bc"), day = $("#s-bc-day");
+  const IT_DONG = matchMedia("(prefers-reduced-motion: reduce)").matches, CHU_KY = 7000;
+  let tuChay = null, nghiDen = 0, dangXem = false, trongTam = true;
+  function chonMon(m, tuDong = false) {
+    const i = DS_MON.indexOf(m);
+    if (i < 0) return;
+    monKH = m;
+    day.style.transform = `translateX(-${i * 100}%)`;
+    day.querySelectorAll(".s-bc-trang").forEach((t, k) => { t.toggleAttribute("inert", k !== i); t.setAttribute("aria-hidden", k !== i); });
+    document.querySelectorAll(".s-mon-tabs button").forEach((x) => x.classList.toggle("on", x.dataset.mon === m));
+    bc.querySelectorAll(".s-bc-cham button").forEach((x) => { x.classList.toggle("on", x.dataset.mon === m); const v = x.querySelector("i"); v.style.animation = "none"; void v.offsetWidth; v.style.animation = ""; });
+    const mo = $("#s-mon-mo"); mo.classList.remove("s-fade1"); void mo.offsetWidth; mo.classList.add("s-fade1"); mo.textContent = MON[m].mo;
+    $("#s-kh-more").href = `#lo-trinh-${m}`;
     $("#s-gd-tabs").innerHTML = tabGD(); ganTabGD();
-    $("#s-ch-grid").innerHTML = oChuong(THEO_MON[monKH][0]);
-  }));
+    const g = $("#s-ch-grid"); g.classList.remove("s-fade"); void g.offsetWidth; g.classList.add("s-fade");
+    g.innerHTML = oChuong(THEO_MON[m][0]);
+    if (!tuDong) nghiDen = Date.now() + 20000; // người xem tự chọn → tạm dừng tự chạy 20 giây
+  }
+  const buoc = (d, tuDong) => chonMon(DS_MON[(DS_MON.indexOf(monKH) + d + DS_MON.length) % DS_MON.length], tuDong);
+  const capNhatChay = () => bc.classList.toggle("dung", IT_DONG || dangXem || !trongTam || Date.now() < nghiDen);
+  if (!IT_DONG) tuChay = setInterval(() => {
+    capNhatChay();
+    if (!bc.classList.contains("dung") && !document.hidden) buoc(1, true);
+  }, CHU_KY);
+  setInterval(capNhatChay, 1000);
+  document.querySelectorAll(".s-mon-tabs button").forEach((b) => (b.onclick = () => chonMon(b.dataset.mon)));
+  bc.querySelectorAll(".s-bc-cham button").forEach((b) => (b.onclick = () => chonMon(b.dataset.mon)));
+  bc.querySelector(".trai").onclick = () => buoc(-1);
+  bc.querySelector(".phai").onclick = () => buoc(1);
+  bc.addEventListener("mouseenter", () => { dangXem = true; capNhatChay(); });
+  bc.addEventListener("mouseleave", () => { dangXem = false; capNhatChay(); });
+  bc.addEventListener("focusin", () => { dangXem = true; capNhatChay(); });
+  bc.addEventListener("focusout", () => { dangXem = false; capNhatChay(); });
+  if ("IntersectionObserver" in window) new IntersectionObserver(([e]) => { trongTam = e.isIntersecting; capNhatChay(); }, { threshold: 0.3 }).observe(bc);
+  // vuốt ngang trên điện thoại
+  let x0 = null, y0 = 0;
+  const khung = bc.querySelector(".s-bc-khung");
+  khung.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  khung.addEventListener("touchend", (e) => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) buoc(dx < 0 ? 1 : -1);
+  });
+  bc.addEventListener("keydown", (e) => { if (e.key === "ArrowRight") buoc(1); if (e.key === "ArrowLeft") buoc(-1); });
+  capNhatChay();
 
   // ------------------------------------------------------------------ đăng ký
   const form = $("#s-form"), msg = $("#s-form-msg");
