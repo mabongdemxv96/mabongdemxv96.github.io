@@ -712,8 +712,12 @@ section[id] { scroll-margin-top: 72px; }
 @keyframes s-nhun { 0%, 55%, 100% { transform: translateY(0); } 62% { transform: translateY(-8px); } 70% { transform: translateY(0); } 76% { transform: translateY(-3px); } 82% { transform: translateY(0); } }
 @media (max-width: 760px) { .s-qua-noi { display: none; } }
 @media (prefers-reduced-motion: reduce) {
-  .s-qua-ic, .s-qua-ic .nap, .s-qua-noi .nap, .s-qua-noi-tui, .s-qua-noi-tui svg, .s-btn.s-qua.gold, .s-sticky.s-qua { animation: none !important; }
+  /* máy tắt hiệu ứng: vẫn lắc nhẹ, thưa hơn; bỏ vệt sáng quét và nhún */
+  .s-qua-ic, .s-qua-noi-tui svg { animation: s-lac-nhe 5s ease-in-out infinite; }
+  .s-qua-ic .nap, .s-qua-noi .nap, .s-qua-noi-tui, .s-sticky.s-qua { animation: none; }
   .s-btn.s-qua::after, .s-nav a.s-nav-cta.s-qua::before, .s-sticky.s-qua::after { display: none; }
+}
+@keyframes s-lac-nhe { 0%, 80%, 100% { transform: rotate(0); } 84% { transform: rotate(-8deg); } 88% { transform: rotate(7deg); } 92% { transform: rotate(-4deg); } 96% { transform: rotate(0); } }
 }
 @media (max-width: 760px) { .s-sticky.s-qua:not([hidden]) { display: flex; } }
 </style>
